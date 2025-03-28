@@ -1,12 +1,14 @@
 ---
-const { url } = Astro.props;
-import sbmLogo from '../assets/images/logo.webp';
+import sbmLogo from "../assets/images/logo.webp";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils.ts";
+import { languages } from "../i18n/ui.ts";
+const currentLang = Astro.currentLocale || "it";
+const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
 <div class="w-[350px] pr-[50px] md:w-[200px] md:pr-0">
-  {url ? (
-    <a href={url}><img src={sbmLogo.src} alt="Logo SBM" /></a>
-  ) : (
-    <img src={sbmLogo.src} alt="Logo SBM" />
-  )}
+  <a href={getRelativeLocaleUrl(currentLang, "/")}
+    ><img src={sbmLogo.src} alt="Logo SBM" /></a
+  >
 </div>
