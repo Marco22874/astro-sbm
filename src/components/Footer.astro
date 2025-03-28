@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import AdvancedImage from "../components/AdvancedImage.astro";
+import SbmLogoWhite from "../assets/images/logo-white.webp";
+import Dnv9001 from "../assets/images/9001_14001.webp";
+import Dnv13485 from "../assets/images/13485.webp";
+import FooterTop from "../assets/images/footer-top.webp";
+---
+
+<div
+  id="footer-top"
+  class="flex w-full justify-items-start -my-[1px] h-[86px] border-0"
+>
+  <Image
+    src={FooterTop}
+    alt="Footer top"
+    format="avif"
+    quality={"mid"}
+    height="86"
+  />
+</div>
+<footer
+  class="flex flex-col gap-8 bg-midnight pt-24 pb-8 w-full text-white text-sm md:text-base border-0"
+>
+  <div
+    class="flex flex-wrap gap-8 justify-center fbp:justify-between px-8 md:px-12 lg:px-24"
+  >
+    <div
+      id="sbm-logo-footer"
+      class="flex flex-col justify-start items-center min-w-[350px]"
+    >
+      <Image
+        src={SbmLogoWhite}
+        alt="Hero sbm"
+        format="avif"
+        quality={"mid"}
+        height="60"
+      />
+      <hr class="bg-white mx-auto my-[15px] w-[70px] h-[1px]" />
+      <p class="my-[20px] text-center leading-6">
+        © Copyright 2025 <br />
+        · All rights reserved ·<br />
+      </p>
+      <p class="my-[20px] text-center leading-6">
+        <strong>SBM s.r.l. Sistemi Biomedicali </strong><br />
+        Viale Finlandia, 1 Zona Ind.le LECCE<br />
+        P.IVA IT 03518350750<br />
+        Iscriz. Reg. Imprese C.C.I.A.A. di Lecce n. 22675<br />
+        Capitale Sociale € 100.000,00 <br />
+      </p>
+    </div>
+    <div
+      id="sbm-contact-footer"
+      class="flex flex-col justify-start items-center min-w-[350px]"
+    >
+      <div class="flex flex-col m-0 p-0 justify-center h-[60px] text-2xl">
+        Contatti
+      </div>
+      <hr class="bg-white mx-auto my-[15px] w-[70px] h-[1px]" />
+
+      <p class="my-[20px] text-center leading-6">
+        <strong>Tel. </strong>
+        +39 0832.362995<br />
+        <strong>Fax. </strong>
+        +39 0832.366084
+      </p>
+      <p class="my-[20px] text-center leading-6">
+        <strong>Segreteria</strong><br />
+        info@sbmsrl.it
+      </p>
+    </div>
+    <div
+      id="sbm-menu-footer"
+      class="flex flex-col justify-start items-center min-w-[350px]"
+    >
+      <ul class="text-center">
+        <li class="w-full">
+          <a href="/">HOME</a>
+          <hr class="stylenav" />
+        </li>
+        <li class="w-full">
+          <a href="prodotti.html">PRODOTTI</a>
+          <hr class="w-[30px] h-[1px]" />
+        </li>
+        <li class="w-full">
+          <a href="servizi.html">SERVIZI</a>
+          <hr class="stylenav" />
+        </li>
+        <li class="w-full">
+          <a href="news.html">NEWS</a>
+          <hr class="stylenav" />
+        </li>
+        <li class="w-full">
+          <a href="chi-siamo.html">CHI SIAMO</a>
+          <hr class="stylenav" />
+        </li>
+        <li>
+          <a href="contatti.html">CONTATTI</a>
+          <hr class="stylenav" />
+        </li>
+      </ul>
+    </div>
+    <div
+      class="flex flex-col justify-start items-center min-w-[350px] text-white"
+    >
+      <div class="flex flex-col m-0 p-0 justify-center h-[60px] text-2xl">
+        Certificazioni
+      </div>
+      <hr class="bg-white mx-auto my-[15px] w-[70px] h-[1px]" />
+      <div
+        id="sbm-cert"
+        class="flex justify-around my-[40px] flex-1 xl:flex-none items-center min-w-[350px] text-white"
+      >
+        <a href="https://sbmsrl.it">
+          <AdvancedImage
+            src={Dnv9001}
+            alt="Hero sbm"
+            filterClass="white-image"
+            format="avif"
+            quality={"mid"}
+            width="100"
+          />
+        </a>
+        <a href="https://sbmsrl.it">
+          <AdvancedImage
+            src={Dnv13485}
+            alt="Hero sbm"
+            filterClass="white-image"
+            format="avif"
+            quality={"mid"}
+            width="100"
+          />
+        </a>
+        <a href="https://sbmsrl.it">
+          <AdvancedImage
+            src={Dnv9001}
+            alt="Hero sbm"
+            filterClass="white-image"
+            format="avif"
+            quality={"mid"}
+            width="100"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col justify-center px-4 text-xs">
+    <div
+      id="sbm-credits"
+      class="flex flex-1 justify-center items-center min-w-[350px]"
+    >
+      CREDITS · PRIVACY POLICY
+    </div>
+  </div>
+</footer>

@@ -5,15 +5,19 @@ export const languages = {
 
 export const labels = {
   it: {
-    "nav.home": "Home",
     "nav.products": "Prodotti",
-    "home.h1": "Benvenuto",
-    "products.h1": "I nostri Prodotti",
+    "nav.services": "Servizi",
+    "nav.news": "News",
+    "nav.about-us": "Chi Siamo",
+    "nav.contacts": "Contatti",
+    "nav.backend": "Area Riservata",
   },
   en: {
-    "nav.home": "Home",
     "nav.products": "Products",
-    "home.h1": "Welcome",
-    "products.h1": "Our Products",
+    "nav.services": "Services",
+    "nav.news": "News",
+    "nav.about-us": "About US",
+    "nav.contacts": "Contacts",
+    "nav.backend": "Reserved Area",
   },
 };

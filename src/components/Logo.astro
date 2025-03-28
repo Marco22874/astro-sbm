@@ -1,0 +1,12 @@
+---
+const { url } = Astro.props;
+import sbmLogo from '../assets/images/logo.webp';
+---
+
+<div class="w-[350px] pr-[50px] md:w-[200px] md:pr-0">
+  {url ? (
+    <a href={url}><img src={sbmLogo.src} alt="Logo SBM" /></a>
+  ) : (
+    <img src={sbmLogo.src} alt="Logo SBM" />
+  )}
+</div>

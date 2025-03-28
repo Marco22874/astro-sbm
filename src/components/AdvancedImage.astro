@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+
+const { 
+  src, 
+  alt, 
+  filterClass = 'filter-none', 
+  transition = 'ease-in-out', 
+  duration = 'duration-300', 
+  ...rest
+} = Astro.props;
+---
+
+<Image 
+  src={src} 
+  alt={alt} 
+  class={`transition-all ${transition} ${duration} ${filterClass}`} 
+  {...rest}  
+/>
+

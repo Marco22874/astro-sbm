@@ -1,9 +1,36 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import HeroImg from "../../assets/images/slide@1920.webp";
 ---
 
 <Layout>
-	<div class="flex items-center justify-center h-screen">
-		<h1 class="text-3xl text-purple-800">Home Page EN</h1>
-	</div>
+  <main class="flex flex-col flex-grow items-center w-full h-full">
+    <section
+      id="hero"
+      class="flex-1 mt-[100px] px-8 md:px-12 lg:px-24 border border-red-600 w-screen"
+    >
+      <Image src={HeroImg} alt="Hero sbm" format="avif" quality={"mid"} />
+      <h1 class="text-purple text-2xl">Sbm - your health partner</h1>
+    </section>
+    <section
+      id="intro"
+      class="flex-1 mt-[100px] px-8 md:px-12 lg:px-24 border border-green-600 w-screen"
+    >
+      <p class="text-6xl text-(--color-midnight)">
+        SBM è un'azienda leader nelle tecnologie sanitarie, con oltre 20 anni di
+        esperienza siamo al fianco di medici, ricercatori e operatori del
+        settore.<br />
+        Offriamo soluzioni innovative per migliorare la qualità della vita dei pazienti
+        e ottimizzare il lavoro di chi si prende cura della loro salute.<br />
+        Questa è SBM, your next health partner.
+      </p>
+    </section>
+    <section
+      id="news"
+      class="flex-1 mt-[100px] px-8 md:px-12 lg:px-24 border border-red-600 w-screen"
+    >
+      <p>News text</p>
+    </section>
+  </main>
 </Layout>

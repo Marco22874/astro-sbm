@@ -1,45 +1,49 @@
----	
-import { getRelativeLocaleUrl } from "astro:i18n";
+---
 import "../styles/global.css";
 import { useTranslations } from "../i18n/utils.ts";
 import { languages } from "../i18n/ui.ts";
 import { ClientRouter } from "astro:transitions";
-import LanguagePicker from "../components/LanguagePicker.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const currentLang = Astro.currentLocale || "it";
-const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
 <!doctype html>
 <html lang={currentLang}>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=0" />
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="robots" content="index, follow">
-		<meta name="google" content="notranslate">
-		<meta name="keywords" content="SBM srl, Lecce, your health partner">
-		<meta name="description" content="SBM srl, Lecce, your health partner">
-		<meta name="author" content="Next Code di Marco De Luca">
-		<meta property="og:title" content="SBM - Your Health Partner" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://www.sbmsrl.it" />
-		<meta property="og:image" content="http://www.sbmsrl.it/img/logo.png" />
-		<meta property="og:locale" content="it_IT" />
-		<meta property="og:description" content="SBM srl, Lecce, your health partner" />
-		<title>SBM - Your Health Partner</title>
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<ClientRouter />
-		
-	</head>
-	<body class="m-0 w-full h-dvh font-Acumin">
-		<nav>
-			<ul>
-				<li><a href={getRelativeLocaleUrl(currentLang, "/")}>{tr("nav.home")}</a></li>
-				<li><a href={getRelativeLocaleUrl(currentLang, "/products")}>{tr("nav.products")}</a></li>
-			</ul>
-			<LanguagePicker />
-		</nav>
-		<slot />
-	</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=0"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="SBM srl, Lecce, your health partner" />
+    <meta name="description" content="SBM srl, Lecce, your health partner" />
+    <meta name="author" content="Next Code di Marco De Luca" />
+    <meta property="og:title" content="SBM - Your Health Partner" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.sbmsrl.it" />
+    <meta property="og:image" content="http://www.sbmsrl.it/img/logo.png" />
+    <meta property="og:locale" content="it_IT" />
+    <meta
+      property="og:description"
+      content="SBM srl, Lecce, your health partner"
+    />
+    <title>SBM - Your Health Partner</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <ClientRouter />
+  </head>
+  <body class="m-0 w-full h-dvh font-Acumin">
+    <div
+      id="container"
+      class="flex flex-col items-center border-2 border-e-indigo-700 min-h-screen overflow-x-hidden"
+    >
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
