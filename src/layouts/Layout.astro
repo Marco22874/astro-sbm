@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
-import { useTranslations } from "../i18n/utils.ts";
-import { languages } from "../i18n/ui.ts";
+
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -32,7 +31,7 @@ const currentLang = Astro.currentLocale || "it";
       property="og:description"
       content="SBM srl, Lecce, your health partner"
     />
-    <title>SBM - Your Health Partner</title>
+    <title>{Astro.props.title}</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <ClientRouter />
   </head>

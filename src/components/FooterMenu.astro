@@ -1,0 +1,53 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils.ts";
+import { languages } from "../i18n/ui.ts";
+const currentLang = Astro.currentLocale || "it";
+const tr = useTranslations(currentLang as keyof typeof languages);
+---
+
+<div
+  id="sbm-menu-footer"
+  class="flex flex-col justify-start items-center min-w-[350px]"
+>
+  <ul class="text-center">
+    <li class="w-full">
+      <a href={getRelativeLocaleUrl(currentLang, "/")}>Home</a>
+      <hr class="stylenav" />
+    </li>
+    <li class="w-full">
+      <a href={getRelativeLocaleUrl(currentLang, "/products")}
+        >{tr("nav.products")}</a
+      >
+      <hr class="stylenav" />
+    </li>
+    <li class="w-full">
+      <a href={getRelativeLocaleUrl(currentLang, "/services")}
+        >{tr("nav.services")}</a
+      >
+      <hr class="stylenav" />
+    </li>
+    <li class="w-full">
+      <a href={getRelativeLocaleUrl(currentLang, "/news")}>{tr("nav.news")}</a>
+      <hr class="stylenav" />
+    </li>
+    <li class="w-full">
+      <a href={getRelativeLocaleUrl(currentLang, "/about-us")}
+        >{tr("nav.about-us")}</a
+      >
+      <hr class="stylenav" />
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/contacts")}
+        >{tr("nav.contacts")}</a
+      >
+      <hr class="stylenav" />
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/backend")}
+        >{tr("nav.backend")}</a
+      >
+      <hr class="stylenav" />
+    </li>
+  </ul>
+</div>
