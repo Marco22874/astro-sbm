@@ -9,7 +9,7 @@ import { useTranslations } from "../i18n/utils.ts";
 import { languages } from "../i18n/ui.ts";
 const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
-import FooterMenu from "./FooterMenu.astro";
+import SecondaryMenu from "./SecondaryMenu.astro";
 ---
 
 <div
@@ -79,7 +79,7 @@ import FooterMenu from "./FooterMenu.astro";
         info@sbmsrl.it
       </div>
     </div>
-    <FooterMenu />
+    <SecondaryMenu />
     <div
       class="flex flex-col justify-start items-center min-w-[350px] text-white"
     >
