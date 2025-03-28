@@ -1,0 +1,12 @@
+---
+import { languages } from "../i18n/ui.ts";
+const currentPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, '');
+---
+
+<ul class="flex justify-center gap-8">
+  {Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={`/${lang}${currentPath}`}>{label}</a>
+    </li>
+  ))}
+</ul>

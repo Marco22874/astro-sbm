@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-white: #fff;
+  --color-purple: #753bbd;
+  --color-midnight: #26336a;
+  --breakpoint-fbp: 1431px; /* footer breakpoint */
+}
+
+@font-face {
+  font-family: Acumin;
+  src: url("../assets/fonts/AcuminVariableConcept.otf") format("otf");
+}
+
+.white-image {
+  filter: brightness(0) invert(1);
+}

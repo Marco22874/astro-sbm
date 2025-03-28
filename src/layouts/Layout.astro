@@ -1,10 +1,16 @@
----
-import { ClientRouter } from "astro:transitions";	
+---	
+import { getRelativeLocaleUrl } from "astro:i18n";
 import "../styles/global.css";
+import { useTranslations } from "../i18n/utils.ts";
+import { languages } from "../i18n/ui.ts";
+import { ClientRouter } from "astro:transitions";
+import LanguagePicker from "../components/LanguagePicker.astro";
+const currentLang = Astro.currentLocale || "it";
+const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang={currentLang}>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=0" />
@@ -27,6 +33,13 @@ import "../styles/global.css";
 		
 	</head>
 	<body class="m-0 w-full h-dvh font-Acumin">
+		<nav>
+			<ul>
+				<li><a href={getRelativeLocaleUrl(currentLang, "/")}>{tr("nav.home")}</a></li>
+				<li><a href={getRelativeLocaleUrl(currentLang, "/products")}>{tr("nav.products")}</a></li>
+			</ul>
+			<LanguagePicker />
+		</nav>
 		<slot />
 	</body>
 </html>
