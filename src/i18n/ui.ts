@@ -16,7 +16,7 @@ export const labels = {
     "nav.products": "Products",
     "nav.services": "Services",
     "nav.news": "News",
-    "nav.about-us": "About US",
+    "nav.about-us": "About Us",
     "nav.contacts": "Contacts",
     "nav.backend": "Reserved Area",
   },
