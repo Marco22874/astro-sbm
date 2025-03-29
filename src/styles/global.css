@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: Acumin;
-  src: url("../assets/fonts/AcuminVariableConcept.otf") format("otf");
+  src: url("../../public/fonts/AcuminVariableConcept.otf") format("otf");
 }
 
 .white-image {
