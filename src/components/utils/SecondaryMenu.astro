@@ -1,7 +1,9 @@
 ---
+// import language files
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { useTranslations } from "../i18n/utils.ts";
-import { languages } from "../i18n/ui.ts";
+import { useTranslations } from "../../i18n/utils.ts";
+import { languages } from "../../i18n/ui.ts";
+
 const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
 ---

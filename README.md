@@ -1,4 +1,4 @@
-# Astro Starter Kit: SBM PROJECT
+# SBM PROJECT
 
 ```sh
 npm create astro@latest -- --template basics
@@ -8,7 +8,7 @@ npm create astro@latest -- --template basics
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🧑‍🚀 **Version 2.0**
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
@@ -20,10 +20,44 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 │   └── favicon.svg
+│   ├── favicon.png
 ├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── footer/
+│   |   |   └──Footer.astro
+│   │   ├── header/
+│   |   |   ├── HamburgerMenu.astro
+│   |   |   ├── Header.astro
+│   |   |   ├── Logo.astro
+│   |   |   ├── MainMenu.astro
+│   |   |   └── MainMenu.astro
+│   │   └── utils/
+│   |       ├── AdvencedImage.astro
+│   |       ├── LanguagePicker.astro
+│   |       └── SecondaryMenu.astro
+│   ├── i18n/
+│   │   ├── ui.ts
+│   │   └── utils.ts
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
+│       ├── it/
+│       │   ├── about-us/
+│       │   ├── backend/
+│       │   ├── contacts/
+│       │   ├── news/
+│       │   ├── products/
+│       │   ├── services/
+│       │   └── index.astro
+│       ├── en/
+│       |   ├── about-us/
+│       |   ├── backend/
+│       |   ├── contacts/
+│       |   ├── news/
+│       |   ├── products/
+│       |   ├── services/
+│       |   └── index.astro
 │       └── index.astro
 └── package.json
 ```

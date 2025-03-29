@@ -1,15 +1,19 @@
 ---
+// Import utils components
+import AdvancedImage from "../../components/utils/AdvancedImage.astro";
+import SecondaryMenu from "../../components/utils/SecondaryMenu.astro";
+// import images
 import { Image } from "astro:assets";
-import AdvancedImage from "../components/AdvancedImage.astro";
-import SbmLogoWhite from "../assets/images/logo-white.webp";
-import Dnv9001 from "../assets/images/9001_14001.webp";
-import Dnv13485 from "../assets/images/13485.webp";
-import FooterTop from "../assets/images/footer-top.webp";
-import { useTranslations } from "../i18n/utils.ts";
-import { languages } from "../i18n/ui.ts";
+import SbmLogoWhite from "../../assets/images/logo-white.webp";
+import Dnv9001 from "../../assets/images/9001_14001.webp";
+import Dnv13485 from "../../assets/images/13485.webp";
+import FooterTop from "../../assets/images/footer-top.webp";
+// import language files
+import { useTranslations } from "../../i18n/utils.ts";
+import { languages } from "../../i18n/ui.ts";
+
 const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
-import SecondaryMenu from "./SecondaryMenu.astro";
 ---
 
 <div
