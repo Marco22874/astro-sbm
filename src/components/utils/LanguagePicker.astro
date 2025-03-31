@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, "");
 const currentLanguage = Astro.url.pathname.split("/")[1];
 ---
 
-<ul class="flex gap-4 w-[74px] items-center justify-center">
+<ul class="flex gap-4 w-[60px] 2xl:w-[74px] items-center justify-center">
   {
     Object.entries(languages).map(([lang, label]) => {
       if (lang !== currentLanguage) {
