@@ -1,14 +1,45 @@
 ---
-// language files
 import { languages } from "../../i18n/ui.ts";
 
 const currentPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, "");
+const currentLanguage = Astro.url.pathname.split("/")[1];
 ---
 
-{
-  Object.entries(languages).map(([lang, label]) => (
-    <li class="border border-yellow-500">
-      <a href={`/${lang}${currentPath}`}>{label}</a>
-    </li>
-  ))
-}
+<ul class="flex gap-4 w-[74px] items-center justify-center">
+  {
+    Object.entries(languages).map(([lang, label]) => {
+      if (lang !== currentLanguage) {
+        return (
+          <li class="toggle-list-item list-none px-2">
+            <a
+              href={`/${lang}${currentPath}`}
+              class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer"
+            >
+              {label}
+            </a>
+          </li>
+        );
+      }
+    })
+  }
+</ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const listItems = document.querySelectorAll(".toggle-list-item");
+
+    listItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        listItems.forEach((el) => {
+          if (el !== item) {
+            el.classList.remove("block");
+            el.classList.add("hidden");
+          } else {
+            el.classList.remove("hidden");
+            el.classList.add("block");
+          }
+        });
+      });
+    });
+  });
+</script>

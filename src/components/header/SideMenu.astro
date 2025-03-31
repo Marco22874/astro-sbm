@@ -1,0 +1,30 @@
+---
+// import language files
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../../i18n/utils.ts";
+import { languages } from "../../i18n/ui.ts";
+// import images
+import LoginIcon from "../../assets/images/login.png";
+
+const currentLang = Astro.currentLocale || "it";
+const tr = useTranslations(currentLang as keyof typeof languages);
+---
+
+<nav class="hidden md:w-[200px] lg:flex items-center h-[60px] text-xl">
+    <ul class="md:flex md:flex-1 justify-around h-[60px] items-center">
+        <li class="list-none px-2">
+            <a href={getRelativeLocaleUrl(currentLang, "/contacts")}
+                >{tr("nav.contacts")}</a
+            >
+        </li>
+        <li class="list-none justify-self-end">
+            <a href={getRelativeLocaleUrl(currentLang, "/backend")}
+                ><img
+                    src={LoginIcon.src}
+                    alt={tr("nav.backend")}
+                    class="h-[40px] p-1"
+                /></a
+            >
+        </li>
+    </ul>
+</nav>

@@ -2,13 +2,15 @@
 // import header components
 import Logo from "./Logo.astro";
 import HamburgerMenu from "./HambugerMenu.astro";
-import Navbar from "./Navbar.astro";
+import MainMenu from "./MainMenu.astro";
+import SideMenu from "./SideMenu.astro";
 ---
 
 <header
-  class="fixed flex justify-between items-center gap-8 bg-white px-8 md:gap-4 lg:px-24 w-full h-[100px] text-midnight border-b border-midnight"
+  class="fixed z-100 flex justify-between items-center gap-8 bg-white px-8 md:gap-4 xl:px-47 w-full h-[80px] text-midnight top-[40px]"
 >
   <Logo />
-  <Navbar />
+  <MainMenu />
+  <SideMenu />
   <HamburgerMenu />
 </header>

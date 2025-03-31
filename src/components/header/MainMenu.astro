@@ -8,30 +8,25 @@ const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/products")}
-    >{tr("nav.products")}</a
-  >
-</li>
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/services")}
-    >{tr("nav.services")}</a
-  >
-</li>
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/news")}>{tr("nav.news")}</a>
-</li>
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/about-us")}
-    >{tr("nav.about-us")}</a
-  >
-</li>
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/contacts")}
-    >{tr("nav.contacts")}</a
-  >
-</li>
-<li>
-  <a href={getRelativeLocaleUrl(currentLang, "/backend")}>{tr("nav.backend")}</a
-  >
-</li>
+<nav class="hidden lg:w-[600px] lg:flex items-center h-[60px] text-xl">
+  <ul class="md:flex md:flex-1 justify-around">
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/products")}
+        >{tr("nav.products")}</a
+      >
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/services")}
+        >{tr("nav.services")}</a
+      >
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/news")}>{tr("nav.news")}</a>
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(currentLang, "/about-us")}
+        >{tr("nav.about-us")}</a
+      >
+    </li>
+  </ul>
+</nav>
