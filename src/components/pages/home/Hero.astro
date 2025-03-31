@@ -29,3 +29,22 @@ import HeroImg from "../../../assets/images/slide_1.webp";
         <span class="block">partner</span>
     </h1>
 </section>
+
+<script>
+    import { gsap } from "gsap";
+    document.addEventListener("DOMContentLoaded", () => {
+        const text4Elements = document.querySelectorAll("#hero h1 span");
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+            text4Elements,
+            { scale: 8, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                ease: "slow(0.1, 0.1, false)",
+                stagger: 1.2,
+            },
+        );
+    });
+</script>
