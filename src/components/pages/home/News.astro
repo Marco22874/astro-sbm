@@ -2,9 +2,128 @@
 
 ---
 
-<section
-    id="news"
-    class="sbm-section w-screen flex-1 m-[50px] border border-red-600"
+<div class="sbm-section w-screen flex-1 mt-[40px]">
+    <div class="w-full">
+        <h1 class="text-5xl text-midnight">News</h1>
+        <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
+    </div>
+</div>
+<div
+    class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent"
 >
-    <p>News text</p>
-</section>
+    <section
+        id="horizontal-news"
+        class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap"
+    >
+        <!-- Prima News -->
+        <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
+            <div>
+                <h1 class="text-2xl min-h-16 mb-2">
+                    <a href="#">Ricerca: nuovo test genetico</a>
+                </h1>
+                <p class="min-h-32">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae nam repellat numquam ipsam laudantium minima
+                    ducimus accusamus perferendis, pariatur repudiandae?
+                </p>
+            </div>
+            <div>
+                <a href="#"
+                    ><img
+                        class="object-cover"
+                        src="https://picsum.photos/600/800?random=1"
+                        alt="news image"
+                    /></a
+                >
+            </div>
+        </div>
+        <!-- Seconda News -->
+        <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
+            <div>
+                <h1 class="text-2xl min-h-16 mb-2">
+                    <a href="#"
+                        >Pitch:La dott.ssa De Belli spiega la nuova medicina</a
+                    >
+                </h1>
+                <p class="min-h-32">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit sit aspernatur aliquam culpa qui laboriosam nihil
+                    tenetur et nostrum maiores!
+                </p>
+            </div>
+            <div>
+                <a href="#"
+                    ><img
+                        class="object-cover"
+                        src="https://picsum.photos/600/800?random=2"
+                        alt="news image"
+                    /></a
+                >
+            </div>
+        </div>
+        <!-- Terza News -->
+        <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
+            <div>
+                <h1 class="text-2xl min-h-16 mb-2">
+                    <a href="#">Tac: prevenzione e salute</a>
+                </h1>
+                <p class="min-h-32">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium alias omnis totam iste qui dignissimos eveniet
+                    similique perspiciatis sapiente sit.
+                </p>
+            </div>
+            <div>
+                <a href="#"
+                    ><img
+                        class="object-cover"
+                        src="https://picsum.photos/600/800?random=3"
+                        alt="news image"
+                    /></a
+                >
+            </div>
+        </div>
+        <!-- Quarta News -->
+        <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
+            <div>
+                <h1 class="text-2xl min-h-16 mb-2">
+                    <a href="#">Ricerca: nuovo test genetico</a>
+                </h1>
+                <p class="min-h-32">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat eius minima beatae asperiores omnis laborum
+                    consequatur id totam eos est.
+                </p>
+            </div>
+            <div>
+                <a href="#"
+                    ><img
+                        class="object-cover"
+                        src="https://picsum.photos/600/800?random=4"
+                        alt="news image"
+                    /></a
+                >
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    import { gsap } from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const news = gsap.utils.toArray(".news");
+
+    gsap.to(news, {
+        xPercent: -100 * (news.length - 1),
+        scrollTrigger: {
+            trigger: "#horizontal-news",
+            pin: true,
+            scrub: 1,
+            pinSpacing: true,
+            start: "top 160px",
+            end: "bottom+=100% top",
+        },
+    });
+</script>

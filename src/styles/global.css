@@ -25,6 +25,10 @@
   @apply flex justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;
 }
 
+#horizontal-sliders {
+  @apply flex flex-nowrap w-[2500px] overflow-x-hidden justify-between items-center;
+}
+
 .text-10xl {
   font-size: var(--text-10xl);
   line-height: var(--tw-leading, 10vw);
