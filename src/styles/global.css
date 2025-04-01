@@ -20,6 +20,9 @@
 .stylenav-white {
   @apply h-px w-[30px] inline-block bg-white group-hover:w-full group-hover:brightness-150 group-hover:contrast-150 group-hover:shadow-[0_0_5px_var(--color-white-80)] transition-all duration-[0.3s] ease-[ease-out] brightness-100 contrast-100 mx-auto my-1 border-0;
 }
+.stylenav-midnight {
+  @apply h-px w-[30px] inline-block bg-midnight group-hover:w-[50%] group-hover:brightness-150 group-hover:contrast-150 group-hover:shadow-[0_0_5px_var(--color-midnight-80)] transition-all duration-[0.3s] ease-[ease-out] brightness-100 contrast-100 mx-auto my-1 border-0;
+}
 
 .sbm-section {
   @apply flex justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;

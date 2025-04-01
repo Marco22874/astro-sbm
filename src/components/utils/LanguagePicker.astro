@@ -5,7 +5,9 @@ const currentPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, "");
 const currentLanguage = Astro.url.pathname.split("/")[1];
 ---
 
-<ul class="flex gap-4 w-[60px] 2xl:w-[74px] items-center justify-center">
+<ul
+  class="flex gap-4 w-[60px] 2xl:w-[40px] items-center justify-center xl:justify-start"
+>
   {
     Object.entries(languages).map(([lang, label]) => {
       if (lang !== currentLanguage) {
@@ -13,7 +15,7 @@ const currentLanguage = Astro.url.pathname.split("/")[1];
           <li class="toggle-list-item list-none px-2">
             <a
               href={`/${lang}${currentPath}`}
-              class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer"
+              class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer rounded-md"
             >
               {label}
             </a>

@@ -12,12 +12,14 @@ const tr = useTranslations(currentLang as keyof typeof languages);
 
 <nav class="hidden md:w-[200px] lg:flex items-center h-[60px] text-xl">
     <ul class="md:flex md:flex-1 justify-around h-[60px] items-center">
-        <li class="list-none px-2">
+        <li class="w-full group flex flex-col items-center list-none px-2">
             <a href={getRelativeLocaleUrl(currentLang, "/contacts")}
                 >{tr("nav.contacts")}</a
             >
+            <hr class="stylenav-midnight" />
         </li>
-        <li class="list-none justify-self-end">
+
+        <li class="list-none">
             <a href={getRelativeLocaleUrl(currentLang, "/backend")}
                 ><img
                     src={LoginIcon.src}
