@@ -20,9 +20,11 @@ import FourImg from "../../../assets/images/sostenibilita.webp";
         class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap"
     >
         <!-- Prima News -->
-        <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
+        <div
+            class="news h-[calc(90vh-160px)] shrink-0 w-full p-2 flex flex-col items-center"
+        >
             <div>
-                <h1 class="text-2xl min-h-16 mb-2">
+                <h1 class="text-2xl font-medium min-h-16 mb-2">
                     <a href="#">Ricerca: nuovo test genetico</a>
                 </h1>
                 <p class="min-h-32">
@@ -31,13 +33,18 @@ import FourImg from "../../../assets/images/sostenibilita.webp";
                     ducimus accusamus perferendis, pariatur repudiandae?
                 </p>
             </div>
-            <div>
+            <div
+                class="w-full flex flex-col items-center border border-green-600"
+            >
                 <a href="#">
                     <Image
                         src={OneImg}
                         alt="Ricerca: nuovo test genetico"
                         format="avif"
                         quality={"mid"}
+                        class="object-cover w-full h-full"
+                        widths={[310, 732, 890, 720, OneImg.width]}
+                        sizes={`(max-width: 360px) 310px, (max-width: 768px) 732px, (max-width: 1280px) 890px, (max-width: 1600px) 720px, ${OneImg.width}px`}
                     />
                 </a>
             </div>
@@ -45,7 +52,7 @@ import FourImg from "../../../assets/images/sostenibilita.webp";
         <!-- Seconda News -->
         <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
             <div>
-                <h1 class="text-2xl min-h-16 mb-2">
+                <h1 class="text-2xl font-medium min-h-16 mb-2">
                     <a href="#"
                         >Pitch:La dott.ssa De Belli spiega la nuova medicina</a
                     >
@@ -70,7 +77,7 @@ import FourImg from "../../../assets/images/sostenibilita.webp";
         <!-- Terza News -->
         <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
             <div>
-                <h1 class="text-2xl min-h-16 mb-2">
+                <h1 class="text-2xl font-medium min-h-16 mb-2">
                     <a href="#">Tac: prevenzione e salute</a>
                 </h1>
                 <p class="min-h-32">
@@ -93,7 +100,7 @@ import FourImg from "../../../assets/images/sostenibilita.webp";
         <!-- Quarta News -->
         <div class="news h-[calc(90vh-160px)] shrink-0 w-full p-2">
             <div>
-                <h1 class="text-2xl min-h-16 mb-2">
+                <h1 class="text-2xl font-medium min-h-16 mb-2">
                     <a href="#"
                         >Sostenibilità: verso una tecnologia adatta a tutti</a
                     >
