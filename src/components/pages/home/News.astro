@@ -1,5 +1,9 @@
 ---
-
+import { Image } from "astro:assets";
+import OneImg from "../../../assets/images/nuovo_test_genetico.webp";
+import TwoImg from "../../../assets/images/nuova_medicina.webp";
+import TreeImg from "../../../assets/images/tac.webp";
+import FourImg from "../../../assets/images/sostenibilita.webp";
 ---
 
 <div class="sbm-section w-screen flex-1 mt-[40px]">
@@ -28,13 +32,14 @@
                 </p>
             </div>
             <div>
-                <a href="#"
-                    ><img
-                        class="object-cover"
-                        src="https://picsum.photos/600/800?random=1"
-                        alt="News Ricerca: nuovo test genetico"
-                    /></a
-                >
+                <a href="#">
+                    <Image
+                        src={OneImg}
+                        alt="Ricerca: nuovo test genetico"
+                        format="avif"
+                        quality={"mid"}
+                    />
+                </a>
             </div>
         </div>
         <!-- Seconda News -->
@@ -52,13 +57,14 @@
                 </p>
             </div>
             <div>
-                <a href="#"
-                    ><img
-                        class="object-cover"
-                        src="https://picsum.photos/600/800?random=2"
-                        alt="News Pitch:La dott.ssa De Belli spiega la nuova medicina"
-                    /></a
-                >
+                <a href="#">
+                    <Image
+                        src={TwoImg}
+                        alt="Pitch:La dott.ssa De Belli spiega la nuova medicina"
+                        format="avif"
+                        quality={"mid"}
+                    />
+                </a>
             </div>
         </div>
         <!-- Terza News -->
@@ -74,13 +80,14 @@
                 </p>
             </div>
             <div>
-                <a href="#"
-                    ><img
-                        class="object-cover"
-                        src="https://picsum.photos/600/800?random=3"
-                        alt="News Tac: prevenzione e salute"
-                    /></a
-                >
+                <a href="#">
+                    <Image
+                        src={TreeImg}
+                        alt="Tac: prevenzione e salute"
+                        format="avif"
+                        quality={"mid"}
+                    />
+                </a>
             </div>
         </div>
         <!-- Quarta News -->
@@ -98,13 +105,14 @@
                 </p>
             </div>
             <div>
-                <a href="#"
-                    ><img
-                        class="object-cover"
-                        src="https://picsum.photos/600/800?random=4"
-                        alt="News Sostenibilità: verso una tecnologia adatta a tutti"
-                    /></a
-                >
+                <a href="#">
+                    <Image
+                        src={FourImg}
+                        alt="Sostenibilità: verso una tecnologia adatta a tuttia"
+                        format="avif"
+                        quality={"mid"}
+                    />
+                </a>
             </div>
         </div>
     </section>
