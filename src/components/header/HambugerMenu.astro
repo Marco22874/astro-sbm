@@ -1,28 +1,76 @@
 ---
-
+import SecondaryMenu from "../utils/SecondaryMenu.astro";
 ---
 
 <!-- Sbm Hamburger Menu -->
-<div id="sbm-menu" class="lg:hidden flex justify-center">
-    <button
-        class="group w-[60px] h-[60px]"
-        aria-pressed="false"
-        onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))"
-    >
-        <div class="justify-items-center gap-2.5 grid">
-            <span
-                class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:rotate-45 transition-all group-[[aria-pressed=true]]:translate-y-[12px] duration-600"
-            >
-            </span>
-            <span
-                class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] h-[2px] group-[[aria-pressed=true]]:scale-x-0 transition-all duration-300"
-            >
-            </span>
-            <span
-                class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:-rotate-45 transition-all group-[[aria-pressed=true]]:-translate-y-[12px] duration-600"
-            >
-            </span>
-        </div>
-    </button>
+<div id="sbm-menu" class="lg:hidden flex justify-center z-100">
+  <button
+    class="group w-[60px] h-[60px]"
+    aria-pressed="false"
+    onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))"
+  >
+    <div class="justify-items-center gap-2.5 grid">
+      <span
+        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:rotate-45 transition-all group-[[aria-pressed=true]]:translate-y-[12px] duration-600"
+      >
+      </span>
+      <span
+        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] h-[2px] group-[[aria-pressed=true]]:scale-x-0 transition-all duration-300"
+      >
+      </span>
+      <span
+        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:-rotate-45 transition-all group-[[aria-pressed=true]]:-translate-y-[12px] duration-600"
+      >
+      </span>
+    </div>
+  </button>
 </div>
 <!-- End Sbm Hamburger Menu -->
+
+<!-- Overlay Panel -->
+<div
+  id="sbm-panel"
+  class="hidden fixed top-0 left-0 w-full h-full bg-midnight bg-opacity-20 z-10"
+>
+  <SecondaryMenu />
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  // Aspettiamo che il DOM sia completamente caricato
+  document.addEventListener("DOMContentLoaded", () => {
+    // Selezioniamo gli elementi necessari
+    const sbmMenu = document.getElementById("sbm-menu") as HTMLElement | null;
+    const sbmPanel = document.getElementById("sbm-panel") as HTMLElement | null;
+
+    // Verifica che gli elementi esistano prima di aggiungere eventi
+    if (sbmMenu && sbmPanel) {
+      // Aggiungiamo l'evento di clic sull'hamburger menu
+      sbmMenu.addEventListener("click", () => {
+        // Controlliamo se il pannello è già aperto
+        const isOpen = !sbmPanel.classList.contains("hidden");
+
+        if (isOpen) {
+          // Se il pannello è aperto, chiudiamolo con animazione
+          gsap.to(sbmPanel, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+              // Dopo l'animazione, nascondiamo definitivamente il pannello
+              sbmPanel.classList.add("hidden");
+            },
+          });
+        } else {
+          // Se il pannello è chiuso, apriamolo con animazione
+          sbmPanel.classList.remove("hidden"); // Rende visibile il pannello
+          gsap.fromTo(
+            sbmPanel,
+            { opacity: 0 }, // Inizia invisibile
+            { opacity: 1, duration: 0.5 } // Termina visibile
+          );
+        }
+      });
+    }
+  });
+</script>
