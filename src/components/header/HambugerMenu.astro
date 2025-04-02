@@ -38,36 +38,31 @@ import SecondaryMenu from "../utils/SecondaryMenu.astro";
 <script>
   import { gsap } from "gsap";
 
-  // Aspettiamo che il DOM sia completamente caricato
   document.addEventListener("DOMContentLoaded", () => {
-    // Selezioniamo gli elementi necessari
     const sbmMenu = document.getElementById("sbm-menu") as HTMLElement | null;
     const sbmPanel = document.getElementById("sbm-panel") as HTMLElement | null;
 
-    // Verifica che gli elementi esistano prima di aggiungere eventi
     if (sbmMenu && sbmPanel) {
-      // Aggiungiamo l'evento di clic sull'hamburger menu
       sbmMenu.addEventListener("click", () => {
-        // Controlliamo se il pannello è già aperto
         const isOpen = !sbmPanel.classList.contains("hidden");
 
         if (isOpen) {
-          // Se il pannello è aperto, chiudiamolo con animazione
+          // Animazione per chiudere il pannello
           gsap.to(sbmPanel, {
             opacity: 0,
+            scale: 0.8, // Effetto di scalatura
             duration: 0.5,
             onComplete: () => {
-              // Dopo l'animazione, nascondiamo definitivamente il pannello
-              sbmPanel.classList.add("hidden");
+              sbmPanel.classList.add("hidden"); // Nascondi dopo l'animazione
             },
           });
         } else {
-          // Se il pannello è chiuso, apriamolo con animazione
-          sbmPanel.classList.remove("hidden"); // Rende visibile il pannello
+          // Animazione per aprire il pannello
+          sbmPanel.classList.remove("hidden");
           gsap.fromTo(
             sbmPanel,
-            { opacity: 0 }, // Inizia invisibile
-            { opacity: 1, duration: 0.5 } // Termina visibile
+            { opacity: 0, scale: 0.8 }, // Inizia con opacità 0 e scala 0.8
+            { opacity: 1, scale: 1, duration: 0.5 } // Arriva a opacità 1 e scala 1
           );
         }
       });
