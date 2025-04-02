@@ -3,7 +3,7 @@
 @theme {
   --color-white: #fff;
   --color-white-80: rgba(255, 255, 255, 0.8);
-  --color-purple: #753bbd;
+  --color-sbm-purple: #753bbd;
   --color-midnight: #1b2d70;
   --breakpoint-fbp: 1431px; /* footer breakpoint */
 }
@@ -26,6 +26,9 @@
 
 .sbm-section {
   @apply flex justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;
+}
+.sbm-h-section {
+  @apply flex flex-col justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;
 }
 
 #horizontal-sliders {

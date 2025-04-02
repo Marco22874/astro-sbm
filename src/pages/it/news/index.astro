@@ -1,9 +1,32 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+const news = await getCollection("it");
 ---
 
-<Layout title="SBM - our products">
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">Products</h1>
-  </div>
+<Layout title="SBM - your health partner">
+  <main class="flex flex-col flex-grow items-center w-full h-full">
+    <div class="sbm-h-section w-full my-[160px]">
+      <div class="w-full">
+        <h1 class="text-5xl text-midnight">News</h1>
+        <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
+      </div>
+      <ul>
+        {
+          news.map((item) => (
+            <li>
+              <a href={`/it/news/${item.data.slug}`}>{item.data.title}</a>
+              <p>{item.data.description}</p>
+              <img
+                class="w-[120px] h-[120px]"
+                src={item.data.image}
+                alt="Ricerca: nuovo test genetico"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
 </Layout>
