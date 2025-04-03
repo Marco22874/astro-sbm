@@ -7,189 +7,176 @@ import FourImg from "../../../assets/images/sostenibilita.png";
 ---
 
 <div class="sbm-section w-screen flex-1 mt-[40px]" id="news-wrapper">
-    <div class="w-full">
-        <h1 class="text-5xl text-midnight">News</h1>
-        <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
-    </div>
+  <div class="w-full">
+    <h1 class="text-5xl text-midnight">News</h1>
+    <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
+  </div>
 </div>
 <div
-    class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent"
+  class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent"
 >
-    <section
-        id="horizontal-news"
-        class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap"
+  <section
+    id="horizontal-news"
+    class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap"
+  >
+    <!-- Prima News -->
+    <div
+      class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
     >
-        <!-- Prima News -->
-        <div
-            class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+      <div class="md:flex-1">
+        <h1
+          class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5"
         >
-            <div class="md:flex-1">
-                <h1
-                    class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5"
-                >
-                    <a href="#">Ricerca: nuovo test genetico</a>
-                </h1>
-                <div
-                    class="text-sbm-purple text-sm px-3 mb-5 2xl:mb-15 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
-                >
-                    News
-                </div>
-                <p class="min-h-32 md:text-xl mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae nam repellat numquam ipsam laudantium minima
-                    ducimus accusamus perferendis, pariatur repudiandae?
-                </p>
-            </div>
-            <div
-                class="w-full flex flex-col overflow-hidden items-center md:flex-1"
-            >
-                <a href="#">
-                    <Image
-                        src={OneImg}
-                        alt="Ricerca: nuovo test genetico"
-                        format="webp"
-                        quality={"mid"}
-                        class="object-cover w-full h-full overflow-y-hidden md:h-[full] xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-                    />
-                </a>
-            </div>
-        </div>
-        <!-- Seconda News -->
+          <a href="#">Ricerca: nuovo test genetico</a>
+        </h1>
         <div
-            class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+          class="text-sbm-purple text-sm px-3 mb-5 2xl:mb-15 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
         >
-            <div class="md:flex-1">
-                <h1
-                    class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5"
-                >
-                    <a href="#"
-                        >Pitch:La dott.ssa De Belli spiega la nuova medicina</a
-                    >
-                </h1>
-                <div
-                    class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
-                >
-                    News
-                </div>
-                <p class="min-h-32 md:text-xl mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit sit aspernatur aliquam culpa qui laboriosam nihil
-                    tenetur et nostrum maiores!
-                </p>
-            </div>
-            <div class="w-full flex flex-col items-center md:flex-1">
-                <a href="#">
-                    <Image
-                        src={TwoImg}
-                        alt="Pitch:La dott.ssa De Belli spiega la nuova medicina"
-                        format="webp"
-                        quality={"mid"}
-                        class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-                    />
-                </a>
-            </div>
+          News
         </div>
-        <!-- Terza News -->
+        <p class="min-h-32 md:text-xl mb-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          nam repellat numquam ipsam laudantium minima ducimus accusamus
+          perferendis, pariatur repudiandae?
+        </p>
+      </div>
+      <div class="w-full flex flex-col overflow-hidden items-center md:flex-1">
+        <a href="#">
+          <Image
+            src={OneImg}
+            alt="Ricerca: nuovo test genetico"
+            format="webp"
+            quality={"mid"}
+            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Seconda News -->
+    <div
+      class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+    >
+      <div class="md:flex-1">
+        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
+          <a href="#">Pitch:La dott.ssa De Belli spiega la nuova medicina</a>
+        </h1>
         <div
-            class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+          class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
         >
-            <div class="md:flex-1">
-                <h1
-                    class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5"
-                >
-                    <a href="#">Tac: prevenzione e salute</a>
-                </h1>
-                <div
-                    class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
-                >
-                    News
-                </div>
-                <p class="min-h-32 md:text-xl mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusantium alias omnis totam iste qui dignissimos eveniet
-                    similique perspiciatis sapiente sit.
-                </p>
-            </div>
-            <div class="w-full flex flex-col items-center md:flex-1">
-                <a href="#">
-                    <Image
-                        src={TreeImg}
-                        alt="Tac: prevenzione e salute"
-                        format="webp"
-                        quality={"mid"}
-                        class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-                    />
-                </a>
-            </div>
+          News
         </div>
-        <!-- Quarta News -->
+        <p class="min-h-32 md:text-xl mb-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sit
+          aspernatur aliquam culpa qui laboriosam nihil tenetur et nostrum
+          maiores!
+        </p>
+      </div>
+      <div class="w-full flex flex-col items-center md:flex-1">
+        <a href="#">
+          <Image
+            src={TwoImg}
+            alt="Pitch:La dott.ssa De Belli spiega la nuova medicina"
+            format="webp"
+            quality={"mid"}
+            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Terza News -->
+    <div
+      class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+    >
+      <div class="md:flex-1">
+        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
+          <a href="#">Tac: prevenzione e salute</a>
+        </h1>
         <div
-            class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+          class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
         >
-            <div class="md:flex-1">
-                <h1
-                    class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5"
-                >
-                    <a href="#"
-                        >Sostenibilità: verso una tecnologia adatta a tutti</a
-                    >
-                </h1>
-                <div
-                    class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
-                >
-                    News
-                </div>
-                <p class="min-h-32 md:text-xl mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat eius minima beatae asperiores omnis laborum
-                    consequatur id totam eos est.
-                </p>
-            </div>
-            <div class="w-full flex flex-col items-center md:flex-1">
-                <a href="#">
-                    <Image
-                        src={FourImg}
-                        alt="Sostenibilità: verso una tecnologia adatta a tuttia"
-                        format="webp"
-                        quality={"mid"}
-                        class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-                    />
-                </a>
-            </div>
+          News
         </div>
-    </section>
+        <p class="min-h-32 md:text-xl mb-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+          alias omnis totam iste qui dignissimos eveniet similique perspiciatis
+          sapiente sit.
+        </p>
+      </div>
+      <div class="w-full flex flex-col items-center md:flex-1">
+        <a href="#">
+          <Image
+            src={TreeImg}
+            alt="Tac: prevenzione e salute"
+            format="webp"
+            quality={"mid"}
+            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Quarta News -->
+    <div
+      class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center"
+    >
+      <div class="md:flex-1">
+        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
+          <a href="#">Sostenibilità: verso una tecnologia adatta a tutti</a>
+        </h1>
+        <div
+          class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center"
+        >
+          News
+        </div>
+        <p class="min-h-32 md:text-xl mb-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius
+          minima beatae asperiores omnis laborum consequatur id totam eos est.
+        </p>
+      </div>
+      <div class="w-full flex flex-col items-center md:flex-1">
+        <a href="#">
+          <Image
+            src={FourImg}
+            alt="Sostenibilità: verso una tecnologia adatta a tuttia"
+            format="webp"
+            quality={"mid"}
+            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
-    import { gsap } from "gsap";
-    import ScrollTrigger from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+  import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-    const news = gsap.utils.toArray(".news");
+  const news = gsap.utils.toArray(".news");
 
-    const horizontalNews = document.querySelector("#horizontal-news");
-    const totalNewsWidth =
-        horizontalNews instanceof HTMLElement ? horizontalNews.offsetWidth : 0;
+  const horizontalNews = document.querySelector("#horizontal-news");
+  const totalNewsWidth =
+    horizontalNews instanceof HTMLElement ? horizontalNews.offsetWidth : 0;
 
-    gsap.to("#news-wrapper", {
-        scrollTrigger: {
-            trigger: "#news-wrapper",
-            start: "top 160px",
-            end: () => `+=${totalNewsWidth}`,
-            pin: true,
-            pinSpacing: false,
-        },
-    });
+  gsap.to("#news-wrapper", {
+    scrollTrigger: {
+      trigger: "#news-wrapper",
+      start: "top 160px",
+      end: () => `+=${totalNewsWidth}`,
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
-    gsap.to(news, {
-        xPercent: -100 * (news.length - 1),
-        scrollTrigger: {
-            trigger: "#horizontal-news",
-            pin: true,
-            scrub: 5,
-            pinSpacing: true,
-            start: "top 240px",
-            end: `+=${totalNewsWidth}`,
-        },
-    });
+  gsap.to(news, {
+    xPercent: -100 * (news.length - 1),
+    scrollTrigger: {
+      trigger: "#horizontal-news",
+      pin: true,
+      scrub: 5,
+      pinSpacing: true,
+      start: "top 240px",
+      end: `+=${totalNewsWidth}`,
+    },
+  });
 </script>
