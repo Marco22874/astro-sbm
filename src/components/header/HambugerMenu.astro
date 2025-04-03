@@ -4,24 +4,14 @@ import SecondaryMenu from "../utils/SecondaryMenu.astro";
 
 <!-- Sbm Hamburger Menu -->
 <div id="sbm-menu" class="lg:hidden flex justify-center z-100">
-  <button
-    class="group w-[60px] h-[60px]"
-    aria-pressed="false"
-    onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))"
-  >
-    <div class="justify-items-center gap-2.5 grid">
-      <span
-        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:rotate-45 transition-all group-[[aria-pressed=true]]:translate-y-[12px] duration-600"
-      >
-      </span>
-      <span
-        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] h-[2px] group-[[aria-pressed=true]]:scale-x-0 transition-all duration-300"
-      >
-      </span>
-      <span
-        class="bg-(--color-midnight) group-hover:shadow-[0_0_5px_var(--color-midnight)] group-hover:brightness-[1.5] rounded-full w-[30px] group-[[aria-pressed=true]]:w-[42px] h-[2px] group-[[aria-pressed=true]]:-rotate-45 transition-all group-[[aria-pressed=true]]:-translate-y-[12px] duration-600"
-      >
-      </span>
+  <button class="w-[60px] h-[60px]" aria-pressed="false">
+    <div class="justify-items-center gap-2.5 grid" id="hamburger-lines">
+      <span class="hamburger-line bg-midnight rounded-full w-[30px] h-[2px]"
+      ></span>
+      <span class="hamburger-line bg-midnight rounded-full w-[30px] h-[2px]"
+      ></span>
+      <span class="hamburger-line bg-midnight rounded-full w-[30px] h-[2px]"
+      ></span>
     </div>
   </button>
 </div>
@@ -32,40 +22,121 @@ import SecondaryMenu from "../utils/SecondaryMenu.astro";
   id="sbm-panel"
   class="hidden fixed top-0 left-0 w-full h-full bg-midnight bg-opacity-20 z-10"
 >
-  <SecondaryMenu />
+  <div
+    id="panel-wrapper"
+    class="flex flex-col h-full overflow-hidden border border-red-500"
+  >
+    <div class="h-[160px] border border-yellow-500">LOGO</div>
+    <SecondaryMenu />
+  </div>
 </div>
 
 <script>
   import { gsap } from "gsap";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const sbmMenu = document.getElementById("sbm-menu") as HTMLElement | null;
-    const sbmPanel = document.getElementById("sbm-panel") as HTMLElement | null;
+  function initializeHamburgerMenu() {
+    const hamburgerLines = document.querySelectorAll(".hamburger-line");
+    const sbmMenu = document.getElementById("sbm-menu");
+    const button = sbmMenu?.querySelector("button");
+    const sbmPanel = document.getElementById("sbm-panel");
 
-    if (sbmMenu && sbmPanel) {
-      sbmMenu.addEventListener("click", () => {
-        const isOpen = !sbmPanel.classList.contains("hidden");
-
-        if (isOpen) {
-          // Animazione per chiudere il pannello
-          gsap.to(sbmPanel, {
-            opacity: 0,
-            scale: 0.8, // Effetto di scalatura
-            duration: 0.5,
-            onComplete: () => {
-              sbmPanel.classList.add("hidden"); // Nascondi dopo l'animazione
-            },
-          });
-        } else {
-          // Animazione per aprire il pannello
-          sbmPanel.classList.remove("hidden");
-          gsap.fromTo(
-            sbmPanel,
-            { opacity: 0, scale: 0.8 }, // Inizia con opacità 0 e scala 0.8
-            { opacity: 1, scale: 1, duration: 0.5 } // Arriva a opacità 1 e scala 1
-          );
-        }
-      });
+    if (!hamburgerLines || !sbmMenu || !button || !sbmPanel) {
+      console.error("Elementi del menu hamburger non trovati.");
+      return;
     }
-  });
+
+    gsap.set(hamburgerLines, {
+      filter: "brightness(1) contrast(1)",
+      boxShadow: "none",
+    });
+
+    // Hover animato
+    button.addEventListener("mouseenter", () => {
+      if (button.getAttribute("aria-pressed") === "false") {
+        gsap.to(hamburgerLines, {
+          filter: "brightness(1.2) contrast(1.2)",
+          boxShadow: "0 0 5px rgba(27, 45, 112, 0.6)",
+          duration: 0.3,
+          ease: "ease-in-out",
+        });
+      }
+    });
+
+    button.addEventListener("mouseleave", () => {
+      if (button.getAttribute("aria-pressed") === "false") {
+        gsap.to(hamburgerLines, {
+          filter: "brightness(1) contrast(1)",
+          boxShadow: "none",
+          duration: 0.3, // Assicuriamoci che la durata sia sufficiente
+          ease: "power2.out", // Miglioriamo l'easing per una transizione più fluida
+          clearProps: "boxShadow,filter", // Ripristina le proprietà per evitare conflitti
+        });
+      }
+    });
+
+    // Apertura e chiusura del menu
+    button.addEventListener("click", () => {
+      const isPressed = button.getAttribute("aria-pressed") === "true";
+
+      if (!isPressed) {
+        // Animazione da hamburger a X (apertura)
+        gsap.to(hamburgerLines[0], { rotate: 45, y: 12, duration: 0.5 });
+        gsap.to(hamburgerLines[1], { scaleX: 0, duration: 0.3 });
+        gsap.to(hamburgerLines[2], { rotate: -45, y: -12, duration: 0.5 });
+
+        // Mostra il pannello con animazione
+        sbmPanel.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden"); // Nasconde la barra di scorrimento
+        gsap.fromTo(
+          sbmPanel,
+          { opacity: 0, scale: 0.8 },
+          { opacity: 1, scale: 1, duration: 0.5 }
+        );
+
+        // Cambia il colore delle linee dell'hamburger a bianco
+        gsap.to(hamburgerLines, {
+          backgroundColor: "white",
+          duration: 0.3,
+        });
+
+        // Cambia lo stato del pulsante
+        button.setAttribute("aria-pressed", "true");
+      } else {
+        // Animazione da X a hamburger (chiusura)
+        gsap.to(hamburgerLines[0], { rotate: 0, y: 0, duration: 0.5 });
+        gsap.to(hamburgerLines[1], { scaleX: 1, duration: 0.3 });
+        gsap.to(hamburgerLines[2], { rotate: 0, y: 0, duration: 0.5 });
+
+        // Nascondi il pannello con animazione
+        gsap.to(sbmPanel, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.5,
+          onComplete: () => {
+            sbmPanel.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden"); // Ripristina la barra di scorrimento
+          },
+        });
+
+        // Ripristina il colore delle linee dell'hamburger a midnight
+        gsap.to(hamburgerLines, {
+          backgroundColor: "var(--color-midnight)",
+          duration: 0.3,
+        });
+
+        // Cambia lo stato del pulsante
+        button.setAttribute("aria-pressed", "false");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initializeHamburgerMenu);
+  document.addEventListener("astro:after-swap", initializeHamburgerMenu);
 </script>
+
+<style>
+  /* Nasconde la barra di scorrimento quando il pannello è aperto */
+  .overflow-hidden {
+    overflow: hidden;
+  }
+</style>
