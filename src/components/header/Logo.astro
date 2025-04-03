@@ -1,17 +1,20 @@
 ---
-// import images
-import sbmLogo from "../../assets/images/logo.webp";
-// import language files
+// Import default logo
+import defaultLogo from "../../assets/images/logo.webp";
+// Import language files
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations } from "../../i18n/utils.ts";
 import { languages } from "../../i18n/ui.ts";
 
 const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
+
+// Use defaultLogo as the fallback value for sbmLogo
+const { sbmLogo = defaultLogo.src } = Astro.props;
 ---
 
 <div class="w-[350px] pr-[50px] md:w-[200px] md:pr-0">
-  <a href={getRelativeLocaleUrl(currentLang, "/")}
-    ><img src={sbmLogo.src} alt="Logo SBM" /></a
-  >
+  <a href={getRelativeLocaleUrl(currentLang, "/")}>
+    <img src={sbmLogo} alt="Logo SBM" />
+  </a>
 </div>

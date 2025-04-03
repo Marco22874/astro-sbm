@@ -1,4 +1,9 @@
 ---
+// import images
+import logoWhite from "../../assets/images/logo-white.webp";
+
+// import components
+import Logo from "../header/Logo.astro";
 import SecondaryMenu from "../utils/SecondaryMenu.astro";
 ---
 
@@ -22,12 +27,13 @@ import SecondaryMenu from "../utils/SecondaryMenu.astro";
   id="sbm-panel"
   class="hidden fixed top-0 left-0 w-full h-full bg-midnight bg-opacity-20 z-10"
 >
-  <div
-    id="panel-wrapper"
-    class="flex flex-col h-full overflow-hidden border border-red-500"
-  >
-    <div class="h-[160px] border border-yellow-500">LOGO</div>
-    <SecondaryMenu />
+  <div id="panel-wrapper" class="flex flex-col h-full overflow-hidden">
+    <div class="h-[200px] flex items-center justify-center">
+      <Logo sbmLogo={logoWhite.src} />
+    </div>
+    <div class="h-full flex flex-col items-center justify-center">
+      <SecondaryMenu />
+    </div>
   </div>
 </div>
 
