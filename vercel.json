@@ -5,5 +5,10 @@
       "destination": "/it/",
       "permanent": true
     }
+  ],
+  "middleware": [
+    {
+      "source": "/"
+    }
   ]
 }
