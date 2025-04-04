@@ -16,10 +16,7 @@ const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
-<div
-  id="footer-top"
-  class="z-99 flex w-full justify-items-start -my-[1px] h-[86px] border-0"
->
+<div id="footer-top"  class="z-99 flex w-full justify-items-start -my-[1px] h-[86px] border-0">
   <Image
     src={FooterTop}
     alt="Footer top"
@@ -28,16 +25,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
     height="86"
   />
 </div>
-<footer
-  class="z-99 flex flex-col gap-8 bg-midnight pt-24 pb-8 w-full text-white text-sm md:text-base border-0"
->
-  <div
-    class="flex flex-wrap gap-4 justify-center fbp:justify-between px-8 md:px-12 lg:px-47"
-  >
-    <div
-      id="sbm-logo-footer"
-      class="flex flex-col justify-start items-center min-w-[350px]"
-    >
+<footer class="z-99 flex flex-col gap-8 bg-midnight pt-24 pb-8 w-full text-white text-sm md:text-base border-0">
+  <div class="flex flex-wrap gap-4 justify-center fbp:justify-between px-8 md:px-12 lg:px-47">
+    <div id="sbm-logo-footer" class="flex flex-col justify-start items-center min-w-[350px]">
       <Image
         src={SbmLogoWhite}
         alt="Hero sbm"
@@ -59,10 +49,7 @@ const tr = useTranslations(currentLang as keyof typeof languages);
         <br />
       </p>
     </div>
-    <div
-      id="sbm-contact-footer"
-      class="flex flex-col justify-start items-center min-w-[350px]"
-    >
+    <div id="sbm-contact-footer" class="flex flex-col justify-start items-center min-w-[350px]">
       <div class="flex flex-col m-0 p-0 justify-center h-[60px] text-2xl">
         {tr("nav.contacts")}
       </div>
@@ -84,17 +71,12 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </div>
     </div>
     <SecondaryMenu />
-    <div
-      class="flex flex-col justify-start items-center min-w-[350px] text-white"
-    >
+    <div class="flex flex-col justify-start items-center min-w-[350px] text-white">
       <div class="flex flex-col m-0 p-0 justify-center h-[60px] text-2xl">
         {tr("cert")}
       </div>
       <hr class="bg-white mx-auto my-[15px] w-[70px] h-[1px]" />
-      <div
-        id="sbm-cert"
-        class="flex justify-around my-[40px] flex-1 xl:flex-none items-center min-w-[350px] text-white"
-      >
+      <div id="sbm-cert" class="flex justify-around my-[40px] flex-1 xl:flex-none items-center min-w-[350px] text-white">
         <a href="https://sbmsrl.it">
           <AdvancedImage
             src={Dnv9001}
@@ -129,10 +111,7 @@ const tr = useTranslations(currentLang as keyof typeof languages);
     </div>
   </div>
   <div class="flex flex-col justify-center px-4 text-xs">
-    <div
-      id="sbm-credits"
-      class="flex flex-1 justify-center items-center min-w-[350px]"
-    >
+    <div id="sbm-credits" class="flex flex-1 justify-center items-center min-w-[350px]">
       CREDITS · PRIVACY POLICY
     </div>
   </div>

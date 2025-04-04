@@ -23,21 +23,12 @@ import SecondaryMenu from "../utils/SecondaryMenu.astro";
 <!-- End Sbm Hamburger Menu -->
 
 <!-- Overlay Panel -->
-<div
-  id="sbm-panel"
-  class="hidden fixed top-0 left-0 w-full h-full bg-midnight bg-opacity-20 z-10"
->
+<div id="sbm-panel" class="hidden fixed top-0 left-0 w-full h-full bg-midnight bg-opacity-20 z-10">
   <div id="panel-wrapper" class="flex flex-col h-full overflow-hidden">
-    <div
-      id="logo-container"
-      class="h-[200px] flex items-center justify-center opacity-0"
-    >
+    <div id="logo-container" class="h-[200px] flex items-center justify-center opacity-0">
       <Logo sbmLogo={logoWhite.src} />
     </div>
-    <div
-      id="menu-container"
-      class="h-full flex flex-col items-center justify-center opacity-0"
-    >
+    <div id="menu-container" class="h-full flex flex-col items-center justify-center opacity-0">
       <SecondaryMenu />
     </div>
   </div>

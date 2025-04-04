@@ -4,54 +4,44 @@ import { Image } from "astro:assets";
 import HeroImg from "../../../assets/images/slide_1.webp";
 ---
 
-<section
-    id="hero"
-    class="-z-100 relative flex-1 mt-[120px] w-screen
-            px-8 md:px-12 lg:px-47"
->
-    <Image
-        src={HeroImg}
-        alt="Hero sbm"
-        format="avif"
-        quality={"mid"}
-        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${HeroImg.width}px`}
-    />
-    <h1
-        class="absolute text-midnight
+<section id="hero" class="-z-100 relative flex-1 mt-[120px] w-screen px-8 md:px-12 lg:px-47">
+  <Image
+    src={HeroImg}
+    alt="Hero sbm"
+    format="avif"
+    quality={"mid"}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${HeroImg.width}px`}
+  />
+  <h1
+    class="absolute text-midnight
                 text-[38px] md:text-[96px] lg:text-[84px] xl:text-[128px] 2xl:text-[200px]
                 top-5 md:top-8 lg:top-8 xl:top-5 2xl:top-10
                 left-19 md:left-26 lg:left-50 xl:left-64 2xl:left-84
                 tracking-[2px] md:tracking-[5px] lg:tracking-[8px]
                 leading-8 md:leading-19 lg:leading-17 xl:leading-28 2xl:leading-42"
-    >
-        <span
-            class="block transform translate-x-1 md:translate-x-15 xl:translate-x-20 2xl:translate-x-30"
-            >your</span
-        >
-        <span
-            class="block transform translate-x-12 md:translate-x-30 xl:translate-x-40 2xl:translate-x-60"
-            >health</span
-        >
-        <span class="block">partner</span>
-    </h1>
+  >
+    <span class="block transform translate-x-1 md:translate-x-15 xl:translate-x-20 2xl:translate-x-30">your</span>
+    <span class="block transform translate-x-12 md:translate-x-30 xl:translate-x-40 2xl:translate-x-60">health</span>
+    <span class="block">partner</span>
+  </h1>
 </section>
 
 <script>
-    import { gsap } from "gsap";
-    document.addEventListener("DOMContentLoaded", () => {
-        const text4Elements = document.querySelectorAll("#hero h1 span");
-        const tl = gsap.timeline();
+  import { gsap } from "gsap";
+  document.addEventListener("DOMContentLoaded", () => {
+    const text4Elements = document.querySelectorAll("#hero h1 span");
+    const tl = gsap.timeline();
 
-        tl.fromTo(
-            text4Elements,
-            { scale: 8, opacity: 0 },
-            {
-                scale: 1,
-                opacity: 1,
-                ease: "power2.out",
-                duration: 1,
-                stagger: 1.2,
-            },
-        );
-    });
+    tl.fromTo(
+      text4Elements,
+      { scale: 8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        ease: "power2.out",
+        duration: 1,
+        stagger: 1.2,
+      },
+    );
+  });
 </script>
