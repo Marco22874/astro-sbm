@@ -4,58 +4,75 @@ import Layout from "../../../layouts/Layout.astro";
 
 <Layout title="SBM - i nostri prodotti">
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="products-wrapper">
-    <!-- Header di pagina -->
-    <div class="w-full">
-      <h1 class="text-5xl text-midnight">Prodotti</h1>
-      <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
-      <p class="mb-[15px]">
-        Scorpi i marchi di alta qualità che trattiamo e le diverse tipologia di
+    <div class="w-full px-4 md:px-0"> <h1 class="text-5xl text-midnight text-center md:text-left">Prodotti</h1>
+      <hr class="bg-midnight mx-auto my-[15px] w-full h-[2px]" />
+      <p class="mb-[15px] text-center md:text-left">
+        Scopri i marchi di alta qualità che trattiamo e le diverse tipologie di
         prodotti per il settore sanitario. Esplora soluzioni innovative con noi
         per ogni esigenza professionale, al fianco della salute.
       </p>
     </div>
-    <!-- Fine header di pagina -->
-    <!-- Scroll marchi -->
-    <div class="scroller w-full h-auto relative overflow-hidden border border-purple-500">
-      <div class="w-full flex justify-between whitespace-nowrap border border-red-600">
-        <span class="bg-yellow-200 min-w-[100px] h-[58px] inline-flex">html</span>
-        <span class="bg-red-200 min-w-[100px] h-[58px] inline-flex">css</span>
-        <span class="bg-green-200 min-w-[100px] h-[58px] inline-flex">js</span>
-        <span class="bg-stone-700 min-w-[100px] h-[58px] inline-flex">astro</span>
-        <span class="bg-sky-600 min-w-[100px] h-[58px] inline-flex">react</span>
-        <span class="bg-amber-500 min-w-[100px] h-[58px] inline-flex">typescript</span>
-        <span class="bg-cyan-700 min-w-[100px] h-[58px] inline-flex">gsap</span>
-        <span class="bg-slate-500 min-w-[100px] h-[58px] inline-flex">tailwind</span>
-      </div>
-      <div class="w-full flex justify-between whitespace-nowrap border border-red-600">
-        <span class="bg-yellow-200 min-w-[100px] h-[58px] inline-flex">html</span>
-        <span class="bg-red-200 min-w-[100px] h-[58px] inline-flex">css</span>
-        <span class="bg-green-200 min-w-[100px] h-[58px] inline-flex">js</span>
-        <span class="bg-stone-700 min-w-[100px] h-[58px] inline-flex">astro</span>
-        <span class="bg-sky-600 min-w-[100px] h-[58px] inline-flex">react</span>
-        <span class="bg-amber-500 min-w-[100px] h-[58px] inline-flex">typescript</span>
-        <span class="bg-cyan-700 min-w-[100px] h-[58px] inline-flex">gsap</span>
-        <span class="bg-slate-500 min-w-[100px] h-[58px] inline-flex">tailwind</span>
+    {/* --- Riga 1: Da Destra a Sinistra --- */}
+    <div class="scroller w-full overflow-hidden group" data-direction="left">
+      {/* Aggiunto group per eventuale pausa su hover con Tailwind */}
+      <div class="scroller__inner flex flex-nowrap w-max animate-scroll-left group-hover:paused">
+         {/* Contenuto Originale */}
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">html</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">css</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">js</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">astro</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">react</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">typescript</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">gsap</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">tailwind</span>
+         {/* Contenuto Duplicato (per loop) */}
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">html</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">css</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">js</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">astro</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">react</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">typescript</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">gsap</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">tailwind</span>
       </div>
     </div>
-    <!-- Fine scroll marchi-->
-    <!-- Lista Prodotti -->
-    <div class="w-full border border-green-500">qui i prodotti</div>
-    <!-- Fine lista prodotti -->
-  </div>
+
+    {/* Aggiungi un po' di spazio tra le righe */}
+    <div class="h-2"></div>
+
+    {/* --- Riga 2: Da Sinistra a Destra --- */}
+     <div class="scroller w-full overflow-hidden group" data-direction="right">
+      <div class="scroller__inner flex flex-nowrap w-max animate-scroll-right group-hover:paused">
+         {/* Contenuto Originale */}
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">html</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">css</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">js</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">astro</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">react</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">typescript</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">gsap</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">tailwind</span>
+         {/* Contenuto Duplicato (per loop) */}
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">html</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">css</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">js</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">astro</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">react</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">typescript</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">gsap</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">tailwind</span>
+      </div>
+    </div>
+    <div class="w-full border border-green-500 mt-8">qui i prodotti</div>
+    </div>
+
+  {/* Aggiungi stile per la pausa su hover (opzionale) */}
+  <style>
+    .group:hover .group-hover\:paused {
+        animation-play-state: paused;
+    }
+
+    /* Opzionale: Rimuovi i bordi di debug */
+    /* .scroller, .scroller__inner { border: none; } */
+  </style>
 </Layout>
-
-<script>
-  const scrollers = document.querySelectorAll(".scroller");
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    addAnimation();
-  }
-  function addAnimation() {
-    scrollers.forEach((scroller) => {
-      scroller.setAttribute("data-animated", "true");
-
-      const scrollerInner = scroller.querySelector(".scroller__inner");
-      const scrollerContent = scrollerInner ? scrollerInner.children : null;
-    });
-  }
-</script>

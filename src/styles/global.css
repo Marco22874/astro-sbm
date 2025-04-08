@@ -39,3 +39,52 @@
   font-size: var(--text-10xl);
   line-height: var(--tw-leading, 10vw);
 }
+
+/* Brands animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroller {
+  /* maschera gradiente per sfumare i bordi */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+@layer utilities {
+  .animate-scroll-left {
+    animation: scroll-left 40s linear infinite;
+  }
+  .animate-scroll-right {
+    animation: scroll-right 40s linear infinite;
+  }
+  .paused {
+    animation-play-state: paused;
+  }
+}
