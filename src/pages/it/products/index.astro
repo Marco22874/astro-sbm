@@ -4,11 +4,14 @@ import Layout from "../../../layouts/Layout.astro";
 
 <Layout title="SBM - i nostri prodotti">
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="products-wrapper">
-    <div class="w-full px-4 md:px-0"> <h1 class="text-5xl text-midnight text-center md:text-left">Prodotti</h1>
-      <hr class="bg-midnight mx-auto my-[15px] w-full h-[2px]" />
-      <p class="mb-[15px] text-center md:text-left">
+    <div class="w-full px-4 md:px-0"> 
+      <h1 class="text-5xl text-midnight text-center md:text-left">Prodotti</h1>
+      <p class="mt-8 mb-1 text-3xl text-center md:text-left">
         Scopri i marchi di alta qualità che trattiamo e le diverse tipologie di
-        prodotti per il settore sanitario. Esplora soluzioni innovative con noi
+        prodotti per il settore sanitario.
+      </p>
+      <p class="mb-8 text-3xl text-center md:text-left">
+        Esplora soluzioni innovative con noi
         per ogni esigenza professionale, al fianco della salute.
       </p>
     </div>
@@ -17,23 +20,31 @@ import Layout from "../../../layouts/Layout.astro";
       {/* Aggiunto group per eventuale pausa su hover con Tailwind */}
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-left group-hover:paused">
          {/* Contenuto Originale */}
-         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">html</span>
-         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">css</span>
-         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">js</span>
-         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">astro</span>
-         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">react</span>
-         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">typescript</span>
-         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">gsap</span>
-         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">tailwind</span>
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">DB</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">LINA MEDICAL</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">RESORBA</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">HEKA</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">LAMIDEY</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">GETINGE</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">DBI</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">GADA</span>
+         <span class="bg-gray-800 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">EDAN</span>
+         <span class="bg-red-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">3DI</span>
+         <span class="bg-purple-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">EB MEDICA</span>
+         <span class="bg-yellow-900 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">BOSTON</span>
          {/* Contenuto Duplicato (per loop) */}
-         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">html</span>
-         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">css</span>
-         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">js</span>
-         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">astro</span>
-         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">react</span>
-         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">typescript</span>
-         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">gsap</span>
-         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">tailwind</span>
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">DB</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">LINA MEDICAL</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">RESORBA</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">HEKA</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">LAMIDEY</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">GETINGE</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">DBI</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">GADA</span>
+         <span class="bg-gray-800 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">EDAN</span>
+         <span class="bg-red-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">3DI</span>
+         <span class="bg-purple-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">AB MEDICA</span>
+         <span class="bg-yellow-900 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">BOSTON</span>
       </div>
     </div>
 
@@ -44,35 +55,39 @@ import Layout from "../../../layouts/Layout.astro";
      <div class="scroller w-full overflow-hidden group" data-direction="right">
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-right group-hover:paused">
          {/* Contenuto Originale */}
-         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">html</span>
-         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">css</span>
-         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">js</span>
-         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">astro</span>
-         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">react</span>
-         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">typescript</span>
-         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">gsap</span>
-         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">tailwind</span>
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">ALLIUM</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">DECOMED</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">MARS</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">MOLNLYCKE</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">NOVA MEDICAL</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">PATHFAST</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">PUSEN</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">TEGEA</span>
+         <span class="bg-gray-800 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">TELEFLEX</span>
+         <span class="bg-red-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">TERUMO</span>
+         <span class="bg-purple-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">WELLEAD</span>
+         <span class="bg-yellow-900 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">WESTMED</span>
          {/* Contenuto Duplicato (per loop) */}
-         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">html</span>
-         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">css</span>
-         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">js</span>
-         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">astro</span>
-         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">react</span>
-         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">typescript</span>
-         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">gsap</span>
-         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">tailwind</span>
+         <span class="bg-yellow-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">ALLIUM</span>
+         <span class="bg-red-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">DECOMED</span>
+         <span class="bg-green-200 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">MARS</span>
+         <span class="bg-stone-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">MOLNLYCKE</span>
+         <span class="bg-sky-600 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">NOVA MEDICAL</span>
+         <span class="bg-amber-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">PATHFAST</span>
+         <span class="bg-cyan-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">PUSEN</span>
+         <span class="bg-slate-500 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2" aria-hidden="true">TEGEA</span>
+         <span class="bg-gray-800 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">TELEFLEX</span>
+         <span class="bg-red-500 min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">TERUMO</span>
+         <span class="bg-purple-700 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">WELLEAD</span>
+         <span class="bg-yellow-900 text-white min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">WESTMED</span>
       </div>
     </div>
     <div class="w-full border border-green-500 mt-8">qui i prodotti</div>
     </div>
 
-  {/* Aggiungi stile per la pausa su hover (opzionale) */}
   <style>
     .group:hover .group-hover\:paused {
         animation-play-state: paused;
     }
-
-    /* Opzionale: Rimuovi i bordi di debug */
-    /* .scroller, .scroller__inner { border: none; } */
   </style>
 </Layout>

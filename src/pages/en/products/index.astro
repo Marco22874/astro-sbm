@@ -1,9 +1,214 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+// import images
+import { Image } from "astro:assets";
+import DiLogo from "../../../assets/images/products/brands/3di.webp";
+import AbmedicaLogo from "../../../assets/images/products/brands/abmedica.webp";
+import AlliumLogo from "../../../assets/images/products/brands/allium.webp";
+import BdLogo from "../../../assets/images/products/brands/bd.webp";
+import BostonLogo from "../../../assets/images/products/brands/boston-scientific.webp";
+import DbiLogo from "../../../assets/images/products/brands/dbi.webp";
+import DecomedLogo from "../../../assets/images/products/brands/decomed.webp";
+import EdanLogo from "../../../assets/images/products/brands/edan.webp";
+import GadaLogo from "../../../assets/images/products/brands/gada.webp";
+import GetingeLogo from "../../../assets/images/products/brands/getinge.webp";
+import HekaLogo from "../../../assets/images/products/brands/heka.webp";
+import LamideyLogo from "../../../assets/images/products/brands/lamidey.webp";
+import LinaLogo from "../../../assets/images/products/brands/lina-medical.webp";
+import MarsLogo from "../../../assets/images/products/brands/mars.webp";
+import MolnlyckeLogo from "../../../assets/images/products/brands/molnlycke.webp";
+import NovaLogo from "../../../assets/images/products/brands/nova-biomedical.webp";
+import PathfastLogo from "../../../assets/images/products/brands/pathfast.webp";
+import PusenLogo from "../../../assets/images/products/brands/pusen.webp";
+import ResorbaLogo from "../../../assets/images/products/brands/resorba.webp";
+import TegaLogo from "../../../assets/images/products/brands/tegea.webp";
+import TeleflexLogo from "../../../assets/images/products/brands/teleflex.webp";
+import TerumoLogo from "../../../assets/images/products/brands/terumo.webp";
+import WelleadLogo from "../../../assets/images/products/brands/wellead.webp";
+import WestmedLogo from "../../../assets/images/products/brands/westmed.webp";
+
 ---
 
-<Layout title="SBM - our products">
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">Products</h1>
-  </div>
+<Layout title="SBM - i nostri prodotti">
+  <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="products-wrapper">
+    <div class="w-full px-4 md:px-0"> 
+      <h1 class="text-5xl text-midnight text-center md:text-left">Products</h1>
+      <p class="mt-8 mb-1 text-3xl text-center md:text-left">
+        Discover the high-quality brands we offer and the diverse range of products for the healthcare sector.
+      </p>
+      <p class="mb-8 text-3xl text-center md:text-left">
+        Explore innovative solutions with us to meet every professional need, supporting health.
+      </p>
+    </div>
+    {/* --- Riga 1: Da Destra a Sinistra --- */}
+    <div class="scroller w-full overflow-hidden group" data-direction="left">
+      {/* Aggiunto group per eventuale pausa su hover con Tailwind */}
+      <div class="scroller__inner flex flex-nowrap w-max animate-scroll-left group-hover:paused">
+         {/* Contenuto Originale */}
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"}/>
+         </span>
+         {/* Contenuto Duplicato (per loop) */}
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"}/>
+         </span>
+      </div>
+    </div>
+
+    {/* Aggiungi un po' di spazio tra le righe */}
+    <div class="h-2"></div>
+
+    {/* --- Riga 2: Da Sinistra a Destra --- */}
+     <div class="scroller w-full overflow-hidden group" data-direction="right">
+      <div class="scroller__inner flex flex-nowrap w-max animate-scroll-right group-hover:paused">
+         {/* Contenuto Originale */}
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TegaLogo} alt="TEGEA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"}/>
+         </span>
+         {/* Contenuto Duplicato (per loop) */}
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TegaLogo} alt="TEGEA Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"}/>
+         </span>
+         <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"}/>
+         </span>
+      </div>
+    </div>
+    <div class="w-full border border-green-500 mt-8">qui i prodotti</div>
+    </div>
+
+  <style>
+    .group:hover .group-hover\:paused {
+        animation-play-state: paused;
+    }
+  </style>
 </Layout>
