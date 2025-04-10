@@ -19,6 +19,8 @@ export const labels = {
     cert: "Certificazioni",
     "slogan.text":
       "Innovazione, affidabilità, e un approccio orientato al cliente definiscono la nostra identità, rendendoci il partner di fiducia per affrontare le sfide sul futuro della salute",
+    "intro.text":
+      "SBM è un'azienda leader nelle tecnologie sanitarie, con oltre 20 anni di esperienza siamo al fianco di medici, ricercatori e operatori del settore. \n Offriamo soluzioni innovative per migliorare la qualità della vita dei pazienti e ottimizzare il lavoro di chi si prende cura della loro salute. \n Questa è SBM, your next health partner.",
   },
   en: {
     "nav.products": "Products",
@@ -35,6 +37,8 @@ export const labels = {
     cert: "Certifications",
     "slogan.text":
       "Innovation, reliability, and a customer-oriented approach define our identity, making us the trusted partner to face the challenges of the future of health",
+    "intro.text":
+      "SBM is a leading company in healthcare technologies with over 20 years of experience, we stand alongside doctors, researchers, and industry professionals. \n We offer innovative solutions to improve patients' quality of life and optimize the work of those who take care of their health. \n This is SBM, your next health partner.",
   },
 };
 
