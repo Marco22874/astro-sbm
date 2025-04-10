@@ -24,26 +24,32 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.png
 ├── src/
 │   ├── assets/
-|   │   └── images/
+│   │   └── images/
+│   │       └── products/
+│   │           ├── brands/
+│   │           └── icons/
 │   ├── components/
 │   │   ├── footer/
-│   |   |   └──Footer.astro
+│   │   │   └──Footer.astro
 │   │   ├── header/
-│   |   |   ├── HamburgerMenu.astro
-│   |   |   ├── Header.astro
-│   |   |   ├── Logo.astro
-│   |   |   ├── MainMenu.astro
-│   |   |   └── MainMenu.astro
+│   │   │   ├── HamburgerMenu.astro
+│   │   │   ├── Header.astro
+│   │   │   ├── Logo.astro
+│   │   │   ├── MainMenu.astro
+│   │   │   └── MainMenu.astro
 │   │   ├── pages/
-│   │   │   └── home/
-│   │   │       ├── Hero.astro
-│   │   │       ├── Intro.astro
-│   │   │       ├── Intro.tsx
-│   │   │       └── News.astro
+│   │   │   ├── home/
+│   │   │   │   ├── Hero.astro
+│   │   │   │   ├── Intro.astro
+│   │   │   │   ├── Intro.tsx
+│   │   │   │   └── News.astro
+│   │   │   └── products/
+│   │   │       └── LogosGrid.astro
 │   │   └── utils/
-│   |       ├── AdvencedImage.astro
-│   |       ├── LanguagePicker.astro
-│   |       └── SecondaryMenu.astro
+│   │       ├── AdvencedImage.astro
+│   │       ├── LanguagePicker.astro
+│   │       ├── SecondaryMenu.astro
+│   │       └── Slogan.astro
 │   ├── i18n/
 │   │   ├── ui.ts
 │   │   └── utils.ts
@@ -59,13 +65,13 @@ Inside of your Astro project, you'll see the following folders and files:
 │       │   ├── services/
 │       │   └── index.astro
 │       ├── en/
-│       |   ├── about-us/
-│       |   ├── backend/
-│       |   ├── contacts/
-│       |   ├── news/
-│       |   ├── products/
-│       |   ├── services/
-│       |   └── index.astro
+│       │   ├── about-us/
+│       │   ├── backend/
+│       │   ├── contacts/
+│       │   ├── news/
+│       │   ├── products/
+│       │   ├── services/
+│       │   └── index.astro
 │       └── index.astro
 └── package.json
 ```
