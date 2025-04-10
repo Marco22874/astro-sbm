@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/pages/home/Hero.astro";
 import Intro from "../../components/pages/home/Intro.astro";
 import News from "../../components/pages/home/News.astro";
+import Slogan from "../../components/utils/Slogan.astro";
 ---
 
 <Layout title="SBM - your health partner">
@@ -13,5 +14,8 @@ import News from "../../components/pages/home/News.astro";
     <Hero />
     <Intro />
     <News />
+    <div class="sbm-section w-screen flex flex-col  text-midnight">
+      <Slogan />
+    </div>
   </main>
 </Layout>
