@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 // import images
 import { Image } from "astro:assets";
+// Brands
 import DiLogo from "../../../assets/images/products/brands/3di.webp";
 import AbmedicaLogo from "../../../assets/images/products/brands/abmedica.webp";
 import AlliumLogo from "../../../assets/images/products/brands/allium.webp";
@@ -26,23 +27,38 @@ import TeleflexLogo from "../../../assets/images/products/brands/teleflex.webp";
 import TerumoLogo from "../../../assets/images/products/brands/terumo.webp";
 import WelleadLogo from "../../../assets/images/products/brands/wellead.webp";
 import WestmedLogo from "../../../assets/images/products/brands/westmed.webp";
-
+// Icons
+import AnesthesiaIcon from "../../../assets/images/products/icons/anesthesia.webp";
+import CardiacSurgeyIcon from "../../../assets/images/products/icons/cardiac-surgey.webp";
+import DermatologyIcon from "../../../assets/images/products/icons/dermatology.webp";
+import EntIcon from "../../../assets/images/products/icons/ent.webp";
+import GeneralSurgeyIcon from "../../../assets/images/products/icons/general-surgey.webp";
+import GynecologyIcon from "../../../assets/images/products/icons/gynecology.webp";
+import NephrologyIcon from "../../../assets/images/products/icons/nephrology.webp";
+import NeuroSurgeyIcon from "../../../assets/images/products/icons/neuro-surgey.webp";
+import OncologyIcon from "../../../assets/images/products/icons/oncology.webp";
+import OrthopedicsIcon from "../../../assets/images/products/icons/orthopedics.png";
+import PlasticSurgeyIcon from "../../../assets/images/products/icons/plastic-surgey.webp";
+import PoctIcon from "../../../assets/images/products/icons/poct.webp";
+import RadiologyIcon from "../../../assets/images/products/icons/radiology.webp";
+import ToracicSurgeyIcon from "../../../assets/images/products/icons/toracic-surgey.webp";
+import UrologyIcon from "../../../assets/images/products/icons/urology.webp";
+import VascularSurgeytIcon from "../../../assets/images/products/icons/vascular-surgey.webp";
 ---
 
-<Layout title="SBM - i nostri prodotti">
+<Layout title="SBM - our products">
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="products-wrapper">
-    <div class="w-full px-4 md:px-0"> 
+    <div class="w-full px-4 py-8 md:px-0"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">Products</h1>
       <p class="mt-8 mb-1 text-3xl text-center md:text-left">
-        Discover the high-quality brands we offer and the diverse range of products for the healthcare sector.
+        Scorpi i marchi di alta qualità che trattiamo e le diverse tipologia di prodotti per il settore sanitario.
       </p>
       <p class="mb-8 text-3xl text-center md:text-left">
-        Explore innovative solutions with us to meet every professional need, supporting health.
+        Espolra soluzioni innovative con noi per ogni segigenza professionale, al fianco della salute.
       </p>
     </div>
     {/* --- Riga 1: Da Destra a Sinistra --- */}
-    <div class="scroller w-full overflow-hidden group" data-direction="left">
-      {/* Aggiunto group per eventuale pausa su hover con Tailwind */}
+    <div class="scroller mt-15 mb-5 w-full overflow-hidden group" data-direction="left">
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-left group-hover:paused">
          {/* Contenuto Originale */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
@@ -121,11 +137,8 @@ import WestmedLogo from "../../../assets/images/products/brands/westmed.webp";
       </div>
     </div>
 
-    {/* Aggiungi un po' di spazio tra le righe */}
-    <div class="h-2"></div>
-
     {/* --- Riga 2: Da Sinistra a Destra --- */}
-     <div class="scroller w-full overflow-hidden group" data-direction="right">
+     <div class="scroller mt-5 mb-15 w-full overflow-hidden group" data-direction="right">
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-right group-hover:paused">
          {/* Contenuto Originale */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
@@ -203,12 +216,354 @@ import WestmedLogo from "../../../assets/images/products/brands/westmed.webp";
          </span>
       </div>
     </div>
-    <div class="w-full border border-green-500 mt-8">qui i prodotti</div>
+    {/* Product Categories */}
+    <div class="w-full my-15">
+      {/* Urology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">UROLOGIA</h2>
+				<Image src={UrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Urology Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* General Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">CHIRURGIA GENERALE</h2>
+				<Image src={GeneralSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="General Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Neuro Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">NEUROCHIRURGIA</h2>
+				<Image src={NeuroSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Neuro Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Orthopedics Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">ORTOPEDIA</h2>
+				<Image src={OrthopedicsIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Orthopedics Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Gynecology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">GINECOLOGIA</h2>
+				<Image src={GynecologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Gynecology Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Anesthesiology and Intensive Care Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">ANESTESIA E RIANIMAZIONE</h2>
+				<Image src={AnesthesiaIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Anesthesiology and Intensive Care Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Poct Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">POCT</h2>
+				<Image src={PoctIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Poct Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Plastic Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">CHIRURGIA PLASTICA</h2>
+				<Image src={PlasticSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="PLastic Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Vascular Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">CHIRURGIA VASCOLARE</h2>
+				<Image src={VascularSurgeytIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Vascular Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Cardio Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">CARDIOCHIRURGIA</h2>
+				<Image src={CardiacSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Cardio Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Oncology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">ONCOLOGIA</h2>
+				<Image src={OncologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Oncology Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Dermatology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">DERMATOLOGIA</h2>
+				<Image src={DermatologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Dermatology Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Nephrology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">NEFROLOGIA</h2>
+				<Image src={NephrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Nephrology Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Toracic Surgey Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">CHIRURGIA TORACICA</h2>
+				<Image src={ToracicSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Toracic Surgey Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Ent Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">OTORINO</h2>
+				<Image src={EntIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Ent Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
+      {/* Radiology Category */}
+      <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
+				<h2 class="flex-1 min-w-0 text-[clamp(1rem,_10cqi,_3rem)] font-bold 2xl:text-6xl">RADIOLOGIA</h2>
+				<Image src={RadiologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Radioilogy Icon" format="webp" quality={"mid"}/>
+			</div>
+			<div class="sbm-products-content my-8 text-[clamp(1rem,_10cqi,_3rem)] 2xl:text-3xl">
+				<p>SBM seleziona e distribuisce tecnologie avanzate per l'urologia, fornendo soluzioni efficaci e all'avanguardia per la diagnosi e il trattamento delle patologie urologiche.
+          In collaborazione con brand leader a livello internazionale, proponiamo dispositivi e strumenti innovativi, pensati per rispondere alle necessità specifiche di specialisti e pazienti, con una garanzia costante di qualità, performance e sicurezza.
+				</p>
+				<ul>
+					<li>Dispositivi reparto sala chirurgica.pdf</li>
+					<div class="sbm-products-line"></div>
+					<li>BD_prodotti_manuale d'uso.pdf</li>
+				</ul>
+			</div>
+      <hr class="bg-midnight mx-auto my-[15px] 2xl:my-[30px] w-[calc(100%-2px)] h-[2px]" />
     </div>
+
+  </div>
 
   <style>
     .group:hover .group-hover\:paused {
         animation-play-state: paused;
     }
   </style>
+  <script>
+    import { gsap } from "gsap";
+
+    function initializeAccordion() {
+    console.log("Initializing accordion...");
+
+    const panels: NodeListOf<HTMLElement> = document.querySelectorAll(".sbm-products-panel");
+    let openPanel: HTMLElement | null = null; // Resetta lo stato ad ogni inizializzazione
+
+    if (!panels.length) {
+      console.warn("No '.sbm-products-panel' elements found this time.");
+      return;
+    }
+    if (typeof gsap === 'undefined') {
+      console.error("GSAP not loaded.");
+      return;
+    }
+
+    panels.forEach((panel) => {
+      if ((panel as any)._accordionInitialized) {
+          return;
+      }
+
+      const content = panel.nextElementSibling as HTMLElement | null;
+      if (!content) {
+        console.warn("Panel without content sibling:", panel);
+        return;
+      }
+
+      gsap.set(content, { opacity: 0, height: 0, display: "none" });
+      gsap.set(panel, { opacity: 1 });
+
+
+      const handleClick = () => {
+        const isCurrentlyOpen = (panel === openPanel);
+
+        if (openPanel && openPanel !== panel) {
+          const openContent = openPanel.nextElementSibling as HTMLElement | null;
+          if (openContent) {
+            gsap.to(openContent, {
+              opacity: 0, height: 0, duration: 0.5, ease: "power1.in",
+              onComplete: () => { gsap.set(openContent, { display: "none" }); }
+            });
+          }
+          gsap.to(openPanel, { opacity: 1, duration: 0.3 });
+        }
+
+        // Apri/Chiudi pannello cliccato
+        if (!isCurrentlyOpen) {
+          gsap.set(content, { display: "block" });
+          gsap.to(content, { opacity: 1, height: "auto", duration: 0.5, ease: "power1.out" });
+          openPanel = panel;
+          // Abbassa opacità altri pannelli
+          panels.forEach((p) => {
+            gsap.to(p, { opacity: (p === panel ? 1 : 0.5), duration: 0.3 });
+          });
+        } else {
+          gsap.to(content, {
+            opacity: 0, height: 0, duration: 0.5, ease: "power1.in",
+            onComplete: () => { gsap.set(content, { display: "none" }); }
+          });
+          openPanel = null;
+          // Ripristina opacità tutti i pannelli
+          panels.forEach((p) => {
+            gsap.to(p, { opacity: 1, duration: 0.3 });
+          });
+        }
+      };
+
+      panel.addEventListener('click', handleClick);
+      (panel as any)._accordionInitialized = true;
+    });
+    }
+
+    if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAccordion);
+    } else {
+    initializeAccordion(); 
+    }
+
+    document.addEventListener('astro:after-swap', initializeAccordion);
+
+  </script>
 </Layout>
