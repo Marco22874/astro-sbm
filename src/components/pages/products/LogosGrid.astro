@@ -1,0 +1,20 @@
+---
+// import images
+import { Image } from "astro:assets";
+const { logos } = Astro.props;
+
+interface Logo {
+  src: ImageMetadata;
+  alt: string;
+}
+---
+
+<div class="mt-15 mb-5 w-full flex items-center justify-center">
+    <div class="flex items-center justify-center flex-wrap w-full">
+    {logos.map((logo: Logo) => (
+        <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
+        <Image src={logo.src} alt={logo.alt} format="webp" quality={"mid"} />
+        </span>
+    ))}
+    </div>
+</div>
