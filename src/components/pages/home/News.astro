@@ -1,159 +1,207 @@
 ---
 import { Image } from "astro:assets";
-import OneImg from "../../../assets/images/nuovo_test_genetico.png";
-import TwoImg from "../../../assets/images/nuova_medicina.png";
-import TreeImg from "../../../assets/images/tac.png";
-import FourImg from "../../../assets/images/sostenibilita.png";
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+
+const pathname = Astro.url.pathname;
+const langSegment = pathname.split('/')[1];
+const currentLang = langSegment === 'en' ? 'en' : 'it';
+const limit = 3;
+let allNews: CollectionEntry<'news'>[] = [];
+let pinnedNews: Array<any> = [];
+let fetchError: Error | null = null;
+let categoryMap = new Map<string, string>();
+
+try {
+
+  const categoryDataEntry = await getEntry('categories', currentLang);
+
+  if (categoryDataEntry) {
+     categoryDataEntry.data.forEach(category => {
+       categoryMap.set(category.slug, category.title);
+     });
+     console.log(`[News.astro] Mappa categorie caricata per '${currentLang}' con ${categoryMap.size} voci.`);
+  } else {
+     console.warn(`[News.astro] File categorie per la lingua '${currentLang}' non trovato.`);
+  }
+
+  allNews = await getCollection('news');
+  console.log(`[News.astro] Recuperate ${allNews.length} news totali.`);
+
+const filteredSortedNews = allNews
+  .filter((entry: CollectionEntry<'news'>) => entry.id.startsWith(currentLang + '/'))
+  .filter((entry: CollectionEntry<'news'>) => entry.data.pinned === true)
+  .sort((a: CollectionEntry<'news'>, b: CollectionEntry<'news'>) =>
+     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  )
+  .slice(0, limit);
+console.log(`[News.astro] Trovate e ordinate <span class="math-inline">\{filteredSortedNews\.length\} news pinnate \(base\) per '</span>{currentLang}'.`);
+
+
+if (filteredSortedNews.length > 0) {
+    pinnedNews = await Promise.all( 
+        filteredSortedNews.map(async (newsEntry) => { 
+            const rendered = await newsEntry.render(); 
+            console.log(`[News.astro RENDERED] remarkPluginFrontmatter per ${newsEntry.id}:`, rendered.remarkPluginFrontmatter);
+            return {
+                id: newsEntry.id,
+                slug: newsEntry.slug, 
+                data: newsEntry.data, 
+                excerpt: rendered.remarkPluginFrontmatter?.excerpt 
+            };
+        })
+    );
+    console.log(`[News.astro] Processate ${pinnedNews.length} news con excerpt.`);
+} else {
+     pinnedNews = []; 
+     console.log(`[News.astro] Trovate 0 news pinnate per la lingua '${currentLang}'.`);
+}
+
+   console.log(`[News.astro] Trovate ${pinnedNews.length} news pinnate per la lingua '${currentLang}'.`);
+
+} catch (error) {
+  console.error("--- ERRORE DETTAGLIATO IN NEWS.ASTRO (FRONTMATTER) ---");
+  console.error(error);
+  console.error("--- FINE ERRORE DETTAGLIATO ---");
+  fetchError = error instanceof Error ? error : new Error(String(error));
+}
 ---
 
 <div class="sbm-section w-screen flex-1 mt-[40px]" id="news-wrapper">
   <div class="w-full">
-    <h1 class="text-5xl text-midnight">News</h1>
+    <h1 class="text-5xl text-midnight">{currentLang === 'it' ? 'News' : 'News'}</h1>
     <hr class="bg-midnight mx-auto my-[15px] w-[calc(100%-2px)] h-[2px]" />
   </div>
 </div>
-<div class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent">
-  <section id="horizontal-news" class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap">
-    <!-- Prima News -->
-    <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center">
-      <div class="md:flex-1">
-        <h1 class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5">
-          <a href="#">Ricerca: nuovo test genetico</a>
-        </h1>
-        <div class="text-sbm-purple text-sm px-3 mb-5 2xl:mb-15 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
-          News
+
+{/* Gestione Errore */}
+{fetchError && (
+  <div class="w-full text-center py-10 px-4 text-red-600">
+    <p>Errore nel caricamento delle news. Controlla la console del server.</p>
+  </div>
+)}
+
+{fetchError && (
+  <div class="w-full text-center py-10 px-4 text-red-600">
+    <p>Errore nel caricamento delle news. Controlla la console del server.</p>
+  </div>
+)}
+
+{!fetchError && pinnedNews.length > 0 ? ( 
+  <div class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent">
+    <section id="horizontal-news" class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap">
+      {pinnedNews.map((news) => (
+        <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center" data-slug={news.slug}>
+          <div class="md:flex-1">
+              <h1 class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5">
+                <a href={`/news/${news.slug ?? 'error-slug'}`}>{news.data.title}</a>
+              </h1>
+              {news.data.categories && news.data.categories.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-5">
+                {news.data.categories.map((categoryRef: { id: string; collection: string }) => { 
+                  const categoryTitle = categoryMap.get(categoryRef.id); 
+                  const lookupSlug = categoryRef.id;
+                  console.log(`[News.astro CATEGORY MAP] Cerco slug con ID: ${lookupSlug}, trovato titolo:'${categoryTitle}'.`);
+                  return categoryTitle ? (
+                    <div class="text-sbm-purple text-sm px-3 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
+                      {categoryTitle}
+                    </div>
+                  ) : null;
+                })}
+              </div>
+              )}
+              <p class="text-sm text-gray-600 mb-3"> 
+                {news.data.pubDate.toLocaleDateString(currentLang === 'en' ? 'en-GB' : 'it-IT', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </p>
+              <p class="min-h-32 md:text-xl xl:text-3xl xl:leading-11 mt-10 mb-5 italic text-gray-500">
+                {news.data.description}
+              </p>
+            </div>
+            <div class="w-full flex flex-col overflow-hidden items-center md:flex-1">
+              <a href={`/news/${news.slug ?? 'error-slug'}`}>
+                <Image
+                  src={news.data.image}
+                  alt={news.data.imageAlt}
+                  width={600}
+                  height={650}
+                  format="webp"
+                  quality={"mid"}
+                  class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
+                  loading="lazy"
+                />
+              </a>
+            </div>
         </div>
-        <p class="min-h-32 md:text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          nam repellat numquam ipsam laudantium minima ducimus accusamus
-          perferendis, pariatur repudiandae?
-        </p>
-      </div>
-      <div class="w-full flex flex-col overflow-hidden items-center md:flex-1">
-        <a href="#">
-          <Image
-            src={OneImg}
-            alt="Ricerca: nuovo test genetico"
-            format="webp"
-            quality={"mid"}
-            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-          />
-        </a>
-      </div>
+       )) /* Fine map */}
+    </section>
+  </div>
+) : (
+  // Messaggio "Nessuna news" - Usa di nuovo pinnedNews
+  !fetchError && (
+    <div class="w-full text-center py-10 px-4">
+      {/* Messaggio originale ripristinato */}
+      <p>Al momento non ci sono news in evidenza ({currentLang}).</p>
     </div>
-    <!-- Seconda News -->
-    <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center">
-      <div class="md:flex-1">
-        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
-          <a href="#">Pitch:La dott.ssa De Belli spiega la nuova medicina</a>
-        </h1>
-        <div class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
-          News
-        </div>
-        <p class="min-h-32 md:text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sit
-          aspernatur aliquam culpa qui laboriosam nihil tenetur et nostrum
-          maiores!
-        </p>
-      </div>
-      <div class="w-full flex flex-col items-center md:flex-1">
-        <a href="#">
-          <Image
-            src={TwoImg}
-            alt="Pitch:La dott.ssa De Belli spiega la nuova medicina"
-            format="webp"
-            quality={"mid"}
-            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-          />
-        </a>
-      </div>
-    </div>
-    <!-- Terza News -->
-    <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center">
-      <div class="md:flex-1">
-        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
-          <a href="#">Tac: prevenzione e salute</a>
-        </h1>
-        <div class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
-          News
-        </div>
-        <p class="min-h-32 md:text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          alias omnis totam iste qui dignissimos eveniet similique perspiciatis
-          sapiente sit.
-        </p>
-      </div>
-      <div class="w-full flex flex-col items-center md:flex-1">
-        <a href="#">
-          <Image
-            src={TreeImg}
-            alt="Tac: prevenzione e salute"
-            format="webp"
-            quality={"mid"}
-            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-          />
-        </a>
-      </div>
-    </div>
-    <!-- Quarta News -->
-    <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center">
-      <div class="md:flex-1">
-        <h1 class="text-2xl font-medium min-h-16 my-2 md:text-3xl md:mb-5">
-          <a href="#">Sostenibilità: verso una tecnologia adatta a tutti</a>
-        </h1>
-        <div class="text-sbm-purple text-sm px-3 mb-5 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
-          News
-        </div>
-        <p class="min-h-32 md:text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius
-          minima beatae asperiores omnis laborum consequatur id totam eos est.
-        </p>
-      </div>
-      <div class="w-full flex flex-col items-center md:flex-1">
-        <a href="#">
-          <Image
-            src={FourImg}
-            alt="Sostenibilità: verso una tecnologia adatta a tuttia"
-            format="webp"
-            quality={"mid"}
-            class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-          />
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
+  )
+)}
+
 
 <script>
   import { gsap } from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
-  const news = gsap.utils.toArray(".news");
+  function initOrUpdateGsapAnimations() {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-  const horizontalNews = document.querySelector("#horizontal-news");
-  const totalNewsWidth =
-    horizontalNews instanceof HTMLElement ? horizontalNews.offsetWidth : 0;
+    const ctx = gsap.context(() => {
+      const newsElements = gsap.utils.toArray(".news");
+      const horizontalNews = document.querySelector("#horizontal-news");
+      const newsWrapper = document.querySelector("#news-wrapper");
 
-  gsap.to("#news-wrapper", {
-    scrollTrigger: {
-      trigger: "#news-wrapper",
-      start: "top 160px",
-      end: () => `+=${totalNewsWidth}`,
-      pin: true,
-      pinSpacing: false,
-    },
-  });
+      if (newsElements.length > 0 && horizontalNews instanceof HTMLElement && newsWrapper instanceof HTMLElement) {
+        const totalScrollWidth = horizontalNews.scrollWidth;
+        const containerWidth = horizontalNews.offsetWidth;
+        const scrollDistance = Math.max(0, totalScrollWidth - containerWidth);
 
-  gsap.to(news, {
-    xPercent: -100 * (news.length - 1),
-    scrollTrigger: {
-      trigger: "#horizontal-news",
-      pin: true,
-      scrub: 5,
-      pinSpacing: true,
-      start: "top 240px",
-      end: `+=${totalNewsWidth}`,
-    },
-  });
+        if (scrollDistance > 0) {
+          gsap.to(newsWrapper, {
+            scrollTrigger: {
+              trigger: newsWrapper, start: "top 160px", end: () => `+=${scrollDistance}`,
+              pin: true,
+              pinSpacing: false,
+              invalidateOnRefresh: true
+            },
+          });
+          gsap.to(newsElements, {
+            x: () => -scrollDistance, ease: "none",
+            scrollTrigger: {
+              trigger: horizontalNews,
+              pin: true,
+              scrub: 1,
+              start: "top 240px", end: () => `+=${scrollDistance}`, invalidateOnRefresh: true
+            },
+          });
+          horizontalNews.style.display = 'flex';
+          newsWrapper.style.display = 'block';
+        } else {
+          horizontalNews.style.display = 'flex';
+          newsWrapper.style.display = 'block';
+        }
+        ScrollTrigger.refresh();
+
+      } else if (newsWrapper instanceof HTMLElement) {
+          newsWrapper.style.display = 'none';
+          if (horizontalNews instanceof HTMLElement) {
+             horizontalNews.style.display = 'none';
+         }
+     }
+    });
+  }
+
+  document.addEventListener('astro:page-load', initOrUpdateGsapAnimations);
+  document.addEventListener('astro:after-swap', initOrUpdateGsapAnimations);
 </script>

@@ -4,64 +4,95 @@ import { useTranslations } from "../../../i18n/utils";
 // import components
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
+
+const initialHtml = tr("intro.text").replace(/\n/g, '<br>');
 ---
 
 <section id="intro" class="sbm-section w-screen flex-1 my-[40px]">
   <p id="animated-paragraph" class="text-midnight my-3 lg:my-5 2xl:my-20 text-2xl lg:text-3xl 2xl:text-5xl xl:leading-15"
-    set:html={tr("intro.text").replace(/\n/g, '<br>')}
+    set:html={initialHtml}
   />
 </section>
 
+
 <script>
-  import { gsap } from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const paragraph = document.getElementById("animated-paragraph");
+  function splitTextAndApplyClasses(element: HTMLElement) {
+      const originalHTML = element.innerHTML;
+      const lines = originalHTML.split(/<br\s*\/?>/gi);
+      const fragment = document.createDocumentFragment();
+      let globalLetterIndex = 0; 
 
-    if (paragraph) {
-      // Funzione per suddividere solo il testo, preservando il markup
-      const splitText = (node: HTMLElement) => {
-        const childNodes = Array.from(node.childNodes);
-        childNodes.forEach((child) => {
-          if (child.nodeType === Node.TEXT_NODE) {
-            const text = child.textContent || "";
-            const wrappedText = text
-              .split("")
-              .map((char) => `<span class="letter">${char}</span>`)
-              .join("");
-            const tempDiv = document.createElement("div");
-            tempDiv.innerHTML = wrappedText;
-            while (tempDiv.firstChild) {
-              node.insertBefore(tempDiv.firstChild, child);
+      lines.forEach((line, lineIndex) => {
+        const words = line.trim().split(/(\s+)/);
+
+        words.forEach(wordOrSpace => {
+          if (wordOrSpace.trim().length === 0) {
+            if (wordOrSpace.length > 0) { 
+              fragment.appendChild(document.createTextNode(wordOrSpace));
             }
-            node.removeChild(child);
-          } else if (child.nodeType === Node.ELEMENT_NODE) {
-            if (child instanceof HTMLElement) {
-              splitText(child); // Ricorsione per gestire elementi annidati
+          } else {
+            const wordWrapper = document.createElement('span');
+            wordWrapper.className = 'word-wrapper'; 
+
+            for (let i = 0; i < wordOrSpace.length; i++) {
+              const char = wordOrSpace[i];
+              const span = document.createElement('span');
+              span.classList.add(
+                'letter', 'opacity-0', 'translate-y-5', 'transform',
+                'transition-all', 'duration-500', 'ease-out'
+              );
+              span.style.transitionDelay = `${globalLetterIndex * 45}ms`;
+              span.textContent = char;
+              wordWrapper.appendChild(span);
+              globalLetterIndex++;
             }
+            fragment.appendChild(wordWrapper);
           }
         });
-      };
 
-      splitText(paragraph);
-
-      gsap.set(".letter", { opacity: 0, y: 20 });
-
-      gsap.to(".letter", {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.05,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: paragraph,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-        },
+        if (lineIndex < lines.length - 1) {
+          fragment.appendChild(document.createElement('br'));
+        }
       });
-    }
-  });
+
+      element.innerHTML = '';
+      element.appendChild(fragment);
+  }
+
+  function setupIntroAnimation() {
+      const paragraph = document.getElementById("animated-paragraph") as HTMLElement | null;
+      if (!paragraph) return;
+
+      if (!paragraph.querySelector('.word-wrapper')) {
+        splitTextAndApplyClasses(paragraph);
+      } else {
+          const letters = paragraph.querySelectorAll('.letter');
+          letters.forEach((letter: Element) => {
+              letter.classList.remove('opacity-100', 'translate-y-0');
+              letter.classList.add('opacity-0', 'translate-y-5');
+          });
+      }
+
+      const lettersToAnimate = paragraph.querySelectorAll('.letter');
+      if (lettersToAnimate.length === 0) return;
+
+      const observer = new IntersectionObserver((entries, observerInstance) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                lettersToAnimate.forEach((letter: Element) => {
+                  letter.classList.remove('opacity-0', 'translate-y-5');
+                  letter.classList.add('opacity-100', 'translate-y-0');
+                });
+                observerInstance.unobserve(paragraph);
+              }
+            });
+      }, { root: null, threshold: 0.1 });
+      observer.observe(paragraph);
+  }
+
+document.addEventListener('astro:page-load', setupIntroAnimation);
+document.addEventListener('astro:after-swap', setupIntroAnimation);
+
+</script>
 </script>

@@ -1,8 +1,57 @@
 ---
-import { languages } from "../../i18n/ui.ts";
+// Importa solo 'languages'
+import { languages } from "../../i18n/ui";
 
-const currentPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, "");
-const currentLanguage = Astro.url.pathname.split("/")[1];
+// Definisci la lingua di default qui
+const defaultLang = 'it'; // O 'en' se la tua lingua principale è l'inglese
+
+const pathname = Astro.url.pathname;
+
+// Variabili per lingua corrente e percorso "base"
+let currentLang = defaultLang; // Inizializza con la default definita sopra
+let basePath = pathname;
+let isNewsDetail = false;
+
+const segments = pathname.split('/').filter(s => s);
+
+// Caso 1: Pagina News Dettaglio (es. /news/it/slug)
+if (segments.length >= 3 && segments[0] === 'news' && segments[1] in languages) {
+  currentLang = segments[1];
+  basePath = '/' + segments.slice(2).join('/');
+  isNewsDetail = true;
+}
+// Caso 2: Pagina normale localizzata (es. /it/about)
+else if (segments.length >= 1 && segments[0] in languages) {
+  currentLang = segments[0];
+  basePath = '/' + segments.slice(1).join('/');
+  if (basePath === '/') basePath = ''; // Gestisci root localizzata
+}
+// Caso 3: Pagina non localizzata (usa lingua default)
+else {
+  currentLang = defaultLang;
+  basePath = pathname; // Usa il percorso completo se non localizzato
+}
+
+// Costruisci i link alternativi
+const alternateLinks: Record<string, string> = {};
+Object.keys(languages).forEach(lang => {
+  if (lang !== currentLang) {
+    if (isNewsDetail) {
+      // Link news: /news/ + altraLingua + slugBase (senza slash iniziale)
+      alternateLinks[lang] = `/news/${lang}${basePath}`;
+    } else {
+      // Link pagina normale: / + altraLingua + percorsoBase
+      // Gestisci caso root (se basePath era '' e lang è default, punta a '/')
+      if (!basePath && lang === defaultLang) { // Usa la defaultLang definita sopra
+          alternateLinks[lang] = '/';
+      } else if (!basePath && lang !== defaultLang) {
+           alternateLinks[lang] = `/${lang}/`;
+      } else {
+           alternateLinks[lang] = `/${lang}${basePath}`;
+      }
+    }
+  }
+});
 ---
 
 <ul
@@ -10,11 +59,12 @@ const currentLanguage = Astro.url.pathname.split("/")[1];
 >
   {
     Object.entries(languages).map(([lang, label]) => {
-      if (lang !== currentLanguage) {
+      if (lang !== currentLang) {
+        const targetUrl = alternateLinks[lang]
         return (
           <li class="toggle-list-item list-none px-2">
             <a
-              href={`/${lang}${currentPath}`}
+              href={targetUrl}
               class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer rounded-full"
             >
               {label}

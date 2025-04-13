@@ -1,9 +1,4 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+// Questo file serve solo a reindirizzare alla prima pagina delle news
+return Astro.redirect('/en/news/1', 301); // 301 = Redirect Permanente
 ---
-
-<Layout title="SBM - News">
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">News</h1>
-  </div>
-</Layout>
