@@ -23,6 +23,15 @@ export const labels = {
       "SBM è un'azienda leader nelle tecnologie sanitarie, con oltre 20 anni di esperienza siamo al fianco di medici, ricercatori e operatori del settore. \n Offriamo soluzioni innovative per migliorare la qualità della vita dei pazienti e ottimizzare il lavoro di chi si prende cura della loro salute. \n Questa è SBM, your next health partner.",
     "paginate.prev": "Precedente",
     "paginate.next": "Successivo",
+    "paginate.label": "Paginazione news",
+    "err.generic": "Si è verificato un errore!",
+    "err.no-news":
+      "Al momento non ci sono news da visualizzare in questa pagina",
+    "err.load-news":
+      "Impossibile caricare le news per questa pagina. Controlla la console del server per dettagli tecnici.",
+    "news.page": "News",
+    "news.published": " Pubblicato il",
+    "pages.page": "Pagina",
   },
   en: {
     "nav.products": "Products",
@@ -43,6 +52,14 @@ export const labels = {
       "SBM is a leading company in healthcare technologies with over 20 years of experience, we stand alongside doctors, researchers, and industry professionals. \n We offer innovative solutions to improve patients' quality of life and optimize the work of those who take care of their health. \n This is SBM, your next health partner.",
     "paginate.prev": "Previous",
     "paginate.next": "Next",
+    "paginate.label": "News pagination",
+    "err.generic": "An error occurred!",
+    "err.no-news": "There are currently no news to display on this page",
+    "err.load-news":
+      "Unable to load news for this page. Check server console for technical details.",
+    "news.page": "News",
+    "news.published": " Published on",
+    "pages.page": "Page",
   },
 };
 
