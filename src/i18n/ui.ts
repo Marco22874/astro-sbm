@@ -118,8 +118,11 @@ export const pageLabels = {
     "products.radiologyText":
       "SBM seleziona tecnologie avanzate per la radiologia, offrendo sistemi di imaging all'avanguardia per diagnosi precise e affidabili. \n Le nostre soluzioni migliorano l’efficienza dei reparti diagnostici, ottimizzando il flusso di lavoro e la qualità delle immagini.",
 
+    // Pagina Servizi
+    "services.title": "I nostri Servizi",
+
     // Pagina Contatti
-    "contact.title": "Contattaci",
+    "contact.title": "Contatti",
     "contact.form.name": "Nome",
     "contact.form.email": "Email",
     "contact.form.message": "Messaggio",
@@ -182,6 +185,9 @@ export const pageLabels = {
       "SBM provides advanced solutions for ENT (ear, nose, and throat) conditions, offering specialized devices for diagnosis and treatment. \n The tools we offer are developed to meet the needs of professionals, ensuring effective and efficient clinical outcomes.",
     "products.radiologyText":
       "SBM selects advanced technologies for radiology, offering state-of-the-art imaging systems for precise and reliable diagnostics. \n Our solutions improve the efficiency of diagnostic departments, optimizing workflows and enhancing image quality.",
+
+    // Pagina Servizi
+    "services.title": "Our Services",
 
     // Contact Page
     "contact.title": "Contact Us",

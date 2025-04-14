@@ -1,8 +1,13 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+
+import { useTranslations } from "../../../i18n/utils.ts";
+const currentLang = Astro.currentLocale;
+const tr = useTranslations(currentLang);
+const layoutTitle = `SBM - ${tr("about.title")}`;
 ---
 
-<Layout title="SBM - About Us">
+<Layout title={layoutTitle}>
   <div class="flex items-center justify-center h-screen">
     <h1 class="text-3xl text-purple-800">About Us</h1>
   </div>
