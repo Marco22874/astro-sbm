@@ -33,8 +33,8 @@ export default defineConfig({
         },
       },
       filter: (page) =>
-        page !== "https://astro-sbm.vercel.app/it/backend" &&
-        page !== "https://astro-sbm.vercel.app/en/backend",
+        page !== "https://astro-sbm.vercel.app/it/backend/" &&
+        page !== "https://astro-sbm.vercel.app/en/backend/",
     }),
   ],
 });
