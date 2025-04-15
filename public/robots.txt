@@ -11,4 +11,4 @@ Disallow: /en/backend/
 Disallow:
 
 # ---- Posizione della Sitemap ----
-Sitemap: https://https://astro-sbm.vercel.app/sitemap-index.xml
+Sitemap: https://astro-sbm.vercel.app/sitemap-index.xml
