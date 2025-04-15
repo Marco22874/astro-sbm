@@ -25,6 +25,13 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      i18n: {
+        defaultLocale: "it",
+        locales: {
+          it: "it-IT",
+          en: "en-US",
+        },
+      },
       filter: (page) =>
         page !== "https://https://astro-sbm.vercel.app/it/backend" &&
         page !== "https://https://astro-sbm.vercel.app/en/backend",
