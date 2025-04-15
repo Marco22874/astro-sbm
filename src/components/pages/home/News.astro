@@ -124,13 +124,15 @@ if (filteredSortedNews.length > 0) {
               <a href={`/news/${news.slug ?? 'error-slug'}`}>
                 <Image
                   src={news.data.image}
-                  alt={news.data.imageAlt}
-                  width={600}
+                  alt={news.data.imageAlt ?? `Immagine per ${news.data.title}`} 
+                  widths={[276, 414, 552, 600]}
+                  sizes="(max-width: 767px) 276px, 585px"
+                  width={600} 
                   height={650}
                   format="webp"
                   quality={"mid"}
-                  class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block"
-                  loading="lazy"
+                  loading="lazy" 
+                  class="object-cover w-full h-full 2xl:h-[650px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block" 
                 />
               </a>
             </div>
