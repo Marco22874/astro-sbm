@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://https://astro-sbm.vercel.app",
+  site: "https://https://astro-sbm.vercel.app/it",
   i18n: {
     defaultLocale: "it",
     locales: ["it", "en"],
