@@ -4,12 +4,5 @@
       "source": "/:path*",
       "destination": "/maintenance.html"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/it/",
-      "permanent": true
-    }
   ]
 }
