@@ -1,0 +1,62 @@
+---
+// NewsArticle.astro
+import { Image } from 'astro:assets';
+import type { ProcessedNews } from '../../utils/newsHelper.ts';
+
+// Import languages
+import { useTranslations } from "../../i18n/utils.ts";
+const CURRENT_LANG = 'it';
+const tr = useTranslations(CURRENT_LANG); 
+
+interface Props {
+  news: ProcessedNews;
+  currentLang: string;
+  categoryMap: Map<string, string>;
+}
+
+const { news, currentLang, categoryMap } = Astro.props as Props;
+const cleanSlug = news.slug.includes('/') ? news.slug.split('/').pop() : news.slug;
+const newsUrl = `/news/${currentLang}/${cleanSlug ?? 'error-slug'}`;
+---
+
+
+<article class="news h-auto w-full flex flex-col lg:flex-row lg:items-start lg:gap-8 items-center border-b border-gray-200 pb-8 md:pb-12 last:border-b-0 last:pb-0">
+  <div class="w-full lg:flex-1 lg:w-auto">
+    <h2 class="text-2xl font-medium min-h-16 flex flex-col justify-center my-4 md:text-3xl md:mb-5">
+      <a href={newsUrl} class="hover:text-sbm-purple transition-colors">{news.data.title}</a>
+    </h2>
+    <p class="text-sm text-gray-600 mb-4">
+      {tr("news.published")}: {news.data.pubDate.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </p>
+    {news.data.categories && news.data.categories.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-5">
+        {news.data.categories.map((categoryRef: { id: string; collection: string }) => {
+          const categoryTitle = categoryMap.get(categoryRef.id);
+          return categoryTitle ? (
+            <div class="text-sbm-purple text-sm px-3 w-auto h-[30px] bg-sbm-purple/10 border border-sbm-purple rounded-3xl inline-flex items-center justify-center">
+              {categoryTitle}
+            </div>
+          ) : null;
+        })}
+      </div>
+    )}
+
+    <p class="min-h-32 md:text-lg xl:text-xl xl:leading-relaxed mt-4 mb-5 italic text-gray-600">
+      {news.data.description}
+    </p>
+  </div>
+  <div class="w-full md:flex-1 flex flex-col overflow-hidden items-center mt-4 md:mt-0 order-1 md:order-2">
+    <a href={newsUrl} class="w-full block group">
+      <Image
+        src={news.data.image}
+        alt={news.data.imageAlt ?? `Immagine per ${news.data.title}`}
+        width={600}
+        height={400}
+        format="webp"
+        quality={"mid"}
+        class="object-cover w-full h-full max-h-[400px] border-1 border-midnight/30 p-[2px] rounded-3xl inline-block group-hover:opacity-80 transition-opacity"
+        loading="eager"
+      />
+    </a>
+  </div>
+</article>

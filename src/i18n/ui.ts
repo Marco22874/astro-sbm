@@ -32,6 +32,8 @@ export const labels = {
     "news.page": "News",
     "news.published": " Pubblicato il",
     "pages.page": "Pagina",
+    "partner.text":
+      "Importatore per l'Italia dei prodotti GENTA-COLL e GENTA-FOIL",
   },
   en: {
     "nav.products": "Products",
@@ -60,6 +62,7 @@ export const labels = {
     "news.page": "News",
     "news.published": " Published on",
     "pages.page": "Page",
+    "partner.text": "Italian importer of GENTA-COLL and GENTA-FOIL products",
   },
 };
 

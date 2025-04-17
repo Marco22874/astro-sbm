@@ -2,7 +2,7 @@
 // import images
 import { Image } from "astro:assets";
 
-import SbmLogo from "../../assets/images/logo-full.webp";
+import OfficialPartnerImage from "../../assets/images/official-partner.png";
 // import languages
 import { useTranslations } from "../../i18n/utils";
 // import components
@@ -12,6 +12,6 @@ const tr = useTranslations(currentLang);
 
 
 <div class="w-full my-15 flex flex-col items-center justify-center">
-    <p class="my-8 text-3xl text-center md:text-left" set:html={tr("slogan.text").replace(/\n/g, '<br>')} />
-    <Image src={SbmLogo} class=" mt-5 md:self-end md:pr-12" alt="SBM Logo" format="webp" quality={"mid"} width="350"/>
+    <p class="my-8 text-3xl text-center md:text-left" set:html={tr("partner.text").replace(/\n/g, '<br>')} />
+    <Image src={OfficialPartnerImage} class=" mt-2 md:self-center" alt="SBM & Resorba" format="webp" quality={"mid"} min-width="350"/>
 </div>
