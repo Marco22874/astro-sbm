@@ -134,6 +134,8 @@ export const pageLabels = {
     // Pagina Chi Siamo
     "about.title": "Chi Siamo",
     "about.mission": "La Nostra Missione",
+    "about.intro":
+      "Fondata nel 2001 a Lecce, SBM Srl è cresciuta da realtà locale a punto di riferimento nel settore biomedicale nazionale, servendo ospedali e strutture sanitarie in Puglia, Abruzzo, Basilicata e altre regioni italiane.",
   },
   en: {
     // Products Page
@@ -202,5 +204,7 @@ export const pageLabels = {
     // About Us Page
     "about.title": "About Us",
     "about.mission": "Our Mission",
+    "about.intro":
+      "Established in Lecce in 2001, SBM Srl has grown from a local business into a key player within the national biomedical sector, serving hospitals and healthcare facilities in Puglia, Abruzzo, Basilicata, and other Italian regions.",
   },
 };

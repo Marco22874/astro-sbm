@@ -1,14 +1,29 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 
+// import languages
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
 const layoutTitle = `SBM - ${tr("about.title")}`;
+
+// import images
+import { Image } from "astro:assets";
 ---
 
 <Layout title={layoutTitle}>
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">Chi siamo</h1>
+  <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
+    <div class="w-full py-8"> 
+      <h1 class="text-5xl text-midnight text-center md:text-left">{tr("about.title")}</h1>
+      <p class="my-8 text-3xl text-center md:text-left" set:html={tr("about.intro").replace(/\n/g, '<br>')} />
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center">
+      <div>
+        image
+      </div>
+      <div>
+        testo
+      </div>
+    </div>
   </div>
 </Layout>

@@ -1,12 +1,11 @@
 ---
 // import Layout
 import Layout from "../../../layouts/Layout.astro";
-// import languages
-import { useTranslations } from "../../../i18n/utils.ts";
 // import components
 import LogosGrid from "../../../components/pages/products/LogosGrid.astro";
 import Slogan from "../../../components/utils/Slogan.astro";
-
+// import languages
+import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
 const layoutTitle = `SBM - ${tr("products.title")}`;
@@ -195,81 +194,80 @@ const radiologyLogos = [
     </div>
     {/* --- Riga 1: Da Destra a Sinistra --- */}
     <div class="scroller mt-15 mb-5 w-full overflow-hidden group" data-direction="left">
-      {/* Aggiunto group per eventuale pausa su hover con Tailwind */}
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-left group-hover:paused">
          {/* Contenuto Originale */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"}/>
+          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"}/>
+          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"}/>
+          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"}/>
+          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"}/>
+          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"}/>
+          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"}/>
+          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"}/>
+          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"}/>
+          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"}/>
+          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"}/>
+          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"}/>
+          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          {/* Contenuto Duplicato (per loop) */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"}/>
+          <Image src={BdLogo} alt="BD Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"}/>
+          <Image src={LinaLogo} alt="Lina Medical Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"}/>
+          <Image src={ResorbaLogo} alt="Resorba Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"}/>
+          <Image src={HekaLogo} alt="HEKA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"}/>
+          <Image src={LamideyLogo} alt="LAMIDEY Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"}/>
+          <Image src={GetingeLogo} alt="GETINGE Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"}/>
+          <Image src={DbiLogo} alt="DBI Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"}/>
+          <Image src={GadaLogo} alt="GADA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"}/>
+          <Image src={EdanLogo} alt="EDAN Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"}/>
+          <Image src={DiLogo} alt="3DI Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"}/>
+          <Image src={AbmedicaLogo} alt="Abmedica Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"}/>
+          <Image src={BostonLogo} alt="BOSTON SCIENTIFIC Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
       </div>
     </div>
@@ -279,77 +277,77 @@ const radiologyLogos = [
       <div class="scroller__inner flex flex-nowrap w-max animate-scroll-right group-hover:paused">
          {/* Contenuto Originale */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"}/>
+          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"}/>
+          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"}/>
+          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"}/>
+          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"}/>
+          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"}/>
+          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"}/>
+          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TegeaLogo} alt="TEGEA Logo" format="webp" quality={"mid"}/>
+          <Image src={TegeaLogo} alt="TEGEA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"}/>
+          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"}/>
+          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"}/>
+          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"}/>
+          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          {/* Contenuto Duplicato (per loop) */}
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"}/>
+          <Image src={AlliumLogo} alt="ALLIUM Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"}/>
+          <Image src={DecomedLogo} alt="DECOMED Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"}/>
+          <Image src={MarsLogo} alt="MARS Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"}/>
+          <Image src={MolnlyckeLogo} alt="MOLNLYCKE Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"}/>
+          <Image src={NovaLogo} alt="NOVA MEDICAL Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"}/>
+          <Image src={PathfastLogo} alt="PATHFAST Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"}/>
+          <Image src={PusenLogo} alt="PUSEN Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TegeaLogo} alt="TEGEA Logo" format="webp" quality={"mid"}/>
+          <Image src={TegeaLogo} alt="TEGEA Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"}/>
+          <Image src={TeleflexLogo} alt="TELEFLEX Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"}/>
+          <Image src={TerumoLogo} alt="TERUMO Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"}/>
+          <Image src={WelleadLogo} alt="WELLEAD Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
          <span class="min-w-[120px] h-[58px] inline-flex items-center justify-center mx-2">
-          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"}/>
+          <Image src={WestmedLogo} alt="WESTMED Logo" format="webp" quality={"mid"} loading="eager"/>
          </span>
       </div>
     </div>
@@ -358,7 +356,7 @@ const radiologyLogos = [
       {/* Urology Category */}      
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.urology")}</h2>
-				<Image src={UrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.urology")} icon` format="webp" quality={"mid"}/>
+				<Image src={UrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.urology")} icon` format="webp" quality={"mid"} loading="eager"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.urologyText").replace(/\n/g, '<br>')} />
@@ -368,7 +366,7 @@ const radiologyLogos = [
       {/* General Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.general-surgey")}</h2>
-				<Image src={GeneralSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.general-surgey")} icon` format="webp" quality={"mid"}/>
+				<Image src={GeneralSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.general-surgey")} icon` format="webp" quality={"mid"} loading="eager"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.generalSurgeyText").replace(/\n/g, '<br>')} />
@@ -378,7 +376,7 @@ const radiologyLogos = [
       {/* Neuro Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.neuro-surgey")}</h2>
-				<Image src={NeuroSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.neuro-surgey")} icon` format="webp" quality={"mid"}/>
+				<Image src={NeuroSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.neuro-surgey")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
         <p set:html={tr("products.neuroSurgeyText").replace(/\n/g, '<br>')} />
@@ -388,7 +386,7 @@ const radiologyLogos = [
       {/* Orthopedics Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.orthopedics")}</h2>
-				<Image src={OrthopedicsIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.orthopedics")} icon` format="webp" quality={"mid"}/>
+				<Image src={OrthopedicsIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.orthopedics")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.orthopedicsText").replace(/\n/g, '<br>')} />
@@ -398,7 +396,7 @@ const radiologyLogos = [
       {/* Gynecology Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.gynecology")}</h2>
-				<Image src={GynecologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.gynecology")} icon` format="webp" quality={"mid"}/>
+				<Image src={GynecologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.gynecology")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.gynecologyText").replace(/\n/g, '<br>')} />
@@ -408,7 +406,7 @@ const radiologyLogos = [
       {/* Anesthesiology and Intensive Care Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.anesthesiology")}</h2>
-				<Image src={AnesthesiaIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.anesthesiology")} icon` format="webp" quality={"mid"}/>
+				<Image src={AnesthesiaIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.anesthesiology")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.anesthesiologyText").replace(/\n/g, '<br>')} />
@@ -418,7 +416,7 @@ const radiologyLogos = [
       {/* Poct Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.poct")}</h2>
-				<Image src={PoctIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.poct")} icon` format="webp" quality={"mid"}/>
+				<Image src={PoctIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.poct")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.poctText").replace(/\n/g, '<br>')} />
@@ -428,7 +426,7 @@ const radiologyLogos = [
       {/* Plastic Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.plastic-surgey")}</h2>
-				<Image src={PlasticSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.plastic-surgey")} icon` format="webp" quality={"mid"}/>
+				<Image src={PlasticSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.plastic-surgey")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.plasticSurgeyText").replace(/\n/g, '<br>')} />
@@ -438,7 +436,7 @@ const radiologyLogos = [
       {/* Vascular Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.vascular-surgey")}</h2>
-				<Image src={VascularSurgeytIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.vascular-surgey")} icon` format="webp" quality={"mid"}/>
+				<Image src={VascularSurgeytIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.vascular-surgey")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.vascularSurgeyText").replace(/\n/g, '<br>')} />
@@ -448,7 +446,7 @@ const radiologyLogos = [
       {/* Cardio Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.cardiac-surgey")}</h2>
-				<Image src={CardiacSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.cardiac-surgey")} icon` format="webp" quality={"mid"}/>
+				<Image src={CardiacSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.cardiac-surgey")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.cardiacSurgeyText").replace(/\n/g, '<br>')} />
@@ -458,7 +456,7 @@ const radiologyLogos = [
       {/* Oncology Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.oncology")}</h2>
-				<Image src={OncologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.oncology")} icon` format="webp" quality={"mid"}/>
+				<Image src={OncologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.oncology")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.oncologyText").replace(/\n/g, '<br>')} />
@@ -468,7 +466,7 @@ const radiologyLogos = [
       {/* Dermatology Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.dermatology")}</h2>
-				<Image src={DermatologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.dermatology")} icon` format="webp" quality={"mid"}/>
+				<Image src={DermatologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt=`${tr("products.category.dermatology")} icon` format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.dermatologyText").replace(/\n/g, '<br>')} />
@@ -478,7 +476,7 @@ const radiologyLogos = [
       {/* Nephrology Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.nephrology")}</h2>
-				<Image src={NephrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Nephrology Icon" format="webp" quality={"mid"}/>
+				<Image src={NephrologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Nephrology Icon" format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.nephrologyText").replace(/\n/g, '<br>')} />
@@ -488,7 +486,7 @@ const radiologyLogos = [
       {/* Toracic Surgey Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.toracic-surgey")}</h2>
-				<Image src={ToracicSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Toracic Surgey Icon" format="webp" quality={"mid"}/>
+				<Image src={ToracicSurgeyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Toracic Surgey Icon" format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.toracicSurgeyText").replace(/\n/g, '<br>')} />
@@ -498,7 +496,7 @@ const radiologyLogos = [
       {/* Ent Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.ent")}</h2>
-				<Image src={EntIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Ent Icon" format="webp" quality={"mid"}/>
+				<Image src={EntIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Ent Icon" format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.entText").replace(/\n/g, '<br>')} />
@@ -508,7 +506,7 @@ const radiologyLogos = [
       {/* Radiology Category */}
       <div class="@container sbm-products-panel flex items-center justify-between cursor-pointer">
 				<h2 class="flex-1 min-w-0 uppercase text-[clamp(1rem,_10cqi,_3rem)] font-semibold 2xl:text-6xl">{tr("products.category.radiology")}</h2>
-				<Image src={RadiologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Radioilogy Icon" format="webp" quality={"mid"}/>
+				<Image src={RadiologyIcon} class="flex-shrink-0 w-[60px] h-[60px]" alt="Radioilogy Icon" format="webp" quality={"mid"} loading="lazy"/>
 			</div>
 			<div class="sbm-products-content my-8 text-xl 2xl:text-3xl">
 				<p set:html={tr("products.radiologyText").replace(/\n/g, '<br>')} />

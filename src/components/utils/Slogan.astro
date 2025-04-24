@@ -13,5 +13,5 @@ const tr = useTranslations(currentLang);
 
 <div class="w-full my-15 flex flex-col items-center justify-center">
     <p class="my-8 text-3xl text-center md:text-left" set:html={tr("slogan.text").replace(/\n/g, '<br>')} />
-    <Image src={SbmLogo} class=" mt-5 md:self-end md:pr-12" alt="SBM Logo" format="webp" quality={"mid"} width="350"/>
+    <Image src={SbmLogo} class="mt-5 md:self-end md:pr-12 min-w-xs" alt="SBM Logo" format="webp" quality={"mid"} width="600"/>
 </div>
