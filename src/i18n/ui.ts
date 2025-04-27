@@ -137,6 +137,9 @@ export const pageLabels = {
 
     // Pagina Contatti
     "contact.title": "Contatti",
+    "contact.info": "Informazioni",
+    "contact.phone": "Telefono",
+    "contact.address": "Indirizzo",
     "contact.form.name": "Nome",
     "contact.form.email": "Email",
     "contact.form.message": "Messaggio",
@@ -226,6 +229,9 @@ export const pageLabels = {
 
     // Contact Page
     "contact.title": "Contact Us",
+    "contact.info": "Information",
+    "contact.phone": "Phone",
+    "contact.address": "Address",
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
