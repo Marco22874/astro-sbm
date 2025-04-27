@@ -223,7 +223,7 @@ export const pageLabels = {
     "services.distribution.title": "Distribution and Logistics",
     "services.distribution":
       "Our distribution and logistics service is specifically designed for the needs of the medical sector, ensuring efficient management and punctual delivery of medical products and equipment throughout the territory we cover. \n We carefully manage the entire flow, from compliant warehousing to rapid order fulfillment and dedicated transport, guaranteeing the integrity and traceability of materials. \n We are committed to providing reliable logistics solutions to support the operational continuity of healthcare facilities, ensuring necessary products are available where and when they are needed.",
-    "services.consultancy.title": "Consultancy and Tecnica Assistance",
+    "services.consultancy.title": "Consultancy and Tecnical Assistance",
     "services.consultancy":
       "We offer an integrated service of specialized consultancy and technical assistance, provided by qualified experts, to optimize the use and ensure maximum efficiency of your medical equipment. \n From strategic advice on technology deployment to timely installation, maintenance, and repair, we provide comprehensive support to minimize downtime. \n Trust our combined expertise to keep your technologies always safe, reliable, and compliant with the highest standards.",
 
