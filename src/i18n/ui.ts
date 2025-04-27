@@ -123,6 +123,17 @@ export const pageLabels = {
 
     // Pagina Servizi
     "services.title": "I nostri Servizi",
+    "services.intro":
+      "SBM, nata a Lecce nel 2001, é oggi un punto di riferimento per la sanità in Puglia, Abruzzo, Basilicata e altre regioni d'Italia. \n Fornisce presidi medico-chirurgici, apparecchiature elettromedicali e diagnostica avanzata per reparti specialistici. \n Offre non solo prodotti di alta qualità, ma anche un servizio post-vendita completo: assistenza in sala operatoria, supporto medico e corsi di formazione professionale.",
+    "services.training.title": "Formazione Specialistica",
+    "services.training":
+      "Offriamo formazione specialistica avanzata per assicurare l'utilizzo corretto, sicuro ed efficace dei nostri prodotti medici da parte del vostro personale. \n L'obiettivo è massimizzare la competenza degli operatori e ottimizzare le performance dei dispositivi, garantendo i più alti standard di sicurezza. \n Il nostro supporto formativo è erogato da specialisti di prodotto qualificati e include dimostrazioni pratiche mirate a consolidare l'apprendimento sul campo.",
+    "services.distribution.title": "Distribuzione e Logistica",
+    "services.distribution":
+      "Il nostro servizio di distribuzione e logistica è studiato specificamente per le esigenze del settore medicale, assicurando la gestione efficiente e la consegna puntuale di prodotti e apparecchiature su tutto il territorio da noi coperto. \n Gestiamo con cura l'intero flusso, dallo stoccaggio conforme alle normative all'evasione rapida degli ordini e al trasporto dedicato, garantendo l'integrità e la tracciabilità dei materiali. \n Ci impegniamo a fornire soluzioni logistiche affidabili per supportare la continuità operativa delle strutture sanitarie, assicurando che i prodotti necessari siano disponibili dove e quando servono.",
+    "services.consultancy.title": "Consulenza e Assistenza Tecnica",
+    "services.consultancy":
+      "Offriamo un servizio integrato di consulenza e assistenza tecnica specializzata, fornito da esperti qualificati, per ottimizzare l'uso e garantire la massima efficienza delle vostre apparecchiature medicali. \n Dalla consulenza strategica sull'impiego delle tecnologie all'installazione, manutenzione e riparazione tempestiva, assicuriamo supporto completo per minimizzare i fermi macchina. \n Affidatevi alla nostra competenza combinata per mantenere le vostre tecnologie sempre sicure, affidabili e conformi ai più alti standard.",
 
     // Pagina Contatti
     "contact.title": "Contatti",
@@ -199,8 +210,19 @@ export const pageLabels = {
     "products.radiologyText":
       "SBM selects advanced technologies for radiology, offering state-of-the-art imaging systems for precise and reliable diagnostics. \n Our solutions improve the efficiency of diagnostic departments, optimizing workflows and enhancing image quality.",
 
-    // Pagina Servizi
+    // Services Page
     "services.title": "Our Services",
+    "services.intro":
+      "SBM, founded in Lecce in 2001, is today a key reference point for healthcare in Puglia, Abruzzo, Basilicata, and other regions of Italy.\n It supplies medical-surgical devices, electromedical equipment, and advanced diagnostics for specialized departments.\n It offers not only high-quality products but also a comprehensive after-sales service: assistance in the operating room, medical support, and professional training courses.",
+    "services.training.title": "Specialized Training",
+    "services.training":
+      "We offer advanced specialized training to ensure the correct, safe, and effective use of our medical products by your personnel.\n The goal is to maximize operator competence and optimize device performance, guaranteeing the highest safety standards.\n Our training support is provided by qualified product specialists and includes practical demonstrations aimed at consolidating on-the-job learning.",
+    "services.distribution.title": "Distribution and Logistics",
+    "services.distribution":
+      "Our distribution and logistics service is specifically designed for the needs of the medical sector, ensuring efficient management and punctual delivery of medical products and equipment throughout the territory we cover. \n We carefully manage the entire flow, from compliant warehousing to rapid order fulfillment and dedicated transport, guaranteeing the integrity and traceability of materials. \n We are committed to providing reliable logistics solutions to support the operational continuity of healthcare facilities, ensuring necessary products are available where and when they are needed.",
+    "services.consultancy.title": "Consultancy and Tecnica Assistance",
+    "services.consultancy":
+      "We offer an integrated service of specialized consultancy and technical assistance, provided by qualified experts, to optimize the use and ensure maximum efficiency of your medical equipment. \n From strategic advice on technology deployment to timely installation, maintenance, and repair, we provide comprehensive support to minimize downtime. \n Trust our combined expertise to keep your technologies always safe, reliable, and compliant with the highest standards.",
 
     // Contact Page
     "contact.title": "Contact Us",

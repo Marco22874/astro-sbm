@@ -1,14 +1,62 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 
+// import components
+import Slogan from "../../../components/utils/Slogan.astro";
+
+// import languages
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
 const layoutTitle = `SBM - ${tr("services.title")}`;
+
+// import images
+import { Image } from "astro:assets";
+
+import SbmFormazione from "../../../assets/images/services/formazione_specialistica.webp";
+import SbmConsulenza from "../../../assets/images/services/consulenza_assistenza_tecnica.webp";
+import SbmDistribuzione from "../../../assets/images/services/distribuzione_logistica.webp";
 ---
 
 <Layout title={layoutTitle}>
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">Servizi</h1>
+  <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
+    <div class="w-full py-8 text-3xl"> 
+      <h1 class="text-5xl text-midnight text-center md:text-left">{tr("services.title")}</h1>
+      <p class="my-8 text-center md:text-left" set:html={tr("services.intro").replace(/\n/g, '<br>')} />
+    </div>
+    <div class="w-full py-8 text-3xl"> 
+      <h2 class="text-4xl text-midnight text-center md:text-left">{tr("services.training.title")}</h2>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-3/4">
+        <p class="py-4" set:html={tr("services.training").replace(/\n/g, '<p class="py-4">')} />
+      </div>
+      <div class="w-full lg:w-1/4 flex justify-center">
+        <Image src={SbmFormazione} alt="Sbm Formazione" format="webp" quality={"mid"} loading="eager"/>
+      </div>
+    </div>
+    <div class="w-full py-8 text-3xl"> 
+      <h2 class="text-4xl text-midnight text-center md:text-left">{tr("services.consultancy.title")}</h2>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-3/4 lg:order-2">
+        <p class="py-4" set:html={tr("services.consultancy").replace(/\n/g, '<p class="py-4">')} />
+      </div>
+      <div class="w-full lg:w-1/4 lg:order-1 flex justify-center">
+        <Image src={SbmConsulenza} alt="Sbm Consulenza" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <div class="w-full py-8 text-3xl"> 
+      <h2 class="text-4xl text-midnight text-center md:text-left">{tr("services.distribution.title")}</h2>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-3/4">
+        <p class="py-4" set:html={tr("services.distribution").replace(/\n/g, '<p class="py-4">')} />
+      </div>
+      <div class="w-full lg:w-1/4 flex justify-center">
+        <Image src={SbmDistribuzione} alt="Sbm Distribuzione" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <Slogan />
   </div>
 </Layout>
