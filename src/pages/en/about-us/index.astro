@@ -1,14 +1,79 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 
+// import components
+import Slogan from "../../../components/utils/Slogan.astro";
+
+// import languages
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
 const layoutTitle = `SBM - ${tr("about.title")}`;
+
+// import images
+import { Image } from "astro:assets";
+
+import SbmEsterno from "../../../assets/images/about-us/sbm-esterno.jpg";
+import SbmIngresso from "../../../assets/images/about-us/sbm-ingresso.jpg";
+import SbmRiunioni from "../../../assets/images/about-us/sbm-riunioni.jpg";
+import SbmUfficio2 from "../../../assets/images/about-us/sbm-ufficio2.jpg";
+import SbmUfficio4 from "../../../assets/images/about-us/sbm-ufficio4.jpg";
+import SbmPencil from "../../../assets/images/about-us/sbm-pencil.jpg";
+import SbmUfficio6 from "../../../assets/images/about-us/sbm-ufficio6.jpg";
+
 ---
 
 <Layout title={layoutTitle}>
-  <div class="flex items-center justify-center h-screen">
-    <h1 class="text-3xl text-purple-800">About Us</h1>
+  <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
+    <div class="w-full py-8"> 
+      <h1 class="text-5xl text-midnight text-center md:text-left">{tr("about.title")}</h1>
+      <p class="my-8 text-3xl text-center md:text-left" set:html={tr("about.intro").replace(/\n/g, '<br>')} />
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-1/3">
+        <p class="py-4" set:html={tr("about.mission.description").replace(/\n/g, '<p>')} />
+      </div>
+      <div class="w-full lg:w-2/3">
+        <Image src={SbmEsterno} alt="Sbm Esterno" format="webp" quality={"mid"} loading="eager"/>
+      </div>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-1/3 lg:order-2">
+        <p class="py-4" set:html={tr("about.success").replace(/\n/g, '<p>')} />
+      </div>
+      <div class="w-full lg:w-2/3 lg:order-1">
+        <Image src={SbmRiunioni} alt="Sbm Sala Riunioni" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-1/3">
+        <p class="py-4" set:html={tr("about.lastText").replace(/\n/g, '<p class="py-4">')} />
+      </div>
+      <div class="w-full lg:w-2/3">
+        <Image src={SbmUfficio2} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full">
+        <p class="py-4" set:html={tr("about.end").replace(/\n/g, '<p class="py-4">')} />
+      </div>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-1/2">
+        <Image src={SbmUfficio4} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+      <div class="w-full lg:w-1/2">
+        <Image src={SbmIngresso} alt="Sbm Ingresso" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
+      <div class="w-full lg:w-1/2">
+        <Image src={SbmPencil} alt="Sbm Dettaglio Penna" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+      <div class="w-full lg:w-1/2">
+        <Image src={SbmUfficio6} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+      </div>
+    </div>
+    <Slogan />
   </div>
 </Layout>

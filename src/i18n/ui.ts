@@ -136,6 +136,14 @@ export const pageLabels = {
     "about.mission": "La Nostra Missione",
     "about.intro":
       "Fondata nel 2001 a Lecce, SBM Srl è cresciuta da realtà locale a punto di riferimento nel settore biomedicale nazionale, servendo ospedali e strutture sanitarie in Puglia, Abruzzo, Basilicata e altre regioni italiane.",
+    "about.mission.description":
+      "La nostra missione consiste nel portare innovazione e comprovata affidabilità all'interno di ogni contesto sanitario. Ci impegniamo a fornire soluzioni avanzate e rigorosamente personalizzate per rispondere alle specifiche necessità operative dei nostri clienti. \n Questo approccio strategico ha sostenuto la nostra crescita nel tempo, permettendoci di consolidare la nostra presenza sul mercato nel pieno rispetto dei valori fondamentali che guidano la nostra attività: qualità, etica professionale e attenzione al cliente",
+    "about.success":
+      "Il nostro successo si fonda su un equilibrio tra risultati concreti e solide partnership basate sulla fiducia, elementi chiave per una crescita sostenibile. \n Scegliere SBM significa instaurare una collaborazione che va oltre la semplice fornitura. Vi affidate a un team dedicato all'eccellenza, che opera in stretta sinergia con voi per contribuire attivamente al vostro benessere e successo.",
+    "about.lastText":
+      "Valutiamo il nostro progresso non solo in base ai risultati misurabili che otteniamo, ma anche attraverso la solidità delle relazioni professionali che costruiamo, fondate su trasparenza e fiducia reciproca. \n Scegliendo SBM, non state semplicemente acquistando un prodotto; state instaurando una partnership strategica. \n Entrate in contatto con un team di professionisti dedicati, convinti che un approccio basato sulla stretta collaborazione e sulla costante ricerca dell'eccellenza sia essenziale per contribuire attivamente al benessere e al successo dei nostri clienti.",
+    "about.end":
+      "Oggi, SBM continua a operare con la stessa passione, puntando a migliorare il futuro della sanità attraverso tecnologie d’avanguardia e un impegno costante verso i propri clienti. \n SBM, your next health partner.",
   },
   en: {
     // Products Page
@@ -206,5 +214,13 @@ export const pageLabels = {
     "about.mission": "Our Mission",
     "about.intro":
       "Established in Lecce in 2001, SBM Srl has grown from a local business into a key player within the national biomedical sector, serving hospitals and healthcare facilities in Puglia, Abruzzo, Basilicata, and other Italian regions.",
+    "about.mission.description":
+      "Our mission is to bring innovation and proven reliability to every healthcare setting. We are committed to providing advanced and rigorously customized solutions to meet the specific operational needs of our clients. \n This strategic approach has supported our growth over time, allowing us to consolidate our market presence while upholding the core values that guide our business: quality, professional ethics, and customer focus.",
+    "about.success":
+      "Our success is founded on a balance between concrete results and solid partnerships based on trust, key elements for sustainable growth. \n Choosing SBM means establishing a collaboration that goes beyond simple provision. You rely on a team dedicated to excellence, operating in close synergy with you to actively contribute to your well-being and success.",
+    "about.lastText":
+      "We evaluate our progress not only by the measurable results we achieve, but also by the strength of the professional relationships we build, founded on transparency and mutual trust. \n By choosing SBM, you are not simply purchasing a product; you are establishing a strategic partnership. \n You connect with a team of dedicated professionals, convinced that an approach based on close collaboration and the constant pursuit of excellence is essential to actively contribute to the well-being and success of our clients.",
+    "about.end":
+      "Today, SBM continues to operate with the same passion, aiming to improve the future of healthcare through cutting-edge technologies and a constant commitment to its clients. \n SBM, your next health partner.",
   },
 };
