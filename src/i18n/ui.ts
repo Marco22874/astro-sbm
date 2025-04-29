@@ -144,6 +144,7 @@ export const pageLabels = {
     "contact.form.email": "Email",
     "contact.form.message": "Messaggio",
     "contact.form.send": "Invia Messaggio",
+    "contact.where": "Dove siamo",
 
     // Pagina Chi Siamo
     "about.title": "Chi Siamo",
@@ -236,6 +237,7 @@ export const pageLabels = {
     "contact.form.email": "Email",
     "contact.form.message": "Message",
     "contact.form.send": "Send Message",
+    "contact.where": "Where we are",
 
     // About Us Page
     "about.title": "About Us",
