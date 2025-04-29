@@ -24,7 +24,7 @@ async function initMap() {
   const beachFlagImg = document.createElement("img");
   // Assicurati che il percorso sia corretto rispetto alla cartella 'public'
   // Se l'immagine è in 'public/img/marker.png', il percorso è corretto.
-  beachFlagImg.src = "/src/assets/images/marker.png";
+  beachFlagImg.src = "/images/marker.png";
   // Applica eventuali stili se necessario (es. dimensioni)
   // beachFlagImg.style.width = '30px';
   // beachFlagImg.style.height = '40px';
