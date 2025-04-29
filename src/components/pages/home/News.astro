@@ -5,7 +5,7 @@ import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 const pathname = Astro.url.pathname;
 const langSegment = pathname.split('/')[1];
 const currentLang = langSegment === 'en' ? 'en' : 'it';
-const limit = 3;
+const limit = 2;
 let allNews: CollectionEntry<'news'>[] = [];
 let pinnedNews: Array<any> = [];
 let fetchError: Error | null = null;

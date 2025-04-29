@@ -1,9 +1,9 @@
 ---
-title: "Cell Aging: Key Protein Discovery"
-description: "A team of researchers at the University of Cambridge has identified a new protein, named Chronofin, that appears to play a crucial role in slowing down the aging process of human cells. The study, published in Nature Aging, opens up new possibilities in the prevention of degenerative diseases."
-pubDate: "2025-04-12"
-image: "./../../../assets/images/nuovo_test_genetico.png"
-imageAlt: "Testo alternativo per seconda news"
+title: "IL WOUND CARE ... DAL MITO ... ALL’INTELLIGENZA ARTIFICIALE"
+description: "Visto l’incremento dell’età avanzata e della comparsa di patologie multiple, le lesioni complesse rappresentano sempre di più un problema sanitario e sociale. Il wound care, per sua natura, si rivolge ad ogni tipologia di paziente senza distinzione di genere, di età, di condizione sociale rappresentando nella sua interezza un problema socio-sanitario per una larghissima fetta di popolazione."
+pubDate: "2025-04-03"
+image: "./../../../assets/images/news/wound care.png"
+imageAlt: "Wound Care, dal mito allintelligenza artificiale"
 categories: ["ricerca", "diagnostica"]
 pinned: true
 ---
