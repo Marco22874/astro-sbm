@@ -36,7 +36,7 @@ const apiKey = import.meta.env.PUBLIC_Maps_KEY;
     </div>
     {apiKey ? (
       <div class="w-full h-[450px] lg:h-[600px] xl:h-[800px] my-4 border border-gray-300">
-         <GoogleMap client:visible apiKey={apiKey} />
+         <GoogleMap apiKey={apiKey} />
       </div>
     ) : (
       <div class="w-full text-center text-red-600 my-4">
