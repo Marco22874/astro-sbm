@@ -1,5 +1,4 @@
 # public/robots.txt
-# Istruzioni per tutti i web crawler
 
 User-agent: *
 
@@ -7,8 +6,5 @@ User-agent: *
 Disallow: /it/backend/
 Disallow: /en/backend/
 
-# ---- Permetti Tutto il Resto ----
-Disallow:
-
 # ---- Posizione della Sitemap ----
-Sitemap: https://astro-sbm.vercel.app/sitemap-index.xml
+Sitemap: https://sbmsrl.it/sitemap-index.xml
