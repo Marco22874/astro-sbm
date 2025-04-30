@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-sbm.vercel.app",
+  site: "https://sbmsrl.it",
   i18n: {
     defaultLocale: "it",
     locales: ["it", "en"],
@@ -33,8 +33,8 @@ export default defineConfig({
         },
       },
       filter: (page) =>
-        page !== "https://astro-sbm.vercel.app/it/backend/" &&
-        page !== "https://astro-sbm.vercel.app/en/backend/",
+        page !== "https://sbmsrl.it/it/backend/" &&
+        page !== "https://sbmsrl.it/en/backend/",
     }),
   ],
 });
