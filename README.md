@@ -4,7 +4,7 @@
 npm create astro@latest -- --template basics
 ```
 
-> 🧑‍🚀 **Version 2.4.7**
+> 🧑‍🚀 **Version 2.4.8**
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
@@ -37,6 +37,8 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   │   ├── MainMenu.astro
 │   │   │   └── MainMenu.astro
 │   │   ├── pages/
+│   │   │   ├── contacts/
+│   │   │   │   └── GoogleMap.astro
 │   │   │   ├── home/
 │   │   │   │   ├── Hero.astro
 │   │   │   │   ├── Intro.astro
@@ -81,6 +83,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   │   ├── index.astro
 │   │   │   └── news/
 │   │   └── index.astro
+│   ├── scripts/
 │   ├── styles/
 │   └── utils/
 └── package.json
