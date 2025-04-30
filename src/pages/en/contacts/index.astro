@@ -8,11 +8,13 @@ const layoutTitle = `SBM - ${tr("contact.title")}`;
 
 // import components
 import Slogan from "../../../components/utils/Slogan.astro";
+import GoogleMap from '../../../components/pages/contacts/GoogleMap.astro';
 
 const apiKey = import.meta.env.PUBLIC_Maps_KEY;
 ---
 
 <Layout title={layoutTitle}>
+
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
     <div class="w-full py-8 text-3xl"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("contact.title")}</h1>
@@ -32,18 +34,16 @@ const apiKey = import.meta.env.PUBLIC_Maps_KEY;
     <div class="w-full py-8 text-3xl"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("contact.where")}</h1>
     </div>
-    <div id="map" class="w-full h-[450px] lg:h-[600px] xl:h-[800px]"></div>
+    {apiKey ? (
+      <div class="w-full h-[450px] lg:h-[600px] xl:h-[800px] my-4 border border-gray-300">
+         <GoogleMap apiKey={apiKey} />
+      </div>
+    ) : (
+      <div class="w-full text-center text-red-600 my-4">
+        Impossibile caricare la mappa. Configurazione API Key mancante.
+      </div>
+    )}
     <Slogan />
   </div>
+ 
 </Layout>
-
-<script define:vars={{ apiKey }}>
-      (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-        ({ key: apiKey, v: "weekly" }); 
-    </script>
-
-    <script type="text/javascript" src="/js/gmaps.js"></script>
-
-    <script>
-      initMap();
-    </script>
