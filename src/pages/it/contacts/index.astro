@@ -13,6 +13,12 @@ const apiKey = import.meta.env.PUBLIC_Maps_KEY;
 ---
 
 <Layout title={layoutTitle}>
+  <Fragment slot="head">
+    <script define:vars={{ apiKey }} is:inline>
+      (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+        ({ key: apiKey, v: "weekly", libraries: "maps,marker" });
+    </script>
+  </Fragment>
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
     <div class="w-full py-8 text-3xl"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("contact.title")}</h1>
@@ -35,15 +41,31 @@ const apiKey = import.meta.env.PUBLIC_Maps_KEY;
     <div id="map" class="w-full h-[450px] lg:h-[600px] xl:h-[800px]"></div>
     <Slogan />
   </div>
+  <script type="text/javascript" src="/js/gmaps.js"></script>
+
+  <script>
+    import { initMap } from '../../../scripts/gmaps.js';
+    initMap();
+  </script>
+  <script>
+    import { initMap } from '../../../scripts/gmaps.js';
+    function initializeMapIfNeeded() {
+      if (document.getElementById('map')) {
+        console.log('[Map Initializer] Contenitore #map trovato, chiamo initMap...');
+        initMap(); 
+      } else {
+        console.log('[Map Initializer] Contenitore #map NON trovato in questa pagina.');
+      }
+    }
+
+    document.addEventListener('astro:page-load', initializeMapIfNeeded);
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      console.log('[Map Initializer] DOM già pronto, chiamo initializeMapIfNeeded');
+      initializeMapIfNeeded();
+    } else {
+      console.log('[Map Initializer] Aggiungo listener DOMContentLoaded');
+      document.addEventListener('DOMContentLoaded', initializeMapIfNeeded);
+    }
+  </script>
 </Layout>
-
-<script define:vars={{ apiKey }}>
-      (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-        ({ key: apiKey, v: "weekly" }); 
-    </script>
-
-    <script type="text/javascript" src="/js/gmaps.js"></script>
-
-    <script>
-      initMap();
-    </script>
