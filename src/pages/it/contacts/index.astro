@@ -45,10 +45,6 @@ const apiKey = import.meta.env.PUBLIC_Maps_KEY;
 
   <script>
     import { initMap } from '../../../scripts/gmaps.js';
-    initMap();
-  </script>
-  <script>
-    import { initMap } from '../../../scripts/gmaps.js';
     function initializeMapIfNeeded() {
       if (document.getElementById('map')) {
         console.log('[Map Initializer] Contenitore #map trovato, chiamo initMap...');
