@@ -1,0 +1,56 @@
+---
+// src/components/ContactForm.astro
+import { useTranslations } from '../../../i18n/utils'; //
+
+// Assumi che la lingua venga passata come prop
+// Dalle pagine /it/contacts e /en/contacts
+interface Props {
+  lang: 'it' | 'en';
+}
+const { lang = 'it' } = Astro.props; // Default 'it' se non passato
+const t = useTranslations(lang); //
+
+function tr(arg0: string): string {
+throw new Error("Function not implemented.");
+}
+
+// Stato per messaggi di successo/errore
+let formStatus = '';
+if (Astro.url.searchParams.has('status')) {
+  formStatus = Astro.url.searchParams.get('status') === 'success'
+    ? tr('contact.form.success') // Nuova chiave di traduzione
+    : tr('contact.form.error');   // Nuova chiave di traduzione
+}
+---
+
+{formStatus && (
+  <p class:list={[
+      "mb-4 p-3 rounded text-center",
+      { "bg-green-100 text-green-800": Astro.url.searchParams.get('status') === 'success' },
+      { "bg-red-100 text-red-800": Astro.url.searchParams.get('status') === 'error' }
+    ]}
+     aria-live="polite"
+  >
+    {formStatus}
+  </p>
+)}
+
+<form method="POST" action={`/api/contact?lang=${lang}`}> {/* Invia all'API route */}
+  <div class="mb-4">
+    <label for="name" class="block text-midnight mb-2">{tr('contact.form.name')}</label> {/* */}
+    <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-sbm-purple">
+  </div>
+  <div class="mb-4">
+    <label for="email" class="block text-midnight mb-2">{tr('contact.form.email')}</label> {/* */}
+    <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-sbm-purple">
+  </div>
+  <div class="mb-6">
+    <label for="message" class="block text-midnight mb-2">{tr('contact.form.message')}</label> {/* */}
+    <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-sbm-purple"></textarea>
+  </div>
+  <div>
+    <button type="submit" class="bg-sbm-purple text-white font-bold py-2 px-6 rounded hover:bg-midnight transition duration-300">
+      {tr('contact.form.send')} {/* */}
+    </button>
+  </div>
+</form>
