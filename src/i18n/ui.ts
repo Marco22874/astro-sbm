@@ -159,6 +159,9 @@ export const pageLabels = {
       "Valutiamo il nostro progresso non solo in base ai risultati misurabili che otteniamo, ma anche attraverso la solidità delle relazioni professionali che costruiamo, fondate su trasparenza e fiducia reciproca. \n Scegliendo SBM, non state semplicemente acquistando un prodotto; state instaurando una partnership strategica. \n Entrate in contatto con un team di professionisti dedicati, convinti che un approccio basato sulla stretta collaborazione e sulla costante ricerca dell'eccellenza sia essenziale per contribuire attivamente al benessere e al successo dei nostri clienti.",
     "about.end":
       "Oggi, SBM continua a operare con la stessa passione, puntando a migliorare il futuro della sanità attraverso tecnologie d’avanguardia e un impegno costante verso i propri clienti. \n SBM, your next health partner.",
+
+    // Pagina Sustainability
+    "sustainability.title": "Sostenibilità",
   },
   en: {
     // Products Page
@@ -252,5 +255,8 @@ export const pageLabels = {
       "We evaluate our progress not only by the measurable results we achieve, but also by the strength of the professional relationships we build, founded on transparency and mutual trust. \n By choosing SBM, you are not simply purchasing a product; you are establishing a strategic partnership. \n You connect with a team of dedicated professionals, convinced that an approach based on close collaboration and the constant pursuit of excellence is essential to actively contribute to the well-being and success of our clients.",
     "about.end":
       "Today, SBM continues to operate with the same passion, aiming to improve the future of healthcare through cutting-edge technologies and a constant commitment to its clients. \n SBM, your next health partner.",
+
+    // Sustainability Page
+    "sustainability.title": "Sustainability",
   },
 };
