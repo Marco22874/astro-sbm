@@ -1,0 +1,88 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+// import components
+import Slogan from "../../../components/utils/Slogan.astro";
+
+// import languages
+import { useTranslations } from "../../../i18n/utils.ts";
+const currentLang = Astro.currentLocale;
+const tr = useTranslations(currentLang);
+const layoutTitle = `SBM - ${tr("privacy.title")}`;
+---
+
+<Layout title={layoutTitle}>
+  <div
+    class="sbm-section w-screen flex flex-col mt-[160px] text-midnight"
+    id="privacy-policy-wrapper"
+  >
+    <div class="w-full py-8">
+      <h1 class="text-5xl text-midnight text-center md:text-left">
+        {tr("privacy.title")}
+      </h1>
+      <p class="my-8 text-lg text-center md:text-left text-gray-600">
+        {tr("privacy.lastUpdate")}
+      </p>
+    </div>
+    
+    <div class="w-full py-8 flex flex-col gap-y-8 text-lg leading-relaxed">
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.introduction.title")}
+        </h2>
+        <p set:html={tr("privacy.introduction.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.dataController.title")}
+        </h2>
+        <p set:html={tr("privacy.dataController.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.dataTypes.title")}
+        </h2>
+        <p set:html={tr("privacy.dataTypes.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.purposes.title")}
+        </h2>
+        <p set:html={tr("privacy.purposes.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.legalBasis.title")}
+        </h2>
+        <p set:html={tr("privacy.legalBasis.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.retention.title")}
+        </h2>
+        <p set:html={tr("privacy.retention.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.rights.title")}
+        </h2>
+        <p set:html={tr("privacy.rights.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("privacy.contact.title")}
+        </h2>
+        <p set:html={tr("privacy.contact.content").replace(/\n/g, "<br>")} />
+      </section>
+    </div>
+
+    <Slogan />
+  </div>
+</Layout>
