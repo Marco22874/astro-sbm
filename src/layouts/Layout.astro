@@ -19,6 +19,9 @@ interface Props {
   seoKey?: keyof typeof import("../i18n/ui").seo.it;
   customDescription?: string;
   customKeywords?: string;
+  customOgImage?: string;
+  customOgImageWidth?: string;
+  customOgImageHeight?: string;
 }
 
 const currentLang = Astro.currentLocale || "it";
@@ -29,7 +32,10 @@ const {
   title, 
   seoKey = "home", 
   customDescription,
-  customKeywords 
+  customKeywords,
+  customOgImage,
+  customOgImageWidth = "1200",
+  customOgImageHeight = "630"
 } = Astro.props;
 
 // Generate SEO data
@@ -37,9 +43,28 @@ const seoTitle = title || getSEO(seoKey, "title");
 const seoDescription = customDescription || getSEO(seoKey, "description");
 const seoKeywords = customKeywords || getSEO(seoKey, "keywords");
 
-// Generate Open Graph data
+// Generate Open Graph image data
+const baseUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+const defaultOgImage = `${baseUrl}/images/logo.webp`;
+const ogImageUrl = customOgImage ? `${baseUrl}${customOgImage}` : defaultOgImage;
+
+// Generate Open Graph data and canonical URL
 const currentUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const canonicalUrl = currentUrl.replace(/\/$/, '') || currentUrl; // Remove trailing slash except for root
 const ogLocale = currentLang === "it" ? "it_IT" : "en_US";
+
+// Generate hreflang URLs for multilingual support
+const generateHreflangUrl = (lang: string, pathname: string) => {
+  // Remove any language prefix from pathname
+  const cleanPath = pathname.replace(/^\/(it|en)/, '') || '/';
+  // Add the new language prefix
+  const langPath = lang === 'it' ? `/it${cleanPath}` : `/en${cleanPath}`;
+  return new URL(langPath, Astro.site).toString().replace(/\/$/, '') || new URL(langPath, Astro.site).toString();
+};
+
+const currentPath = Astro.url.pathname;
+const itUrl = generateHreflangUrl('it', currentPath);
+const enUrl = generateHreflangUrl('en', currentPath);
 ---
 
 <!doctype html>
@@ -57,22 +82,32 @@ const ogLocale = currentLang === "it" ? "it_IT" : "en_US";
     <meta name="description" content={seoDescription} />
     <meta name="keywords" content={seoKeywords} />
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Hreflang for multilingual support -->
+    <link rel="alternate" hreflang="it" href={itUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={itUrl} />
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={seoTitle} />
     <meta property="og:description" content={seoDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={currentUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="SBM - Your Health Partner" />
     <meta property="og:locale" content={ogLocale} />
-    <meta property="og:image" content={`${Astro.site}images/logo.png`} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content={customOgImageWidth} />
+    <meta property="og:image:height" content={customOgImageHeight} />
+    <meta property="og:image:alt" content={`${seoTitle} - SBM`} />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seoTitle} />
     <meta name="twitter:description" content={seoDescription} />
-    <meta name="twitter:image" content={`${Astro.site}images/logo.png`} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={`${seoTitle} - SBM`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     
