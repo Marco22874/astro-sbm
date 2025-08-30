@@ -3,6 +3,103 @@ export const languages = {
   en: "EN",
 };
 
+export const seo = {
+  it: {
+    home: {
+      title: "SBM - Il tuo partner per la salute",
+      description: "SBM è un'azienda leader nelle tecnologie sanitarie con oltre 20 anni di esperienza. Dispositivi medici e soluzioni innovative per ospedali e strutture sanitarie in tutta Italia.",
+      keywords: "SBM, dispositivi medici, tecnologie sanitarie, Lecce, salute, partner sanitario, apparecchiature mediche"
+    },
+    aboutUs: {
+      title: "Chi Siamo | SBM - Il tuo partner per la salute",
+      description: "Fondata nel 2001 a Lecce, SBM Srl è cresciuta da realtà locale a punto di riferimento nazionale nel settore biomedicale. Scopri la nostra missione e i nostri valori.",
+      keywords: "SBM, chi siamo, azienda biomedicale, Lecce, storia aziendale, missione, tecnologie sanitarie"
+    },
+    products: {
+      title: "Prodotti | SBM your health partner", 
+      description: "Scopri i marchi di alta qualità che trattiamo: BD, Boston Scientific, Resorba, HEKA e molti altri. Soluzioni innovative per 16 specialità mediche.",
+      keywords: "prodotti medici, dispositivi medici, BD, Boston Scientific, Resorba, HEKA, urologia, chirurgia, cardiologia"
+    },
+    services: {
+      title: "Servizi | SBM - Il tuo partner per la salute",
+      description: "Formazione specialistica, distribuzione, logistica e assistenza tecnica. SBM offre servizi completi post-vendita per il settore sanitario in tutta Italia.",
+      keywords: "servizi medici, formazione sanitaria, distribuzione dispositivi medici, assistenza tecnica, logistica sanitaria"
+    },
+    contacts: {
+      title: "Contatti | SBM - Il tuo partner per la salute",
+      description: "Contatta SBM per informazioni sui nostri prodotti e servizi. Sede a Lecce, Viale Finlandia 1. Telefono, email e modulo contatti disponibili.",
+      keywords: "contatti SBM, Lecce, Viale Finlandia, telefono, email, informazioni, dispositivi medici"
+    },
+    news: {
+      title: "News | SBM - Il tuo partner per la salute",
+      description: "Rimani aggiornato sulle ultime novità di SBM, nuovi prodotti, eventi del settore sanitario e innovazioni nelle tecnologie mediche.",
+      keywords: "news SBM, notizie sanitarie, novità dispositivi medici, eventi medici, aggiornamenti tecnologie sanitarie"
+    },
+    sustainability: {
+      title: "Sostenibilità | SBM - Il tuo partner per la salute",
+      description: "I documenti fondamentali di SBM: Codice Etico, Politica Aziendale, Privacy Policy e Cookies Policy. Il nostro impegno per etica e trasparenza.",
+      keywords: "sostenibilità, codice etico, politica aziendale, privacy policy, cookies policy, trasparenza, etica aziendale"
+    },
+    privacyPolicy: {
+      title: "Privacy Policy | SBM your health partner",
+      description: "Privacy Policy di SBM S.R.L. Informazioni sulla raccolta e utilizzo dei dati di navigazione in conformità al GDPR e normativa italiana.",
+      keywords: "privacy policy, GDPR, protezione dati, normativa privacy, SBM, dati personali"
+    },
+    cookiesPolicy: {
+      title: "Cookies Policy | SBM your health partner", 
+      description: "Cookies Policy di SBM S.R.L. Informazioni dettagliate sull'utilizzo dei cookies e tecnologie simili sul sito web sbmsrl.it.",
+      keywords: "cookies policy, cookies, tecnologie web, SBM, navigazione, privacy"
+    }
+  },
+  en: {
+    home: {
+      title: "SBM - Your Health Partner",
+      description: "SBM is a leading company in healthcare technologies with over 20 years of experience. Medical devices and innovative solutions for hospitals and healthcare facilities throughout Italy.",
+      keywords: "SBM, medical devices, healthcare technologies, Lecce, health, healthcare partner, medical equipment"
+    },
+    aboutUs: {
+      title: "About Us | SBM - Your Health Partner",
+      description: "Founded in 2001 in Lecce, SBM Srl has grown from a local business to a national reference point in the biomedical sector. Discover our mission and values.",
+      keywords: "SBM, about us, biomedical company, Lecce, company history, mission, healthcare technologies"
+    },
+    products: {
+      title: "Products | SBM your health partner",
+      description: "Discover the high-quality brands we offer: BD, Boston Scientific, Resorba, HEKA and many others. Innovative solutions for 16 medical specialties.",
+      keywords: "medical products, medical devices, BD, Boston Scientific, Resorba, HEKA, urology, surgery, cardiology"
+    },
+    services: {
+      title: "Services | SBM your health partner",
+      description: "Specialized training, distribution, logistics and technical assistance. SBM offers comprehensive after-sales services for the healthcare sector throughout Italy.",
+      keywords: "medical services, healthcare training, medical device distribution, technical assistance, healthcare logistics"
+    },
+    contacts: {
+      title: "Contact Us | SBM - Your Health Partner", 
+      description: "Contact SBM for information about our products and services. Headquarters in Lecce, Viale Finlandia 1. Phone, email and contact form available.",
+      keywords: "contact SBM, Lecce, Viale Finlandia, phone, email, information, medical devices"
+    },
+    news: {
+      title: "News | SBM - Your Health Partner",
+      description: "Stay updated on the latest SBM news, new products, healthcare industry events and innovations in medical technologies.",
+      keywords: "SBM news, healthcare news, medical device updates, medical events, healthcare technology updates"
+    },
+    sustainability: {
+      title: "Sustainability | SBM - Your Health Partner",
+      description: "SBM's fundamental documents: Code of Ethics, Business Policy, Privacy Policy and Cookies Policy. Our commitment to ethics and transparency.",
+      keywords: "sustainability, code of ethics, business policy, privacy policy, cookies policy, transparency, corporate ethics"
+    },
+    privacyPolicy: {
+      title: "Privacy Policy | SBM your health partner",
+      description: "Privacy Policy of SBM S.R.L. Information on the collection and use of navigation data in compliance with GDPR and Italian legislation.",
+      keywords: "privacy policy, GDPR, data protection, privacy legislation, SBM, personal data"
+    },
+    cookiesPolicy: {
+      title: "Cookies Policy | SBM your health partner",
+      description: "Cookies Policy of SBM S.R.L. Detailed information on the use of cookies and similar technologies on the website sbmsrl.it.",
+      keywords: "cookies policy, cookies, web technologies, SBM, navigation, privacy"
+    }
+  }
+};
+
 export const labels = {
   it: {
     "nav.products": "Prodotti",

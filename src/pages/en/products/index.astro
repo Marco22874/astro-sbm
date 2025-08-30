@@ -8,8 +8,6 @@ import Slogan from "../../../components/utils/Slogan.astro";
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
-const layoutTitle = `SBM - ${tr("products.title")}`;
-
 // import images
 import { Image } from "astro:assets";
 
@@ -186,7 +184,7 @@ const radiologyLogos = [
 ];
 ---
 
-<Layout title={layoutTitle}>
+<Layout seoKey="products">
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="products-wrapper">
     <div class="w-full px-4 py-8 md:px-0"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("nav.products")}</h1>

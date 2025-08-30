@@ -10,7 +10,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLang = Astro.currentLocale || "en";
 const tr = useTranslations(currentLang);
-const layoutTitle = `SBM - ${tr("sustainability.title")}`;
+const layoutTitle = `${tr("sustainability.title")} | SBM your health partner`;
 ---
 
 <Layout title={layoutTitle}>

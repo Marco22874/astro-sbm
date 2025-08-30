@@ -8,8 +8,6 @@ import Slogan from "../../../components/utils/Slogan.astro";
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
-const layoutTitle = `SBM - ${tr("services.title")}`;
-
 // import images
 import { Image } from "astro:assets";
 
@@ -18,7 +16,7 @@ import SbmConsulenza from "../../../assets/images/services/consulenza_assistenza
 import SbmDistribuzione from "../../../assets/images/services/distribuzione_logistica.webp";
 ---
 
-<Layout title={layoutTitle}>
+<Layout seoKey="services">
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
     <div class="w-full py-8 text-3xl"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("services.title")}</h1>

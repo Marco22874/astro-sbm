@@ -8,10 +8,9 @@ import Slogan from "../../../components/utils/Slogan.astro";
 import { useTranslations } from "../../../i18n/utils.ts";
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
-const layoutTitle = `SBM - ${tr("cookies.title")}`;
 ---
 
-<Layout title={layoutTitle}>
+<Layout seoKey="cookiesPolicy">
   <div
     class="sbm-section w-screen flex flex-col mt-[160px] text-midnight"
     id="cookies-policy-wrapper"

@@ -1,4 +1,4 @@
-import { labels, pageLabels, languages } from "./ui";
+import { labels, pageLabels, seo, languages } from "./ui";
 
 const defaultLang = "it";
 
@@ -7,6 +7,9 @@ type LangCode = keyof typeof languages;
 type TranslationKey =
   | keyof (typeof labels)[typeof defaultLang]
   | keyof (typeof pageLabels)[typeof defaultLang];
+
+type SeoKey = keyof (typeof seo)[typeof defaultLang];
+type SeoProperty = keyof (typeof seo)[typeof defaultLang][SeoKey];
 
 export function useTranslations(lang: string | undefined) {
   // Determina la lingua effettiva da usare (quella passata o la default)
@@ -57,5 +60,32 @@ export function useTranslations(lang: string | undefined) {
       `Chiave di traduzione "${key}" non trovata per la lingua "${effectiveLang}" o default "${defaultLang}".`
     );
     return key;
+  };
+}
+
+export function useSEO(lang: string | undefined) {
+  const effectiveLang =
+    lang && lang in languages ? (lang as LangCode) : defaultLang;
+
+  return function getSEO(pageKey: SeoKey, property: SeoProperty): string {
+    // Cerca nella lingua corrente
+    let seoValue = seo[effectiveLang]?.[pageKey]?.[property];
+    if (seoValue !== undefined) {
+      return seoValue;
+    }
+
+    // Fallback alla lingua di default
+    if (effectiveLang !== defaultLang) {
+      seoValue = seo[defaultLang]?.[pageKey]?.[property];
+      if (seoValue !== undefined) {
+        return seoValue;
+      }
+    }
+
+    // Se non trovato, ritorna stringa vuota e logga warning
+    console.warn(
+      `SEO ${property} per pagina "${pageKey}" non trovato per lingua "${effectiveLang}"`
+    );
+    return "";
   };
 }

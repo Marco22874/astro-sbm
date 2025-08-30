@@ -29,7 +29,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { processedPageData, categoryMap, fetchError } = await getPageData(page, CURRENT_LANG);
 
 const showNoNewsMessage = !fetchError && processedPageData.length === 0;
-const layoutTitle = `SBM - ${tr("news.page")}`;
+const layoutTitle = `${tr("news.page")} | SBM your health partner`;
 
 ---
 

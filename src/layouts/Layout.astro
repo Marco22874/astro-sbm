@@ -9,35 +9,68 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 // import vercel analytics
 import Analytics from '@vercel/analytics/astro'
+// import SEO utilities
+import { useSEO } from "../i18n/utils";
+
+interface Props {
+  title?: string;
+  seoKey?: keyof typeof import("../i18n/ui").seo.it;
+  customDescription?: string;
+  customKeywords?: string;
+}
 
 const currentLang = Astro.currentLocale || "it";
+const getSEO = useSEO(currentLang);
+
+// Get props with defaults
+const { 
+  title, 
+  seoKey = "home", 
+  customDescription,
+  customKeywords 
+} = Astro.props;
+
+// Generate SEO data
+const seoTitle = title || getSEO(seoKey, "title");
+const seoDescription = customDescription || getSEO(seoKey, "description");
+const seoKeywords = customKeywords || getSEO(seoKey, "keywords");
+
+// Generate Open Graph data
+const currentUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const ogLocale = currentLang === "it" ? "it_IT" : "en_US";
 ---
 
 <!doctype html>
 <html lang={currentLang}>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=5"
-    />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <meta name="robots" content="index, follow" />
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="SBM srl, Lecce, your health partner" />
-    <meta name="description" content="SBM srl, Lecce, your health partner" />
     <meta name="author" content="Next Code di Marco De Luca" />
-    <meta property="og:title" content="SBM - Your Health Partner" />
+    
+    <!-- Dynamic SEO Meta Tags -->
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <meta name="keywords" content={seoKeywords} />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.sbmsrl.it" />
-    <meta property="og:image" content="http://www.sbmsrl.it/img/logo.png" />
-    <meta property="og:locale" content="it_IT" />
-    <meta
-      property="og:description"
-      content="SBM srl, Lecce, your health partner"
-    />
-    <title>{Astro.props.title}</title>
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:site_name" content="SBM - Your Health Partner" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:image" content={`${Astro.site}images/logo.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDescription} />
+    <meta name="twitter:image" content={`${Astro.site}images/logo.png`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <ClientRouter />
