@@ -8,10 +8,7 @@
     "dist"
   ],
   "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "astro",
-    "allowImportingTsExtensions": true,
-    "noResolve": false,
-    "moduleResolution": "bundler"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
