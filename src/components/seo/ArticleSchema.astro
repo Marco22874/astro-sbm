@@ -1,0 +1,84 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+  currentLang: 'it' | 'en';
+}
+
+const { entry, currentLang } = Astro.props;
+const currentUrl = new URL(Astro.request.url);
+const baseUrl = currentUrl.origin;
+const articleUrl = `${baseUrl}${Astro.url.pathname}`;
+
+// Generate image URL
+const imageUrl = entry.data.image ? `${baseUrl}${entry.data.image.src || entry.data.image}` : `${baseUrl}/images/logo.png`;
+
+// Author information
+const authorName = "SBM S.R.L.";
+const publisherName = "SBM your health partner";
+
+// Article categories for keywords  
+const keywords = entry.data.categories?.map(cat => cat.id).join(', ') || '';
+
+// Calculate estimated word count from description and title
+const titleWords = entry.data.title.split(' ').length;
+const descriptionWords = entry.data.description.split(' ').length;
+const estimatedWordCount = Math.max(titleWords + descriptionWords + 200, 300);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": entry.data.title,
+  "description": entry.data.description,
+  "image": {
+    "@type": "ImageObject",
+    "url": imageUrl,
+    "alt": entry.data.imageAlt || entry.data.title
+  },
+  "author": {
+    "@type": "Organization",
+    "name": authorName,
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject", 
+      "url": `${baseUrl}/images/logo.png`
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": publisherName,
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/images/logo.png`
+    }
+  },
+  "datePublished": entry.data.pubDate.toISOString(),
+  "dateModified": entry.data.pubDate.toISOString(),
+  "url": articleUrl,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": articleUrl
+  },
+  "keywords": keywords,
+  "inLanguage": currentLang === 'it' ? 'it-IT' : 'en-US',
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Healthcare Technology",
+      "description": "Medical devices and healthcare solutions"
+    },
+    {
+      "@type": "Thing", 
+      "name": "Medical Equipment",
+      "description": "Professional medical equipment and instruments"
+    }
+  ],
+  "articleSection": "Healthcare News",
+  "wordCount": estimatedWordCount,
+  "genre": "Medical News"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
