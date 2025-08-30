@@ -1,0 +1,80 @@
+---
+// LocalBusiness Schema JSON-LD per SBM (da usare nelle pagine contatti)
+const baseUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": `${baseUrl}/#localbusiness`,
+  "name": "SBM S.R.L.",
+  "description": "Leading company in healthcare technologies specializing in medical devices and solutions for hospitals and healthcare facilities.",
+  "url": baseUrl,
+  "image": `${baseUrl}/images/logo.png`,
+  "logo": {
+    "@type": "ImageObject", 
+    "url": `${baseUrl}/images/logo.png`
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Finlandia, 1 Zona Industriale", 
+    "addressLocality": "Lecce",
+    "addressRegion": "Puglia",
+    "postalCode": "73100",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.3515,
+    "longitude": 18.1750
+  },
+  "telephone": "+39 0832 362995",
+  "email": "info@sbmsrl.it",
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Puglia"
+    },
+    {
+      "@type": "Place", 
+      "name": "Abruzzo"
+    },
+    {
+      "@type": "Place",
+      "name": "Basilicata"
+    }
+  ],
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Invoice, Bank Transfer",
+  "priceRange": "$$",
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Italy",
+    "description": "Healthcare facilities and hospitals throughout Italy"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Medical Devices and Healthcare Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Medical Devices",
+          "description": "Surgical equipment and medical devices"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Healthcare Technology",
+          "description": "Electromedical equipment and diagnostics"
+        }
+      }
+    ]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

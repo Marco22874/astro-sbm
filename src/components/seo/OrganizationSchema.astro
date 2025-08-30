@@ -1,0 +1,64 @@
+---
+// Organization Schema JSON-LD per SBM
+const currentUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const baseUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${baseUrl}/#organization`,
+  "name": "SBM S.R.L.",
+  "legalName": "SBM S.R.L.",
+  "alternateName": "SBM - Your Health Partner",
+  "description": "SBM is a leading company in healthcare technologies with over 20 years of experience. Medical devices and innovative solutions for hospitals and healthcare facilities throughout Italy.",
+  "foundingDate": "2001",
+  "url": baseUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${baseUrl}/images/logo.png`,
+    "width": 200,
+    "height": 100
+  },
+  "image": `${baseUrl}/images/logo.png`,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Finlandia, 1 Zona Industriale",
+    "addressLocality": "Lecce",
+    "addressRegion": "Puglia",
+    "postalCode": "73100",
+    "addressCountry": "IT"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+39 0832 362995",
+    "email": "info@sbmsrl.it",
+    "contactType": "customer service",
+    "availableLanguage": ["Italian", "English"],
+    "areaServed": ["IT"]
+  },
+  "sameAs": [
+    // Aggiungi qui i social media quando disponibili
+  ],
+  "knowsAbout": [
+    "Medical Devices",
+    "Healthcare Technology", 
+    "Surgical Equipment",
+    "Electromedical Equipment",
+    "Medical Diagnostics"
+  ],
+  "industry": "Healthcare Technology",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 20
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Italy",
+    "description": "Puglia, Abruzzo, Basilicata and other regions of Italy"
+  },
+  "vatID": "IT03518350750",
+  "taxID": "IT03518350750"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

@@ -7,12 +7,15 @@ const tr = useTranslations(currentLang);
 // import components
 import Slogan from "../../../components/utils/Slogan.astro";
 import GoogleMap from '../../../components/pages/contacts/GoogleMap.astro';
+import LocalBusinessSchema from "../../../components/seo/LocalBusinessSchema.astro";
 
 const apiKey = import.meta.env.PUBLIC_Maps_KEY;
 ---
 
 <Layout seoKey="contacts">
-
+  <!-- Local Business Schema for contacts page -->
+  <LocalBusinessSchema />
+  
   <div class="sbm-section w-screen flex flex-col mt-[160px] text-midnight" id="about-us-wrapper">
     <div class="w-full py-8 text-3xl"> 
       <h1 class="text-5xl text-midnight text-center md:text-left">{tr("contact.title")}</h1>
