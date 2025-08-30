@@ -331,6 +331,21 @@ export const pageLabels = {
     "sustainability.privacyPolicy.description": "Le modalità di raccolta, trattamento e protezione dei dati personali in conformità al GDPR.",
     "sustainability.cookiesPolicy.title": "Cookies Policy",
     "sustainability.cookiesPolicy.description": "Informazioni dettagliate sull'utilizzo dei cookies e tecnologie simili sul nostro sito web.",
+
+    // Alt text per immagini
+    "alt.hero": "Tecnologie sanitarie SBM - Moderne attrezzature mediche e strumenti di laboratorio",
+    "alt.footer.curve": "Design decorativo curvo del footer SBM",
+    "alt.footer.logo": "Logo SBM bianco - Il tuo partner per la salute",
+    "alt.about.entrance": "Ingresso sede SBM - Edificio moderno nell'Area Industriale di Lecce",
+    "alt.about.meeting": "Sala riunioni SBM con tavolo moderno e illuminazione professionale",
+    "alt.about.office1": "Ufficio moderno SBM con arredamento ergonomico",
+    "alt.about.waiting": "Area attesa SBM con poltrone direzionali confortevoli",
+    "alt.about.exterior": "Vista esterna edificio SBM con insegna aziendale e parcheggio",
+    "alt.about.pen": "Dettaglio professionale di penna elegante che rappresenta la precisione SBM",
+    "alt.about.office2": "Ufficio direzionale SBM dal design contemporaneo e atmosfera professionale",
+    "alt.services.training": "Formazione specialistica SBM - Corsi professionali e training medico",
+    "alt.services.consultancy": "Consulenza tecnica SBM - Assistenza specializzata e supporto professionale",
+    "alt.services.distribution": "Distribuzione e logistica SBM - Gestione efficace prodotti medicali",
   },
   en: {
     // Products Page
@@ -437,5 +452,20 @@ export const pageLabels = {
     "sustainability.privacyPolicy.description": "The methods of collection, processing and protection of personal data in compliance with GDPR.",
     "sustainability.cookiesPolicy.title": "Cookies Policy",
     "sustainability.cookiesPolicy.description": "Detailed information on the use of cookies and similar technologies on our website.",
+
+    // Alt text for images
+    "alt.hero": "SBM healthcare technologies - Modern medical equipment and laboratory instruments",
+    "alt.footer.curve": "SBM footer decorative curve design",
+    "alt.footer.logo": "SBM logo white - Your health partner",
+    "alt.about.entrance": "SBM headquarters entrance - Modern office building in Lecce Industrial Area",
+    "alt.about.meeting": "SBM conference room with modern meeting table and professional lighting",
+    "alt.about.office1": "SBM modern office workspace with ergonomic furniture",
+    "alt.about.waiting": "SBM waiting area with comfortable executive chairs",
+    "alt.about.exterior": "SBM building exterior view showing company signage and parking area",
+    "alt.about.pen": "Professional detail of elegant pen on desk representing SBM business precision",
+    "alt.about.office2": "SBM executive office with contemporary design and professional atmosphere",
+    "alt.services.training": "SBM specialized training - Professional courses and medical training programs",
+    "alt.services.consultancy": "SBM technical consultancy - Specialized assistance and professional support",
+    "alt.services.distribution": "SBM distribution and logistics - Efficient medical products management",
   },
 };

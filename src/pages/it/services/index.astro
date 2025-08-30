@@ -30,7 +30,7 @@ import SbmDistribuzione from "../../../assets/images/services/distribuzione_logi
         <p class="py-4" set:html={tr("services.training").replace(/\n/g, '<p class="py-4">')} />
       </div>
       <div class="w-full lg:w-1/4 flex justify-center">
-        <Image src={SbmFormazione} alt="Sbm Formazione" format="webp" quality={"mid"} loading="eager"/>
+        <Image src={SbmFormazione} alt={tr("alt.services.training")} format="webp" quality={"mid"} loading="eager"/>
       </div>
     </div>
     <div class="w-full py-8 text-3xl"> 
@@ -41,7 +41,7 @@ import SbmDistribuzione from "../../../assets/images/services/distribuzione_logi
         <p class="py-4" set:html={tr("services.consultancy").replace(/\n/g, '<p class="py-4">')} />
       </div>
       <div class="w-full lg:w-1/4 lg:order-1 flex justify-center">
-        <Image src={SbmConsulenza} alt="Sbm Consulenza" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmConsulenza} alt={tr("alt.services.consultancy")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <div class="w-full py-8 text-3xl"> 
@@ -52,7 +52,7 @@ import SbmDistribuzione from "../../../assets/images/services/distribuzione_logi
         <p class="py-4" set:html={tr("services.distribution").replace(/\n/g, '<p class="py-4">')} />
       </div>
       <div class="w-full lg:w-1/4 flex justify-center">
-        <Image src={SbmDistribuzione} alt="Sbm Distribuzione" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmDistribuzione} alt={tr("alt.services.distribution")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <Slogan />

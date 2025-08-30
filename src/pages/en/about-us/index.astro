@@ -33,7 +33,7 @@ import SbmPoltrone from "../../../assets/images/about-us/sbm-poltrone.jpg";
         <p class="py-4" set:html={tr("about.mission.description").replace(/\n/g, '<p>')} />
       </div>
       <div class="w-full lg:w-2/3">
-        <Image src={SbmIngresso} alt="Sbm Ingresso Esterno" format="webp" quality={"mid"} loading="eager"/>
+        <Image src={SbmIngresso} alt={tr("alt.about.entrance")} format="webp" quality={"mid"} loading="eager"/>
       </div>
     </div>
     <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
@@ -41,7 +41,7 @@ import SbmPoltrone from "../../../assets/images/about-us/sbm-poltrone.jpg";
         <p class="py-4" set:html={tr("about.success").replace(/\n/g, '<p>')} />
       </div>
       <div class="w-full lg:w-2/3 lg:order-1">
-        <Image src={SbmRiunioni} alt="Sbm Sala Riunioni" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmRiunioni} alt={tr("alt.about.meeting")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
@@ -49,7 +49,7 @@ import SbmPoltrone from "../../../assets/images/about-us/sbm-poltrone.jpg";
         <p class="py-4" set:html={tr("about.lastText").replace(/\n/g, '<p class="py-4">')} />
       </div>
       <div class="w-full lg:w-2/3">
-        <Image src={SbmUfficio4} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmUfficio4} alt={tr("alt.about.office1")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
@@ -59,18 +59,18 @@ import SbmPoltrone from "../../../assets/images/about-us/sbm-poltrone.jpg";
     </div>
     <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
       <div class="w-full lg:w-1/2">
-        <Image src={SbmPoltrone} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmPoltrone} alt={tr("alt.about.waiting")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
       <div class="w-full lg:w-1/2">
-        <Image src={SbmEsterno} alt="Sbm Esterno" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmEsterno} alt={tr("alt.about.exterior")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <div class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl">
       <div class="w-full lg:w-1/2">
-        <Image src={SbmPencil} alt="Sbm Dettaglio Penna" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmPencil} alt={tr("alt.about.pen")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
       <div class="w-full lg:w-1/2">
-        <Image src={SbmUfficio6} alt="Sbm Ufficio" format="webp" quality={"mid"} loading="lazy"/>
+        <Image src={SbmUfficio6} alt={tr("alt.about.office2")} format="webp" quality={"mid"} loading="lazy"/>
       </div>
     </div>
     <Slogan />

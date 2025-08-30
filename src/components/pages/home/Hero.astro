@@ -2,12 +2,17 @@
 // import images
 import { Image } from "astro:assets";
 import HeroImg from "../../../assets/images/slide_1.webp";
+
+// import language files
+import { useTranslations } from "../../../i18n/utils.ts";
+const currentLang = Astro.currentLocale || "it";
+const tr = useTranslations(currentLang);
 ---
 
 <section id="hero" class="-z-100 relative flex-1 mt-[120px] w-screen px-8 md:px-12 lg:px-47">
   <Image
     src={HeroImg}
-    alt="Hero sbm"
+    alt={tr("alt.hero")}
     format="webp"
     quality={"mid"}
     loading="eager"
