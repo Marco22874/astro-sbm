@@ -35,6 +35,20 @@ export default defineConfig({
       filter: (page) =>
         page !== "https://sbmsrl.it/it/backend/" &&
         page !== "https://sbmsrl.it/en/backend/",
+      customPages: [
+        // Aggiungi pagine personalizzate se necessario
+      ],
+      serialize(item) {
+        // Aggiungi lastmod per le news basato sulla data di pubblicazione
+        if (item.url.includes('/news/')) {
+          return {
+            ...item,
+            // Le news hanno data nella loro struttura, per ora usiamo la data corrente
+            lastmod: new Date().toISOString(),
+          };
+        }
+        return item;
+      },
     }),
   ],
 });
