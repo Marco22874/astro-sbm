@@ -6,12 +6,12 @@ export const languages = {
 export const seo = {
   it: {
     home: {
-      title: "SBM - Il tuo partner per la salute",
+      title: "SBM your health partner",
       description: "SBM è un'azienda leader nelle tecnologie sanitarie con oltre 20 anni di esperienza. Dispositivi medici e soluzioni innovative per ospedali e strutture sanitarie in tutta Italia.",
       keywords: "SBM, dispositivi medici, tecnologie sanitarie, Lecce, salute, partner sanitario, apparecchiature mediche"
     },
     aboutUs: {
-      title: "Chi Siamo | SBM - Il tuo partner per la salute",
+      title: "Chi Siamo | SBM your health partner",
       description: "Fondata nel 2001 a Lecce, SBM Srl è cresciuta da realtà locale a punto di riferimento nazionale nel settore biomedicale. Scopri la nostra missione e i nostri valori.",
       keywords: "SBM, chi siamo, azienda biomedicale, Lecce, storia aziendale, missione, tecnologie sanitarie"
     },
@@ -21,22 +21,22 @@ export const seo = {
       keywords: "prodotti medici, dispositivi medici, BD, Boston Scientific, Resorba, HEKA, urologia, chirurgia, cardiologia"
     },
     services: {
-      title: "Servizi | SBM - Il tuo partner per la salute",
+      title: "Servizi | SBM your health partner",
       description: "Formazione specialistica, distribuzione, logistica e assistenza tecnica. SBM offre servizi completi post-vendita per il settore sanitario in tutta Italia.",
       keywords: "servizi medici, formazione sanitaria, distribuzione dispositivi medici, assistenza tecnica, logistica sanitaria"
     },
     contacts: {
-      title: "Contatti | SBM - Il tuo partner per la salute",
+      title: "Contatti | SBM your health partner",
       description: "Contatta SBM per informazioni sui nostri prodotti e servizi. Sede a Lecce, Viale Finlandia 1. Telefono, email e modulo contatti disponibili.",
       keywords: "contatti SBM, Lecce, Viale Finlandia, telefono, email, informazioni, dispositivi medici"
     },
     news: {
-      title: "News | SBM - Il tuo partner per la salute",
+      title: "News | SBM your health partner",
       description: "Rimani aggiornato sulle ultime novità di SBM, nuovi prodotti, eventi del settore sanitario e innovazioni nelle tecnologie mediche.",
       keywords: "news SBM, notizie sanitarie, novità dispositivi medici, eventi medici, aggiornamenti tecnologie sanitarie"
     },
     sustainability: {
-      title: "Sostenibilità | SBM - Il tuo partner per la salute",
+      title: "Sostenibilità | SBM your health partner",
       description: "I documenti fondamentali di SBM: Codice Etico, Politica Aziendale, Privacy Policy e Cookies Policy. Il nostro impegno per etica e trasparenza.",
       keywords: "sostenibilità, codice etico, politica aziendale, privacy policy, cookies policy, trasparenza, etica aziendale"
     },
@@ -53,12 +53,12 @@ export const seo = {
   },
   en: {
     home: {
-      title: "SBM - Your Health Partner",
+      title: "SBM your health partner",
       description: "SBM is a leading company in healthcare technologies with over 20 years of experience. Medical devices and innovative solutions for hospitals and healthcare facilities throughout Italy.",
       keywords: "SBM, medical devices, healthcare technologies, Lecce, health, healthcare partner, medical equipment"
     },
     aboutUs: {
-      title: "About Us | SBM - Your Health Partner",
+      title: "About Us | SBM your health partner",
       description: "Founded in 2001 in Lecce, SBM Srl has grown from a local business to a national reference point in the biomedical sector. Discover our mission and values.",
       keywords: "SBM, about us, biomedical company, Lecce, company history, mission, healthcare technologies"
     },
@@ -73,17 +73,17 @@ export const seo = {
       keywords: "medical services, healthcare training, medical device distribution, technical assistance, healthcare logistics"
     },
     contacts: {
-      title: "Contact Us | SBM - Your Health Partner", 
+      title: "Contact Us | SBM your health partner", 
       description: "Contact SBM for information about our products and services. Headquarters in Lecce, Viale Finlandia 1. Phone, email and contact form available.",
       keywords: "contact SBM, Lecce, Viale Finlandia, phone, email, information, medical devices"
     },
     news: {
-      title: "News | SBM - Your Health Partner",
+      title: "News | SBM your health partner",
       description: "Stay updated on the latest SBM news, new products, healthcare industry events and innovations in medical technologies.",
       keywords: "SBM news, healthcare news, medical device updates, medical events, healthcare technology updates"
     },
     sustainability: {
-      title: "Sustainability | SBM - Your Health Partner",
+      title: "Sustainability | SBM your health partner",
       description: "SBM's fundamental documents: Code of Ethics, Business Policy, Privacy Policy and Cookies Policy. Our commitment to ethics and transparency.",
       keywords: "sustainability, code of ethics, business policy, privacy policy, cookies policy, transparency, corporate ethics"
     },
