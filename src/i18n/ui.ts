@@ -322,6 +322,7 @@ export const pageLabels = {
     // Pagina Sustainability
     "sustainability.title": "Sostenibilità",
     "sustainability.intro": "SBM si impegna a operare secondo i più alti standard di etica e trasparenza. Questa sezione raccoglie tutti i documenti fondamentali che guidano le nostre attività e definiscono i nostri principi di condotta aziendale.",
+    "sustainability.sections.title": "I Nostri Documenti",
     "sustainability.businessPolicy.title": "Politica Aziendale",
     "sustainability.businessPolicy.description": "Il documento che definisce i principi, gli obiettivi e le linee guida strategiche che orientano tutte le attività di SBM.",
     "sustainability.ethicsCode.title": "Codice Etico",
@@ -427,6 +428,7 @@ export const pageLabels = {
     // Sustainability Page
     "sustainability.title": "Sustainability",
     "sustainability.intro": "SBM is committed to operating according to the highest standards of ethics and transparency. This section brings together all the fundamental documents that guide our activities and define our principles of corporate conduct.",
+    "sustainability.sections.title": "Our Documents",
     "sustainability.businessPolicy.title": "Business Policy",
     "sustainability.businessPolicy.description": "The document that defines the principles, objectives and strategic guidelines that guide all SBM activities.",
     "sustainability.ethicsCode.title": "Code of Ethics",
