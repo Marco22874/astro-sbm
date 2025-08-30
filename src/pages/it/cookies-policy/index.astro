@@ -1,0 +1,67 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+// import components
+import Slogan from "../../../components/utils/Slogan.astro";
+
+// import languages
+import { useTranslations } from "../../../i18n/utils.ts";
+const currentLang = Astro.currentLocale;
+const tr = useTranslations(currentLang);
+const layoutTitle = `SBM - ${tr("cookies.title")}`;
+---
+
+<Layout title={layoutTitle}>
+  <div
+    class="sbm-section w-screen flex flex-col mt-[160px] text-midnight"
+    id="cookies-policy-wrapper"
+  >
+    <div class="w-full py-8">
+      <h1 class="text-5xl text-midnight text-center md:text-left">
+        {tr("cookies.title")}
+      </h1>
+      <p class="my-8 text-lg text-center md:text-left text-gray-600">
+        {tr("cookies.lastUpdate")}
+      </p>
+    </div>
+    
+    <div class="w-full py-8 flex flex-col gap-y-8 text-lg leading-relaxed">
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("cookies.introduction.title")}
+        </h2>
+        <p set:html={tr("cookies.introduction.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("cookies.whatAre.title")}
+        </h2>
+        <p set:html={tr("cookies.whatAre.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("cookies.types.title")}
+        </h2>
+        <p set:html={tr("cookies.types.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("cookies.management.title")}
+        </h2>
+        <p set:html={tr("cookies.management.content").replace(/\n/g, "<br>")} />
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-4 text-midnight">
+          {tr("cookies.contact.title")}
+        </h2>
+        <p set:html={tr("cookies.contact.content").replace(/\n/g, "<br>")} />
+      </section>
+    </div>
+
+    <Slogan />
+  </div>
+</Layout>
