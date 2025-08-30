@@ -61,6 +61,15 @@ const tr = useTranslations(currentLang as keyof typeof languages);
     <li class="w-full group">
       <a
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
+        href={getRelativeLocaleUrl(currentLang, "/sustainability")}
+      >
+        {tr("nav.sustainability")}
+      </a>
+      <hr class="stylenav-white" />
+    </li>
+    <li class="w-full group">
+      <a
+        class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/contacts")}
       >
         {tr("nav.contacts")}

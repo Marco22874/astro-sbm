@@ -9,6 +9,7 @@ export const labels = {
     "nav.services": "Servizi",
     "nav.news": "News",
     "nav.about-us": "Chi Siamo",
+    "nav.sustainability": "Sostenibilità",
     "nav.contacts": "Contatti",
     "nav.backend": "Area Riservata",
     "company.address": "Viale Finlandia, 1 Zona Ind.le LECCE",
@@ -70,6 +71,7 @@ export const labels = {
     "nav.services": "Services",
     "nav.news": "News",
     "nav.about-us": "About Us",
+    "nav.sustainability": "Sustainability",
     "nav.contacts": "Contacts",
     "nav.backend": "Reserved Area",
     "company.address": "Finlandia Avenue, 1 Industrial Area, LECCE",
@@ -222,6 +224,15 @@ export const pageLabels = {
 
     // Pagina Sustainability
     "sustainability.title": "Sostenibilità",
+    "sustainability.intro": "SBM si impegna a operare secondo i più alti standard di etica e trasparenza. Questa sezione raccoglie tutti i documenti fondamentali che guidano le nostre attività e definiscono i nostri principi di condotta aziendale.",
+    "sustainability.businessPolicy.title": "Politica Aziendale",
+    "sustainability.businessPolicy.description": "Il documento che definisce i principi, gli obiettivi e le linee guida strategiche che orientano tutte le attività di SBM.",
+    "sustainability.ethicsCode.title": "Codice Etico",
+    "sustainability.ethicsCode.description": "I valori e i principi etici che guidano il comportamento di tutti i collaboratori e stakeholder di SBM.",
+    "sustainability.privacyPolicy.title": "Privacy Policy",
+    "sustainability.privacyPolicy.description": "Le modalità di raccolta, trattamento e protezione dei dati personali in conformità al GDPR.",
+    "sustainability.cookiesPolicy.title": "Cookies Policy",
+    "sustainability.cookiesPolicy.description": "Informazioni dettagliate sull'utilizzo dei cookies e tecnologie simili sul nostro sito web.",
   },
   en: {
     // Products Page
@@ -318,5 +329,14 @@ export const pageLabels = {
 
     // Sustainability Page
     "sustainability.title": "Sustainability",
+    "sustainability.intro": "SBM is committed to operating according to the highest standards of ethics and transparency. This section brings together all the fundamental documents that guide our activities and define our principles of corporate conduct.",
+    "sustainability.businessPolicy.title": "Business Policy",
+    "sustainability.businessPolicy.description": "The document that defines the principles, objectives and strategic guidelines that guide all SBM activities.",
+    "sustainability.ethicsCode.title": "Code of Ethics",
+    "sustainability.ethicsCode.description": "The values and ethical principles that guide the behavior of all SBM employees and stakeholders.",
+    "sustainability.privacyPolicy.title": "Privacy Policy",
+    "sustainability.privacyPolicy.description": "The methods of collection, processing and protection of personal data in compliance with GDPR.",
+    "sustainability.cookiesPolicy.title": "Cookies Policy",
+    "sustainability.cookiesPolicy.description": "Detailed information on the use of cookies and similar technologies on our website.",
   },
 };

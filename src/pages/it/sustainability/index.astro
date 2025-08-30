@@ -6,145 +6,114 @@ import Slogan from "../../../components/utils/Slogan.astro";
 
 // import languages
 import { useTranslations } from "../../../i18n/utils.ts";
-const currentLang = Astro.currentLocale;
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang);
 const layoutTitle = `SBM - ${tr("sustainability.title")}`;
-
-// import images
-import { Image } from "astro:assets";
-
-import SbmEsterno from "../../../assets/images/about-us/sbm-esterno.jpg";
-import SbmIngresso from "../../../assets/images/about-us/sbm-ingresso.jpg";
-import SbmRiunioni from "../../../assets/images/about-us/sbm-riunioni.jpg";
-import SbmUfficio2 from "../../../assets/images/about-us/sbm-ufficio2.jpg";
-import SbmUfficio4 from "../../../assets/images/about-us/sbm-ufficio4.jpg";
-import SbmPencil from "../../../assets/images/about-us/sbm-pencil.jpg";
-import SbmUfficio6 from "../../../assets/images/about-us/sbm-ufficio6.jpg";
-import SbmPoltrone from "../../../assets/images/about-us/sbm-poltrone.jpg";
 ---
 
 <Layout title={layoutTitle}>
   <div
     class="sbm-section w-screen flex flex-col mt-[160px] text-midnight"
-    id="about-us-wrapper"
+    id="sustainability-wrapper"
   >
+    <!-- Header Section -->
     <div class="w-full py-8">
       <h1 class="text-5xl text-midnight text-center md:text-left">
         {tr("sustainability.title")}
       </h1>
       <p
-        class="my-8 text-3xl text-center md:text-left"
-        set:html={tr("about.intro").replace(/\n/g, "<br>")}
+        class="my-8 text-xl text-center md:text-left"
+        set:html={tr("sustainability.intro")}
       />
     </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full lg:w-1/3">
-        <p
-          class="py-4"
-          set:html={tr("about.mission.description").replace(/\n/g, "<p>")}
-        />
-      </div>
-      <div class="w-full lg:w-2/3">
-        <Image
-          src={SbmIngresso}
-          alt="Sbm Ingresso Esterno"
-          format="webp"
-          quality={"mid"}
-          loading="eager"
-        />
-      </div>
-    </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full lg:w-1/3 lg:order-2">
-        <p class="py-4" set:html={tr("about.success").replace(/\n/g, "<p>")} />
-      </div>
-      <div class="w-full lg:w-2/3 lg:order-1">
-        <Image
-          src={SbmRiunioni}
-          alt="Sbm Sala Riunioni"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
-      </div>
-    </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full lg:w-1/3">
-        <p
-          class="py-4"
-          set:html={tr("about.lastText").replace(/\n/g, '<p class="py-4">')}
-        />
-      </div>
-      <div class="w-full lg:w-2/3">
-        <Image
-          src={SbmUfficio4}
-          alt="Sbm Ufficio"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
-      </div>
-    </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full">
-        <p
-          class="py-4"
-          set:html={tr("about.end").replace(/\n/g, '<p class="py-4">')}
-        />
-      </div>
-    </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={SbmPoltrone}
-          alt="Sbm Ufficio"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
-      </div>
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={SbmEsterno}
-          alt="Sbm Esterno"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
-      </div>
-    </div>
-    <div
-      class="w-full py-8 flex flex-col items-center justify-center text-xl gap-y-4 lg:flex-row lg:gap-x-8 lg:items-start 2xl:text-3xl"
-    >
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={SbmPencil}
-          alt="Sbm Dettaglio Penna"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
-      </div>
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={SbmUfficio6}
-          alt="Sbm Ufficio"
-          format="webp"
-          quality={"mid"}
-          loading="lazy"
-        />
+
+    <!-- 4 Cards Grid -->
+    <div class="w-full py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Politica Aziendale Card -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-bold text-midnight mb-4">
+            {tr("sustainability.businessPolicy.title")}
+          </h3>
+          <p class="text-gray-600 mb-6">
+            {tr("sustainability.businessPolicy.description")}
+          </p>
+          <a
+            href="/documents/02_Politica aziendale rev.2 SBM S.r.l. 05.06.2025.pdf"
+            target="_blank"
+            class="inline-flex items-center px-6 py-3 bg-midnight text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Scarica PDF
+          </a>
+        </div>
+
+        <!-- Codice Etico Card -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-bold text-midnight mb-4">
+            {tr("sustainability.ethicsCode.title")}
+          </h3>
+          <p class="text-gray-600 mb-6">
+            {tr("sustainability.ethicsCode.description")}
+          </p>
+          <a
+            href="/documents/01_Codice etico rev.7 SBM S.r.l. 05.06.2025-1.pdf"
+            target="_blank"
+            class="inline-flex items-center px-6 py-3 bg-midnight text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Scarica PDF
+          </a>
+        </div>
+
+        <!-- Privacy Policy Card -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-bold text-midnight mb-4">
+            {tr("sustainability.privacyPolicy.title")}
+          </h3>
+          <p class="text-gray-600 mb-6">
+            {tr("sustainability.privacyPolicy.description")}
+          </p>
+          <a
+            href={getRelativeLocaleUrl(currentLang, "/privacy-policy")}
+            class="inline-flex items-center px-6 py-3 bg-midnight text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Leggi Online
+          </a>
+        </div>
+
+        <!-- Cookies Policy Card -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+          <h3 class="text-2xl font-bold text-midnight mb-4">
+            {tr("sustainability.cookiesPolicy.title")}
+          </h3>
+          <p class="text-gray-600 mb-6">
+            {tr("sustainability.cookiesPolicy.description")}
+          </p>
+          <a
+            href={getRelativeLocaleUrl(currentLang, "/cookies-policy")}
+            class="inline-flex items-center px-6 py-3 bg-midnight text-white font-medium rounded-lg hover:bg-blue-800 transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Leggi Online
+          </a>
+        </div>
+
       </div>
     </div>
+
     <Slogan />
   </div>
 </Layout>
