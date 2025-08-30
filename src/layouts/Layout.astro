@@ -13,6 +13,7 @@ import Analytics from '@vercel/analytics/astro'
 import { useSEO } from "../i18n/utils";
 // import Schema components
 import OrganizationSchema from "../components/seo/OrganizationSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 
 interface Props {
   title?: string;
@@ -113,6 +114,7 @@ const enUrl = generateHreflangUrl('en', currentPath);
     
     <!-- Schema Markup -->
     <OrganizationSchema />
+    <BreadcrumbSchema currentLang={currentLang as 'it' | 'en'} />
     
     <ClientRouter />
   </head>

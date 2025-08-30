@@ -1,0 +1,99 @@
+---
+import { useTranslations } from '../../i18n/utils.ts';
+
+interface Props {
+  currentLang?: 'it' | 'en';
+  customPath?: Array<{name: string, url: string}>;
+}
+
+const { currentLang = 'it', customPath } = Astro.props;
+const tr = useTranslations(currentLang);
+
+const currentUrl = new URL(Astro.request.url);
+const baseUrl = currentUrl.origin;
+const pathname = currentUrl.pathname;
+
+// Build breadcrumb items dynamically
+let breadcrumbItems: Array<{name: string, url: string}> = [];
+
+// Always start with Home
+breadcrumbItems.push({
+  name: currentLang === 'it' ? 'Home' : 'Home',
+  url: currentLang === 'it' ? `${baseUrl}/it/` : `${baseUrl}/en/`
+});
+
+// If custom path provided, use that
+if (customPath) {
+  breadcrumbItems = [...breadcrumbItems, ...customPath];
+} else {
+  // Auto-detect from pathname
+  const pathSegments = pathname.split('/').filter(Boolean);
+  
+  // Remove language prefix
+  const segments = pathSegments.slice(1); // Remove 'it' or 'en'
+  
+  for (let i = 0; i < segments.length; i++) {
+    const segment = segments[i];
+    let name = '';
+    let url = `${baseUrl}/${pathSegments.slice(0, i + 2).join('/')}/`;
+    
+    // Map URL segments to readable names
+    switch (segment) {
+      case 'about-us':
+        name = tr('nav.about-us');
+        break;
+      case 'products':
+        name = tr('nav.products');
+        break;
+      case 'services':
+        name = tr('nav.services');
+        break;
+      case 'contacts':
+        name = tr('nav.contacts');
+        break;
+      case 'news':
+        name = tr('nav.news');
+        break;
+      case 'sustainability':
+        name = tr('nav.sustainability');
+        break;
+      case 'privacy-policy':
+        name = currentLang === 'it' ? 'Privacy Policy' : 'Privacy Policy';
+        break;
+      case 'cookies-policy':
+        name = currentLang === 'it' ? 'Cookies Policy' : 'Cookies Policy';
+        break;
+      case 'backend':
+        name = tr('nav.backend');
+        break;
+      default:
+        // For pagination or article titles, try to make it readable
+        if (!isNaN(Number(segment))) {
+          name = currentLang === 'it' ? `Pagina ${segment}` : `Page ${segment}`;
+        } else {
+          // Capitalize and replace hyphens with spaces for article slugs
+          name = segment.split('-').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+          ).join(' ');
+        }
+        break;
+    }
+    
+    breadcrumbItems.push({ name, url });
+  }
+}
+
+// Generate Schema.org BreadcrumbList
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
