@@ -1,0 +1,28 @@
+{
+  "name": "SBM your health partner",
+  "short_name": "SBM",
+  "description": "Tecnologie sanitarie avanzate per l'eccellenza medica. Oltre 20 anni di esperienza nel settore biomedicale.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/it/",
+  "display": "standalone",
+  "theme_color": "#1d4ed8",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["medical", "healthcare", "business"],
+  "lang": "it",
+  "dir": "ltr"
+}
