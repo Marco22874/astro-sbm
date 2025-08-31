@@ -1,10 +1,33 @@
-# public/robots.txt
+# robots.txt ottimizzato per SBM your health partner
+# https://sbmsrl.it
 
+# User-agent globale
 User-agent: *
 
+# Crawl delay per ridurre il carico del server
+Crawl-delay: 1
+
 # ---- Esclusioni ----
+# Pagine backend amministrative
 Disallow: /it/backend/
 Disallow: /en/backend/
 
-# ---- Posizione della Sitemap ----
+# File e cartelle di sistema (se presenti)
+Disallow: /_astro/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# ---- Configurazioni specifiche per crawler ----
+# Googlebot - nessuna restrizione aggiuntiva
+User-agent: Googlebot
+Crawl-delay: 0.5
+
+# Bingbot
+User-agent: Bingbot
+Crawl-delay: 1
+
+# ---- Host canonico ----
+Host: sbmsrl.it
+
+# ---- Sitemap ----
 Sitemap: https://sbmsrl.it/sitemap-index.xml
