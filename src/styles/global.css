@@ -93,32 +93,3 @@
   display: inline-block !important; /* Usiamo !important per massima priorità iniziale */
   white-space: nowrap !important; /* Usiamo !important per massima priorità iniziale */
 }
-
-/* Nasconde messaggi di redirect di Astro */
-[data-astro-transition-scope] {
-  color: white !important;
-}
-
-.astro-redirect-message,
-[data-astro-redirect] {
-  color: white !important;
-  opacity: 0 !important;
-}
-
-/* CSS più aggressivo per nascondere tutti i messaggi di transizione */
-* {
-  &:contains("redirecting") {
-    color: white !important;
-    text-decoration: none !important;
-    opacity: 0 !important;
-  }
-}
-
-/* Nasconde elementi con testi di redirect specifici */
-body *:not(script):not(style) {
-  &:has-text("redirecting") {
-    color: white !important;
-    text-decoration: none !important;
-    visibility: hidden !important;
-  }
-}
