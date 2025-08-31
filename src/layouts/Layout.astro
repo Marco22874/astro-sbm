@@ -119,12 +119,10 @@ const enUrl = generateHreflangUrl('en', currentPath);
     <OrganizationSchema />
     <BreadcrumbSchema currentLang={currentLang as 'it' | 'en'} />
     
-    <!-- Google Analytics 4 - Controlled by cookie consent -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0M7ZH7S50"></script>
+    <!-- Google Analytics 4 - Base setup (script loaded only after consent) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
       
       // Initially disable GA until consent is given
       window[`ga-disable-G-T0M7ZH7S50`] = true;

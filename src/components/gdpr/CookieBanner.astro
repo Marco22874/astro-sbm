@@ -211,17 +211,30 @@ const cookiePolicyUrl = currentLang === 'it' ? '/it/cookies-policy' : '/en/cooki
     return null;
   }
 
-  // Initialize Google Analytics based on consent
-  function initializeGA() {
-    if (typeof gtag !== 'undefined') {
-      gtag('config', 'G-T0M7ZH7S50', {
-        page_title: document.title,
-        page_location: window.location.href,
-        anonymize_ip: true,
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false
-      });
-    }
+  // Load and initialize Google Analytics 4
+  function loadAndInitializeGA() {
+    // Enable GA first
+    (window as any)[`ga-disable-G-T0M7ZH7S50`] = false;
+    
+    // Create and load the GA script dynamically
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T0M7ZH7S50';
+    document.head.appendChild(gaScript);
+    
+    // Initialize when script loads
+    gaScript.onload = function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('js', new Date());
+        gtag('config', 'G-T0M7ZH7S50', {
+          page_title: document.title,
+          page_location: window.location.href,
+          anonymize_ip: true,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+      }
+    };
   }
 
   // Disable Google Analytics
@@ -248,7 +261,7 @@ const cookiePolicyUrl = currentLang === 'it' ? '/it/cookies-policy' : '/en/cooki
   function handleAcceptAll() {
     setCookie('cookie-consent', 'all', 365);
     localStorage.setItem('cookie-consent', 'all');
-    initializeGA();
+    loadAndInitializeGA();
     hideBanner();
   }
 
@@ -268,8 +281,8 @@ const cookiePolicyUrl = currentLang === 'it' ? '/it/cookies-policy' : '/en/cooki
       disableGA();
       showBanner();
     } else if (consent === 'all') {
-      // All cookies accepted, initialize GA
-      initializeGA();
+      // All cookies accepted, load and initialize GA
+      loadAndInitializeGA();
     } else {
       // Only necessary cookies, disable GA
       disableGA();

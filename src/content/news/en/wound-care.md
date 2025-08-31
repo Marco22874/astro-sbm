@@ -4,7 +4,7 @@ description: "Visto l’incremento dell’età avanzata e della comparsa di pato
 pubDate: "2025-04-03"
 image: "./../../../assets/images/news/wound care.png"
 imageAlt: "Wound Care, dal mito allintelligenza artificiale"
-categories: ["ricerca", "diagnostica"]
+categories: ["research", "diagnostics"]
 pinned: true
 ---
 

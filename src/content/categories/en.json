@@ -1,14 +1,18 @@
 [
   {
     "title": "Scientific Research",
-    "slug": "ricerca"
+    "slug": "research"
   },
   {
-    "title": "Medical Technology",
-    "slug": "tecnologia"
+    "title": "Medical Technology", 
+    "slug": "technology"
+  },
+  {
+    "title": "Advanced Diagnostics",
+    "slug": "diagnostics"
   },
   {
     "title": "Prevention",
-    "slug": "prevenzione"
+    "slug": "prevention"
   }
 ]
