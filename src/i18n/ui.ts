@@ -173,7 +173,7 @@ export const labels = {
     "nav.backend": "Reserved Area",
     "company.address": "Finlandia Avenue, 1 Industrial Area, LECCE",
     "company.vat": "VAT Number IT 03518350750",
-    "company.reg": "Registered at Chamber of Commerce of Lecce No. 22675",
+    "company.reg": "Lecce Chamber of Commerce, R.E.A. No. 22675",
     "company.capital": "Share Capital € 100.000,00",
     "company.office": "Office",
     cert: "Certifications",
