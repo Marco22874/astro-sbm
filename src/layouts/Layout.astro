@@ -131,13 +131,16 @@ const enUrl = generateHreflangUrl('en', currentPath);
     <ClientRouter />
   </head>
   <body class="m-0 w-full h-dvh font-Acumin">
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
     <div
       id="container"
       class="flex flex-col items-center border-0 min-h-screen overflow-x-hidden"
     >
       <TopHeader />
       <Header />
-      <slot />
+      <main id="main-content">
+        <slot />
+      </main>
       <Footer />
       <CookieBanner currentLang={currentLang as 'it' | 'en'} />
     </div>
