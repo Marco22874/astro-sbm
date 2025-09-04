@@ -87,7 +87,7 @@ if (filteredSortedNews.length > 0) {
 )}
 
 {!fetchError && pinnedNews.length > 0 ? ( 
-  <div class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[188px] xl:border-b-[188px] border-white bg-transparent">
+  <div class="w-full mt-[15px] border-x-[32px] border-b-[32px] md:border-x-[48px] md:border-b-[48px] xl:border-x-[48px] xl:border-b-[48px] 2xl:border-x-[120px] 2xl:border-b-[120px] border-white bg-transparent">
     <section id="horizontal-news" class="bg-white text-midnight flex overflow-hidden w-full flex-no-wrap">
       {pinnedNews.map((news) => (
         <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center" data-slug={news.slug}>

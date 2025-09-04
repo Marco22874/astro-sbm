@@ -93,14 +93,16 @@ a:focus-visible,
 }
 
 .sbm-section {
-  @apply flex justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;
+  @apply flex justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-12 2xl:px-16;
 }
 .sbm-h-section {
-  @apply flex flex-col justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-47;
+  @apply flex flex-col justify-between items-center gap-8 md:gap-4 px-8 md:px-12 xl:px-12 2xl:px-16;
 }
 
 #horizontal-sliders {
-  @apply flex flex-nowrap w-[2500px] overflow-x-hidden justify-between items-center;
+  @apply flex flex-nowrap overflow-x-auto overflow-y-hidden justify-start items-center;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .text-10xl {
@@ -160,4 +162,18 @@ a:focus-visible,
 .word-wrapper {
   display: inline-block !important; /* Usiamo !important per massima priorità iniziale */
   white-space: nowrap !important; /* Usiamo !important per massima priorità iniziale */
+}
+
+/* WCAG 2.1 AA - Criterio 1.4.10 Reflow: Garantisce no scroll orizzontale al 200% zoom */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container, #container {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
