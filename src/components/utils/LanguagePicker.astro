@@ -55,6 +55,8 @@ Object.keys(languages).forEach(lang => {
 ---
 
 <ul
+  role="list"
+  aria-label="Selettore lingua"
   class="flex gap-4 w-[60px] 2xl:w-[40px] items-center justify-center xl:justify-start"
 >
   {
@@ -62,10 +64,13 @@ Object.keys(languages).forEach(lang => {
       if (lang !== currentLang) {
         const targetUrl = alternateLinks[lang]
         return (
-          <li class="toggle-list-item list-none px-2">
+          <li class="toggle-list-item list-none px-2" role="listitem">
             <a
               href={targetUrl}
-              class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer rounded-full"
+              role="button"
+              aria-label={`Cambia lingua in ${label}`}
+              tabindex="0"
+              class="w-[28px] h-[28px] bg-midnight/10 border border-midnight text-midnight text-sm flex items-center justify-center cursor-pointer rounded-full focus:outline-none focus:ring-2 focus:ring-sbm-purple focus:ring-offset-2"
             >
               {label}
             </a>
@@ -79,18 +84,43 @@ Object.keys(languages).forEach(lang => {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const listItems = document.querySelectorAll(".toggle-list-item");
+    const languageLinks = document.querySelectorAll(".toggle-list-item a");
 
+    // Funzione per gestire il toggle della visibilità
+    function toggleVisibility(targetItem) {
+      listItems.forEach((el) => {
+        if (el !== targetItem) {
+          el.classList.remove("block");
+          el.classList.add("hidden");
+        } else {
+          el.classList.remove("hidden");
+          el.classList.add("block");
+        }
+      });
+    }
+
+    // Event listener per mouse click
     listItems.forEach((item) => {
       item.addEventListener("click", () => {
-        listItems.forEach((el) => {
-          if (el !== item) {
-            el.classList.remove("block");
-            el.classList.add("hidden");
-          } else {
-            el.classList.remove("hidden");
-            el.classList.add("block");
+        toggleVisibility(item);
+      });
+    });
+
+    // Event listener per keyboard support sui link lingua
+    languageLinks.forEach((link) => {
+      link.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          // Trigger navigation (link default behavior)
+          link.click();
+        }
+        if (e.key === "Escape") {
+          // Close language picker if open
+          const parentItem = link.closest(".toggle-list-item");
+          if (parentItem && !parentItem.classList.contains("hidden")) {
+            toggleVisibility(parentItem);
           }
-        });
+        }
       });
     });
   });
