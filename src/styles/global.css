@@ -6,6 +6,12 @@
   --color-sbm-purple: #753bbd;
   --color-midnight: #1b2d70;
   --breakpoint-fbp: 1431px; /* footer breakpoint */
+  
+  /* WCAG 2.1 AA - Colori con contrasto migliorato */
+  --color-gray-400: #6B7280; /* Sostituisce text-gray-400 (#9CA3AF) - Contrasto 4.5:1 */
+  --color-gray-500: #4B5563; /* Sostituisce text-gray-500 (#6B7280) - Contrasto 7:1 */
+  --color-gray-600: #374151; /* Sostituisce text-gray-600 (#4B5563) - Contrasto 9:1 */
+  --color-gray-700: #1F2937; /* Per testo ad alto contrasto - Contrasto 12:1 */
 }
 
 /* WCAG 2.1 AA - Indicatori focus visibili */
@@ -46,6 +52,28 @@ a:focus-visible,
 
 .skip-link:focus {
   top: 8px;
+}
+
+/* WCAG 2.1 AA - Override colori Tailwind per contrasto migliorato */
+.text-gray-400 {
+  color: var(--color-gray-400) !important;
+}
+
+.text-gray-500 {
+  color: var(--color-gray-500) !important;
+}
+
+.text-gray-600 {
+  color: var(--color-gray-600) !important;
+}
+
+.text-gray-700 {
+  color: var(--color-gray-700) !important;
+}
+
+/* Migliora contrasto per badge categories */
+.bg-sbm-purple\/10 {
+  background-color: rgba(117, 59, 189, 0.15) !important; /* Aumentato da 10% a 15% per migliore leggibilità */
 }
 
 @font-face {
