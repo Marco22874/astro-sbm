@@ -92,9 +92,9 @@ if (filteredSortedNews.length > 0) {
       {pinnedNews.map((news) => (
         <div class="news h-auto shrink-0 w-full p-2 flex flex-col md:flex-row md:items-start md:px-8 md:gap-8 items-center" data-slug={news.slug}>
           <div class="md:flex-1">
-              <h1 class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5">
+              <h3 class="text-2xl font-medium min-h-16 my-2 2xl:mt-10 md:text-3xl md:mb-5">
                 <a href={`/news/${news.slug ?? 'error-slug'}`}>{news.data.title}</a>
-              </h1>
+              </h3>
               {news.data.categories && news.data.categories.length > 0 && (
               <div class="flex flex-wrap gap-2 mb-5">
                 {news.data.categories.map((categoryRef: { id: string; collection: string }) => { 
