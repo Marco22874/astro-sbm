@@ -8,26 +8,26 @@ const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang);
 ---
 
-<nav class="hidden lg:w-[600px] lg:flex items-center h-[60px] text-xl">
-  <ul class="md:flex md:flex-1 justify-around">
-    <li class="w-full group flex flex-col items-center">
-      <a href={getRelativeLocaleUrl(currentLang, "/products")}>{tr("nav.products")}</a>
+<nav role="navigation" aria-label={tr("nav.main-menu") || "Menu principale"} class="hidden lg:w-[600px] lg:flex items-center h-[60px] text-xl">
+  <ul role="menubar" class="md:flex md:flex-1 justify-around">
+    <li role="none" class="w-full group flex flex-col items-center">
+      <a role="menuitem" href={getRelativeLocaleUrl(currentLang, "/products")}>{tr("nav.products")}</a>
       <hr class="stylenav-midnight" />
     </li>
-    <li class="w-full group flex flex-col items-center">
-      <a href={getRelativeLocaleUrl(currentLang, "/services")}>{tr("nav.services")}</a>
+    <li role="none" class="w-full group flex flex-col items-center">
+      <a role="menuitem" href={getRelativeLocaleUrl(currentLang, "/services")}>{tr("nav.services")}</a>
       <hr class="stylenav-midnight" />
     </li>
-    <li class="w-full group flex flex-col items-center">
-      <a href={getRelativeLocaleUrl(currentLang, "/news")}>{tr("nav.news")}</a>
+    <li role="none" class="w-full group flex flex-col items-center">
+      <a role="menuitem" href={getRelativeLocaleUrl(currentLang, "/news")}>{tr("nav.news")}</a>
       <hr class="stylenav-midnight" />
     </li>
-    <li class="w-full group flex flex-col items-center">
-      <a href={getRelativeLocaleUrl(currentLang, "/about-us")}>{tr("nav.about-us")}</a>
+    <li role="none" class="w-full group flex flex-col items-center">
+      <a role="menuitem" href={getRelativeLocaleUrl(currentLang, "/about-us")}>{tr("nav.about-us")}</a>
       <hr class="stylenav-midnight" />
     </li>
-    <li class="w-full group flex flex-col items-center">
-      <a href={getRelativeLocaleUrl(currentLang, "/sustainability")}>{tr("nav.sustainability")}</a>
+    <li role="none" class="w-full group flex flex-col items-center">
+      <a role="menuitem" href={getRelativeLocaleUrl(currentLang, "/sustainability")}>{tr("nav.sustainability")}</a>
       <hr class="stylenav-midnight" />
     </li>
   </ul>

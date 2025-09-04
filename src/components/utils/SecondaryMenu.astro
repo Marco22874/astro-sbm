@@ -8,13 +8,16 @@ const currentLang = Astro.currentLocale || "it";
 const tr = useTranslations(currentLang as keyof typeof languages);
 ---
 
-<div
+<nav
+  role="navigation" 
+  aria-label={tr("nav.mobile-menu") || "Menu mobile"}
   id="sbm-menu-footer"
   class="flex flex-col justify-start items-center min-w-[350px]"
 >
-  <ul class="text-center">
-    <li class="w-full group">
+  <ul role="menubar" class="text-center">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/")}
       >
@@ -22,8 +25,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/products")}
       >
@@ -31,8 +35,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/services")}
       >
@@ -40,8 +45,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/news")}
       >
@@ -49,8 +55,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/about-us")}
       >
@@ -58,8 +65,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/sustainability")}
       >
@@ -67,8 +75,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/contacts")}
       >
@@ -76,8 +85,9 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       </a>
       <hr class="stylenav-white" />
     </li>
-    <li class="w-full group">
+    <li role="none" class="w-full group">
       <a
+        role="menuitem"
         class="block leading-0 text-white no-underline transition-all duration-[0.3s] ease-[ease-out] p-[10px]"
         href={getRelativeLocaleUrl(currentLang, "/backend")}
       >
@@ -86,4 +96,4 @@ const tr = useTranslations(currentLang as keyof typeof languages);
       <hr class="stylenav-white" />
     </li>
   </ul>
-</div>
+</nav>
