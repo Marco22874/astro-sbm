@@ -1,23 +1,26 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { useTranslations } from "../../../i18n/utils";
-import { languages } from "../../../i18n/ui";
 
-const currentLang = "en";
-const tr = useTranslations(currentLang as keyof typeof languages);
+const currentLang = Astro.currentLocale;
+const tr = useTranslations(currentLang);
 ---
 
 <Layout seoKey="accessibility">
-  <div class="sbm-section w-screen flex-1 my-[40px]">
-    <div class="w-full max-w-4xl mx-auto">
-      <!-- Page Title -->
-      <h1 class="text-4xl text-midnight mb-8">{tr("accessibility.title")}</h1>
-      
-      <div class="text-midnight space-y-8">
-        <!-- Last Update -->
-        <p class="text-sm text-gray-600 mb-8">
-          {tr("accessibility.lastUpdate")}
-        </p>
+  <div
+    class="sbm-section w-screen flex flex-col mt-[160px] text-midnight"
+    id="accessibility-wrapper"
+  >
+    <div class="w-full py-8">
+      <h1 class="text-5xl text-midnight text-center md:text-left">
+        {tr("accessibility.title")}
+      </h1>
+      <p class="my-8 text-lg text-center md:text-left text-gray-600">
+        {tr("accessibility.lastUpdate")}
+      </p>
+    </div>
+    
+    <div class="w-full py-8 flex flex-col gap-y-8 text-lg leading-relaxed">
 
         <!-- Section 1: Commitment to Accessibility -->
         <section>
@@ -111,7 +114,6 @@ const tr = useTranslations(currentLang as keyof typeof languages);
             <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.contact.content").replace(/\n/g, '<br>')} />
           </div>
         </section>
-      </div>
     </div>
   </div>
 </Layout>

@@ -148,22 +148,22 @@ const tr = useTranslations(currentLang as keyof typeof languages);
         href={`/${currentLang}/privacy-policy/`}
         class="hover:underline"
       >
-        PRIVACY POLICY
+        {tr("footer.privacy")}
       </a>
       <span class="mx-4">·</span>
       <a
         href={`/${currentLang}/cookies-policy/`}
         class="hover:underline"
       >
-        COOKIES POLICY</a
-      >
+        {tr("footer.cookies")}
+      </a>
       <span class="mx-4">·</span>
       <a
         href={`/${currentLang}/accessibility/`}
         class="hover:underline"
       >
-        ACCESSIBILITY</a
-      >
+        {tr("footer.accessibility")}
+      </a>
     </div>
   </div>
 </footer>
