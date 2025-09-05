@@ -2,6 +2,9 @@
 import Layout from "../../../layouts/Layout.astro";
 import { useTranslations } from "../../../i18n/utils";
 
+// import components
+import Slogan from "../../../components/utils/Slogan.astro";
+
 const currentLang = Astro.currentLocale;
 const tr = useTranslations(currentLang);
 ---
@@ -44,7 +47,17 @@ const tr = useTranslations(currentLang);
           </div>
         </section>
 
-        <!-- Section 3: W3C Badge -->
+        <!-- Section 3: UNI CEI EN 301549 Compliance -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.unicei.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.unicei.content").replace(/\n/g, '<br>')} />
+          </div>
+        </section>
+
+        <!-- Section 4: W3C Badge -->
         <section>
           <h2 class="text-2xl font-semibold mb-4 text-midnight">
             {tr("accessibility.badge.title")}
@@ -66,7 +79,7 @@ const tr = useTranslations(currentLang);
                 <img 
                   height="32" 
                   width="88"
-                  src="https://www.w3.org/WAI/wcag21/wcag2.1AA-v.png"
+                  src="https://www.w3.org/WAI/wcag21/wcag2.1AA-blue-v.png"
                   alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"
                   class="border border-gray-300 rounded"
                 />
@@ -115,5 +128,7 @@ const tr = useTranslations(currentLang);
           </div>
         </section>
     </div>
+
+    <Slogan />
   </div>
 </Layout>
