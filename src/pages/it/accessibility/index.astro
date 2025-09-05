@@ -1,0 +1,117 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { useTranslations } from "../../../i18n/utils";
+import { languages } from "../../../i18n/ui";
+
+const currentLang = "it";
+const tr = useTranslations(currentLang as keyof typeof languages);
+---
+
+<Layout seoKey="accessibility">
+  <div class="sbm-section w-screen flex-1 my-[40px]">
+    <div class="w-full max-w-4xl mx-auto">
+      <!-- Page Title -->
+      <h1 class="text-4xl text-midnight mb-8">{tr("accessibility.title")}</h1>
+      
+      <div class="text-midnight space-y-8">
+        <!-- Last Update -->
+        <p class="text-sm text-gray-600 mb-8">
+          {tr("accessibility.lastUpdate")}
+        </p>
+
+        <!-- Section 1: Commitment to Accessibility -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.introduction.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <p class="text-lg leading-7 mb-6">
+              {tr("accessibility.introduction.content")}
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2: WCAG Compliance -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.compliance.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <p class="text-lg leading-7 mb-6" set:html={tr("accessibility.compliance.content")} />
+          </div>
+        </section>
+
+        <!-- Section 3: W3C Badge -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.badge.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <p class="text-lg leading-7 mb-6">
+              {tr("accessibility.badge.content")}
+            </p>
+            
+            <!-- W3C WCAG 2.1 AA Badge -->
+            <div class="flex justify-start my-8">
+              <a 
+                href="https://www.w3.org/WAI/WCAG2AA-Conformance"
+                title="Explanation of WCAG 2 Level AA conformance"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  height="32" 
+                  width="88"
+                  src="https://www.w3.org/WAI/wcag21/wcag2.1AA-v.png"
+                  alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"
+                  class="border border-gray-300 rounded"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Implemented Features -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.features.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.features.content").replace(/\n/g, '<br>')} />
+          </div>
+        </section>
+
+        <!-- Section 5: Testing Results -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.testing.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.testing.content").replace(/\n/g, '<br>')} />
+          </div>
+        </section>
+
+        <!-- Section 6: Feedback Channel -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.feedback.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.feedback.content").replace(/\n/g, '<br>')} />
+          </div>
+        </section>
+
+        <!-- Section 7: Contact -->
+        <section>
+          <h2 class="text-2xl font-semibold mb-4 text-midnight">
+            {tr("accessibility.contact.title")}
+          </h2>
+          <div class="prose prose-slate max-w-none">
+            <div class="text-lg leading-7 mb-6" set:html={tr("accessibility.contact.content").replace(/\n/g, '<br>')} />
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
